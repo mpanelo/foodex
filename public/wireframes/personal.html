@@ -2,18 +2,23 @@
 <html>
 <head>
   <title>Personal Recipes</title>
+  <link rel="stylesheet" type="text/css" href="../hw3/vanilla/css/nav.css">
 </head>
 <body>
-  <button type="button" onclick="location.href='addEditRecipe.html'">Add Recipe</button>
   
   <h1>Personal Catalog</h1>
   
   <nav>
-    <a href="main.html">Foodex Catalog</a>
+    <ul>
+      <li><a class="active" href="#home">Home</a></li>
+      <li><a href="main.html">Foodex Catalog</a></li>
+      <li><a onclick="alert('Log out successful')" href="login.html">Logout</a></li>
+    </ul>
     <br>
-    <a onclick="alert('Log out successful')" href="login.html">Logout</a>
   </nav>
   
+  <button type="button" onclick="location.href='addEditRecipe.html'">Add Recipe</button>
+
   <h3>Spaghetti</h3>
   <img src="mjones.jpg" alt="Image of the recipe">
   <p>
