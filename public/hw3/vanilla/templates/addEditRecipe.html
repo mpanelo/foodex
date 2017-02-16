@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Add/Edit Recipe</title>
+</head>
+<body>
+
+  <form action="none" method="post" id="recipeForm">
+		<h5>Recipe Title</h5>
+    <input type="text" name="recipe">
+
+    <h5>Time Estimation</h5>
+    <label><input type="text" name="days">Days</label>
+    <label><input type="text" name="hours">Hours</label>
+    <label><input type="text" name="minutes">Minutes</label>
+
+    <h5>Difficulty</h5>
+    <label><input type="radio" name="difficulty" value="hard">hard</label>
+    <label><input type="radio" name="difficulty" value="medium">medium</label>
+    <label><input type="radio" name="difficulty" value="easy">easy</label>
+    
+    <h5>Brief Description</h5>
+    <textarea name="description"></textarea>
+    <h5>Ingredients</h5>
+    <textarea name="ingredients"></textarea>
+    
+    <h5>Instructions</h5>
+    <textarea name="instructions"></textarea>
+    
+    <h5>Visibiility</h5>
+    <label><input type="radio" name="visible" value="public">Public</label>
+    <label><input type="radio" name="visible" value="private">Private</label>
+
+    <img src="#" alt="preview image of final product">
+    <button type="submit">Upload Image</button>
+  </form>
+
+  <button type="submit" form="recipeForm" value="recipeSubmit">Save</button>
+  <button type="submit" form="recipeForm" value="recipeCancel">Cancel</button>
+
+</body>
+</html>
