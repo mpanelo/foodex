@@ -2,36 +2,45 @@
 <html>
 <head>
   <title>Personal Recipes</title>
+  <link rel="stylesheet" type="text/css" href="../hw3/vanilla/css/nav.css">
 </head>
 <body>
-  <button type="button" onclick="location.href='addEditRecipe.html'">Add Recipe</button>
   
-  <h1>Personal Catalog</h1>
-  
-  <nav>
-    <a href="main.html">Foodex Catalog</a>
+  <div>
+    <ul>
+      <li><a class="active" href="#home">Home</a></li>
+      <li><a href="main.html">Foodex Catalog</a></li>
+      <li><a onclick="alert('Log out successful')" href="login.html">Logout</a></li>
+    </ul>
     <br>
-    <a onclick="alert('Log out successful')" href="login.html">Logout</a>
-  </nav>
+  </div>
   
-  <h3>Spaghetti</h3>
-  <img src="mjones.jpg" alt="Image of the recipe">
-  <p>
-    Check out this awesome spaghetti recipe
-  </p>
+  <div style="margin-left:25%;padding:1px 16px;height:1000px;">
 
-  <h3>Burger</h3>
-  <img src="mjones.jpg" alt="Image of the recipe">
-  <p>
-    Check out this awesome burger recipe
-  </p>
+    <h1>Personal Catalog</h1>
 
-  <h3>Quesadilla</h3>
-  <img src="mjones.jpg" alt="Image of the recipe">
-  <p>
-    Check out this awesome taco recipe
-  </p>
+    <button type="button" onclick="location.href='addEditRecipe.html'">Add Recipe</button>
 
-  <footer><p>&copy; 2017 Foodex</p></footer>
+    <h3>Spaghetti</h3>
+    <img src="mjones.jpg" alt="Image of the recipe">
+    <p>
+      Check out this awesome spaghetti recipe
+    </p>
+
+    <h3>Burger</h3>
+    <img src="mjones.jpg" alt="Image of the recipe">
+    <p>
+      Check out this awesome burger recipe
+    </p>
+
+    <h3>Quesadilla</h3>
+    <img src="mjones.jpg" alt="Image of the recipe">
+    <p>
+      Check out this awesome taco recipe
+    </p>
+
+    <footer><p>&copy; 2017 Foodex</p></footer>
+
+  </div>
 </body>
 </html>
