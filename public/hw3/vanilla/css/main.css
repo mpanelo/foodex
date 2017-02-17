@@ -1,17 +1,5 @@
 /* Styles for the home/catalog page */
 
-* {
-    margin: 0;
-    padding: 0;
-}
-
-html{
-    height: 100%;
-}
-body {
-    min-height: 100%;
-}
-
 main {
     background-color: white;
     padding-left: 280px;
