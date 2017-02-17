@@ -3,16 +3,21 @@
 <head>
   <meta charset="utf-8"/>
   <title>Login</title>
+  <link href="../css/login.css" type="text/css" rel="stylesheet">
 </head>
 <body>
-  <form>
-    User Name:<br>
-    <input type="text" name="userName"><br>
-    Password:<br>
-    <input type="text" name="password"><br>
-    <label><input type="checkbox">Remember me?</label><br>
-    <input type="submit" name="Submit">
-  </form>
+  <header>
+    <h1>Welcome to Foodex</h1>
+  </header>
+  <main>
+    <form method="post">
+      <input type="text" name="userName" placeholder="Username">
+      <input type="password" name="password" placeholder="Password">
+      <label><input type="checkbox">Remember me?</label>
+      <button>Sign Up</button>
+      <input type="submit" name="submitted" value="Login">
+    </form>
+  </main>
   <footer><p>&copy; 2017 Foodex</p></footer>
 </body>
 </html>
