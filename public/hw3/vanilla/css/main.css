@@ -38,3 +38,21 @@ main {
     position: relative;
     top: 20px;
 }
+
+
+
+.row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.row-elem {
+
+}
+
+
+ul, ol {
+    list-style-type: disc;
+    list-style-position: inside;
+}
