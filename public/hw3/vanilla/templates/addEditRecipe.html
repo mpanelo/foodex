@@ -8,38 +8,39 @@
 <body>
 
 	<main>
-	  <form action="none" method="post" id="recipeForm">
-			<h5>Recipe Title</h5>
-	    <input type="text" name="recipe">
+	  <form method="post" id="recipeForm">
+			<h3>Recipe Title</h3>
+	    <input type="text" name="recipe" placeholder="Recipe Title">
+	    <h3>Time Estimation</h3>
+			<div class="time-container">
+		    <input type="text" name="days" placeholder="days" maxlength="20" size="1">
+		    <input type="text" name="hours" placeholder="hours" maxlength="20" size="1">
+		    <input type="text" name="minutes" placeholder="minutes" maxlength="20" size="1">
+			</div>
+	    <h4>Difficulty</h4>
+			<div class="radio-container">
+		    <label><input type="radio" name="difficulty" value="hard">hard</label>
+		    <label><input type="radio" name="difficulty" value="medium">medium</label>
+		    <label><input type="radio" name="difficulty" value="easy">easy</label>
+			</div>
 
-	    <h5>Time Estimation</h5>
-	    <label><input type="text" name="days">Days</label>
-	    <label><input type="text" name="hours">Hours</label>
-	    <label><input type="text" name="minutes">Minutes</label>
+	    <h3>Brief Description</h3>
+	    <textarea name="description" rows="5" cols="50"></textarea>
+	    <h3>Ingredients</h3>
+	    <textarea name="ingredients" rows="5" cols="50"></textarea>
 
-	    <h5>Difficulty</h5>
-	    <label><input type="radio" name="difficulty" value="hard">hard</label>
-	    <label><input type="radio" name="difficulty" value="medium">medium</label>
-	    <label><input type="radio" name="difficulty" value="easy">easy</label>
+	    <h3>Instructions</h3>
+	    <textarea name="instructions" rows="5" cols="50"></textarea>
 
-	    <h5>Brief Description</h5>
-	    <textarea name="description"></textarea>
-	    <h5>Ingredients</h5>
-	    <textarea name="ingredients"></textarea>
-
-	    <h5>Instructions</h5>
-	    <textarea name="instructions"></textarea>
-
-	    <h5>Visibiility</h5>
+	    <h3>Visibiility</h3>
 	    <label><input type="radio" name="visible" value="public">Public</label>
 	    <label><input type="radio" name="visible" value="private">Private</label>
 
-	    <img src="#" alt="preview image of final product">
+	    <img alt="preview image of final product">
 	    <button type="submit">Upload Image</button>
 	  </form>
-
-	  <button type="submit" form="recipeForm" value="recipeSubmit">Save</button>
-	  <button type="submit" form="recipeForm" value="recipeCancel">Cancel</button>
+	  <button type="submit" form="recipeForm" value="recipeSubmit">Submit</button>
+	  <button id="cancel" type="submit" onclick="location.href='main.html'" value="recipeCancel">Cancel</button>
 	</main>
   <footer><p>&copy; 2017 Foodex</p></footer>
 </body>

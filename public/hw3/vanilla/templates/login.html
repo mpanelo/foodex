@@ -11,14 +11,17 @@
     <h1>Welcome to Foodex</h1>
   </header>
   <main>
-    <form method="post">
-      <input type="text" name="userName" placeholder="Username">
-      <input type="password" name="password" placeholder="Password">
-      <input id="retype" class="hide" type="password" name="retype" placeholder="Re-type Password">
-      <input id="email" class="hide" type="email" name="email" placeholder="Email">
-      <label><input type="checkbox">Remember me?</label>
-      <input type="submit" name="submitted" value="Login">
-    </form>
+    <div class="container">
+      <form id="loginForm" method="post">
+        <input type="text" name="userName" placeholder="Username">
+        <input type="password" name="password" placeholder="Password">
+        <input id="retype" class="hide" type="password" name="retype" placeholder="Re-type Password">
+        <input id="email" class="hide" type="email" name="email" placeholder="Email">
+        <label><input type="checkbox">Remember me?</label>
+      </form>
+      <button id="signUp" onclick="location.href='signUp.html'">Sign Up</button>
+      <button type="submit" form="loginForm" value="submitted">Log In</button>
+    </div>
   </main>
   <footer><p>&copy; 2017 Foodex</p></footer>
 </body>
