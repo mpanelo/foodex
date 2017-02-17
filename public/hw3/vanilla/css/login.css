@@ -2,6 +2,9 @@ html, body {
   margin: 0;
   height: 100%;
   width: 100%;
+  background-image: url("../img/foodex.jpeg");
+  background-size: cover;
+  background-color: #f6f6f6;
 }
 
 h1 {
@@ -9,23 +12,25 @@ h1 {
   text-align: center;
   padding-top: 20px;
   font-size: 4em;
-  color: #00cbac;
+  color: #005B4C;
 }
 
 footer {
-  background: #005B4C;
+  background-color: #005B4C;
   position: fixed;
   bottom: 0;
   width: 100%;
+  padding: 5px 0;
 }
 
 .container {
-  box-shadow: 4px 4px 2px 0px rgba(166,166,166,1);
-  height: 200px;
+  box-shadow: 1px 1px 8px 1px rgba(115,115,115,1);
+  height: 250px;
   background-color: white;
   width: 200px;
-  padding: 55px 0 60px 80px;
+  padding: 70px 0 20px 80px;
   padding-right: 130px;
+  border-radius: 5px;
 }
 
 label {
@@ -44,6 +49,7 @@ a {
 footer p {
   text-align: center;
   color: white;
+  font-size: 0.8rem;
 }
 
 input[type="checkbox"] {

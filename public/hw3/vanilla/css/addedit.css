@@ -5,7 +5,7 @@ html,body {
 
 main {
   padding-left: 20px;
-  margin-bottom: 15px;
+  margin-bottom: 35px;
 }
 
 h3 {
@@ -14,6 +14,7 @@ h3 {
 footer {
   width: 100%;
   background: #005B4C;
+  padding: 20px 0;
 }
 
 footer p {
@@ -40,6 +41,11 @@ button {
   margin-top: 20px;
   margin-right: 15px;
   padding: 5px 15px;
+}
+
+#cancel {
+  color: #00cbac;
+  background-color: white;
 }
 
 label {
