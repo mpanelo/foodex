@@ -7,7 +7,7 @@ nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    width: 280px;
+    width: 230px;
     background-color: #f1f1f1;
     position: fixed;
     height: 100%;
@@ -27,6 +27,6 @@ ul li a.active {
 }
 
 ul li a:hover:not(.active) {
-    background-color: #555;
+    background-color: #8ffcac;
     color: white;
 }
