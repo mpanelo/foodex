@@ -2,45 +2,58 @@
 <html>
 <head>
   <title>Personal Recipes</title>
-  <link rel="stylesheet" type="text/css" href="../hw3/vanilla/css/nav.css">
+  <link rel="stylesheet" type="text/css" href="../css/main.css">
+  <link rel="stylesheet" type="text/css" href="../css/nav.css">
 </head>
+
 <body>
-  
-  <div>
+  <nav>
     <ul>
       <li><a class="active" href="#home">Home</a></li>
       <li><a href="main.html">Foodex Catalog</a></li>
       <li><a onclick="alert('Log out successful')" href="login.html">Logout</a></li>
     </ul>
-    <br>
-  </div>
+  </nav>
   
-  <div style="margin-left:25%;padding:1px 16px;height:1000px;">
-
+  <main>
     <h1>Personal Catalog</h1>
 
-    <button type="button" onclick="location.href='addEditRecipe.html'">Add Recipe</button>
+    <button type="button" onclick="location.href='addEditRecipe.html'">
+      Add Recipe
+    </button>
 
-    <h3>Spaghetti</h3>
-    <img src="mjones.jpg" alt="Image of the recipe">
-    <p>
-      Check out this awesome spaghetti recipe
-    </p>
+    <div class="flex-container">
+      <div class="flex-item">
+	<h3>Spaghetti</h3>
+	<img class="flex-img"
+	     src="../img/spaghetti.jpg"
+	     onclick="location.href='recipe.html'"
+	     alt="Image of the recipe">
+	<p>Check out this awesome spaghetti seriouslyItalian</p>
+      </div>
+      
+      <div class="flex-item">
+	<h3>Burger</h3>
+	<img class="flex-img"
+	     src="../img/burger.jpg"
+	     onclick="location.href='recipe.html'"
+	     alt="Image of the recipe">
+	<p>
+	  Check out this burger by bigBoi420
+	</p>
 
-    <h3>Burger</h3>
-    <img src="mjones.jpg" alt="Image of the recipe">
-    <p>
-      Check out this awesome burger recipe
-    </p>
+      </div>
+      <div class="flex-item">
+	<h3>Tacos</h3>
+	<img class="flex-img"
+	     src="../img/alpastor.jpg"
+	     onclick="location.href='recipe.html'"
+	     alt="Image of the recipe">
+	<p>Check out this awesome taco recipe made by jalapeno_man35</p>
+      </div>
+    </div>
 
-    <h3>Quesadilla</h3>
-    <img src="mjones.jpg" alt="Image of the recipe">
-    <p>
-      Check out this awesome taco recipe
-    </p>
+  <footer><p>&copy; 2017 Foodex</p></footer>
 
-    <footer><p>&copy; 2017 Foodex</p></footer>
-
-  </div>
 </body>
 </html>

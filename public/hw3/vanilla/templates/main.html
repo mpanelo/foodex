@@ -4,74 +4,77 @@
   <meta charset="utf-8">
   <title>Foodex Recipes</title>
   <link rel="stylesheet" type="text/css" href="../css/main.css">
+  <link rel="stylesheet" type="text/css" href="../css/nav.css">
 </head>
 
 <body>
-  <h1>Foodex Catalog</h1>
   <nav>
-    <a href="personal.html">Personal Catalog</a>
-    <br>
-    <a href="login.html">Login</a>
+    <ul>
+      <li><a class="active" href="#home">Home</a></li>
+      <li><a href="personal.html">Personal Catalog</a></li>
+      <li><a onclick="alert('Log out successful')" href="login.html">Logout</a></li>
+    </ul>
   </nav>
 
-  <div class="flex-container">
-    <div class="flex-item">
-      <h3>Korean Steak</h3>
-      <img class="flex-img"
-	   src="../img/kalbi.jpg"
-	   onclick="location.href='recipe.html'"
-	   alt="Image of the recipe">
+  <main>
+    <h1>Foodex Catalog</h1>
+    
+    <div class="flex-container">
+      <div class="flex-item">
+	<h3>Korean Steak</h3>
+	<img class="flex-img"
+	     src="../img/kalbi.jpg"
+	     onclick="location.href='recipe.html'"
+	     alt="Image of the recipe">
       <p>Check out this awesome korean steak recipe made by aznculture221</p>
-    </div>
-    <div class="flex-item">
-      <h3>Sushi Roll</h3>
-      <img class="flex-img"
-	   src="../img/avoroll.jpg"
-	   onclick="location.href='recipe.html'"
+      </div>
+      <div class="flex-item">
+	<h3>Sushi Roll</h3>
+	<img class="flex-img"
+	     src="../img/avoroll.jpg"
+	     onclick="location.href='recipe.html'"
 	   alt="Image of the recipe">
-      <p>
-	Check out this awesome sushi roll recipe made by ShadowCloneJitsu8
-      </p>
-      
-    </div>
-    <div class="flex-item">
-      <h3>Tacos</h3>
-      <img class="flex-img"
-	   src="../img/alpastor.jpg"
-	   onclick="location.href='recipe.html'"
-	   alt="Image of the recipe">
-      <p>Check out this awesome taco recipe made by jalapeno_man35</p>
-    </div>
-        <div class="flex-item">
-      <h3>Korean Steak</h3>
-      <img src="mjones.jpg"
-	   onclick="location.href='recipe.html'"
-	   alt="Image of the recipe">
-      <p>Check out this awesome korean steak recipe made by aznculture221</p>
-    </div>
-    <div class="flex-item">
-      <h3>Sushi Roll</h3>
-      <img src="mjones.jpg"
-	   onclick="location.href='recipe.html'"
-	   alt="Image of the recipe">
-      
-      <p>
-	Check out this awesome sushi roll recipe made by ShadowCloneJitsu8
-      </p>
-      
-    </div>
-    <div class="flex-item">
-      <h3>Tacos</h3>
-      <img src="mjones.jpg"
-	   onclick="location.href='recipe.html'"
-	   alt="Image of the recipe">
-      <p>Check out this awesome taco recipe made by jalapeno_man35</p>
-    </div>
-
-  </div>
-  
+	<p>
+	  Check out this awesome sushi roll recipe made by ShadowCloneJitsu8
+	</p>
 	
-  
+      </div>
+      <div class="flex-item">
+	<h3>Tacos</h3>
+	<img class="flex-img"
+	     src="../img/alpastor.jpg"
+	   onclick="location.href='recipe.html'"
+	     alt="Image of the recipe">
+	<p>Check out this awesome taco recipe made by jalapeno_man35</p>
+      </div>
+      <div class="flex-item">
+	<h3>Korean Steak</h3>
+	<img src="mjones.jpg"
+	     onclick="location.href='recipe.html'"
+	     alt="Image of the recipe">
+	<p>Check out this awesome korean steak recipe made by aznculture221</p>
+      </div>
+      <div class="flex-item">
+	<h3>Sushi Roll</h3>
+	<img src="mjones.jpg"
+	     onclick="location.href='recipe.html'"
+	     alt="Image of the recipe">
+	
+	<p>
+	  Check out this awesome sushi roll recipe made by ShadowCloneJitsu8
+	</p>
+	
+      </div>
+      <div class="flex-item">
+	<h3>Tacos</h3>
+	<img src="mjones.jpg"
+	     onclick="location.href='recipe.html'"
+	     alt="Image of the recipe">
+	<p>Check out this awesome taco recipe made by jalapeno_man35</p>
+      </div>
+      
+    </div>
+  </main>
   <footer><p>&copy; 2017 Foodex</p></footer>
 </body>
 </html>
