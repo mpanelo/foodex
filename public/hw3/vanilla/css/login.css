@@ -2,9 +2,6 @@ html, body {
   margin: 0;
   height: 100%;
   width: 100%;
-  background-image: url("../img/foodex.jpeg");
-  background-size: cover;
-  background-color: #f6f6f6;
 }
 
 h1 {
@@ -110,5 +107,17 @@ main {
   }
   h1 {
     font-size: 3em;
+  }
+
+  html, body {
+    background-image: url("..");
+    background-color: #f6f6f6;
+  }
+}
+
+@media (min-width: 701px) {
+  html, body {
+    background-image: url("../img/foodex.jpeg");
+    background-size: cover;
   }
 }
