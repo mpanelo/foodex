@@ -1,0 +1,23 @@
+html,body {
+  margin: 0;
+  color: #00cbac;
+}
+
+main {
+  padding-left: 15px;
+}
+h5 {
+  font-size: 1.5em;
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+footer {
+  color: white;
+  width: 100%;
+  background: #005B4C;
+}
+
+footer p {
+  margin: 0;
+}
