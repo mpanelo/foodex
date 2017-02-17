@@ -36,11 +36,19 @@ label {
   /*color: #3f998b;*/
   color: white;
 }
-
+/*
 a {
+  border: 1px solid #00cbac;
+  border-radius: 4px;
+  background-color: white;
   color: #00cbac;
-  font-size: 1rem;
-  margin-right: 15px;
+  margin-top: 20px;
+  padding: 5px 15px;
+  text-decoration: none;
+}
+*/
+a:hover{
+  cursor: default;
 }
 
 footer p {
@@ -52,6 +60,12 @@ input[type="checkbox"] {
   margin: 0;
   margin-right: 10px;
 }
+
+.center{
+  margin: auto;
+  display: block;
+}
+
 
 input[type="text"], input[type="email"] {
   margin-bottom: 20px;
@@ -72,7 +86,7 @@ input[type="password"] {
   margin-bottom: 20px;
 }
 
-input[type="submit"] {
+input[type="submit"], a{
   border: 1px solid #00cbac;
   border-radius: 4px;
   /*background-color: #00cbac;*/
@@ -81,6 +95,7 @@ input[type="submit"] {
   color: #00cbac;
   margin-top: 20px;
   padding: 5px 15px;
+  text-decoration: none;
 }
 
 main {
