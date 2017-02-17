@@ -1,13 +1,9 @@
-/* Styles for the login page */
 html, body {
   margin: 0;
   height: 100%;
   width: 100%;
 }
 
-body {
-  background: linear-gradient(to bottom, rgba(247,247,247,1) 0%, rgba(110,255,183,1) 100%);
-}
 h1 {
   margin: 0;
   text-align: center;
@@ -17,7 +13,10 @@ h1 {
 }
 
 footer {
-  background: #4f5256;
+  background: #005B4C;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
 form {
@@ -37,10 +36,8 @@ label {
   color: #3f998b;
 }
 
-button {
+a {
   color: #00cbac;
-  border: none;
-  background-color: white;
   font-size: 1rem;
   margin-right: 15px;
 }
@@ -55,7 +52,7 @@ input[type="checkbox"] {
   margin-right: 10px;
 }
 
-input[type="text"] {
+input[type="text"], input[type="email"] {
   margin-bottom: 20px;
   border: none;
   border-bottom: 2px solid #00cbac;
@@ -90,10 +87,17 @@ main {
   height: 80vh;
 }
 
+.hide {
+  display: none;
+}
+
 @media (max-width: 700px) {
   form {
-    width: 150px;
+    width: 180px;
     padding: 30px 0 30px 35px;
-    padding-right: 130px;
+    padding-right: 110px;
+  }
+  h1 {
+    font-size: 3em;
   }
 }
