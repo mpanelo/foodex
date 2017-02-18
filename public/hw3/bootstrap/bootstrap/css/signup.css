@@ -1,8 +1,10 @@
+
+
 #colorstrip{
     width: 100%; 
     height: 60px;
     border-style: solid;
-    border-color: white;
+    border-color: #00cbac;
     background-color: #00cbac;
     position: relative;
 }
@@ -11,9 +13,17 @@
 	text-align: center;
 }
 
+hr {
+	border: 1px solid white;
+}
+
 #cancel {
-	color:blue;
+	color: #00cbac;
 	margin-top: 5px;
+}
+
+.btn {
+	background: #00cbac;
 }
 
 #logo {
@@ -23,13 +33,42 @@
 	height: 35px;
 }
 
+#contain {
+	background: #f4f4f4;
+	width: 100%;
+}
+
+#header {
+   position: relative;
+}
+
+#body {
+   padding:10px;
+   padding-bottom:40px;   /* Height of the footer */
+}
+
+#foot {
+    background-color: white;
+    padding: 20px 0;
+    position: relative;
+    height: 60px;
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+    color: black;
+}
+
+/*
 .footer {
+	  margin-top: 15px;
       background-color: #00cbac;
       padding: 20px 0;
-      position: absolute;
+      position: fixed;
       height: 60px;
       width: 100%;
       bottom: 0;
       text-align: center;
       color: black;
 }
+
+*/

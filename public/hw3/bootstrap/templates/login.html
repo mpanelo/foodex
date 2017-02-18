@@ -31,26 +31,28 @@
     .btn-primary {
       background-color: #00cbac;
     }
-    h1 {
+    h2 {
       margin-top: 0;
       padding-top: 30px;
       text-align: center;
       color: #005B4C;
-      font-size: 6rem;
     }
+    /*
     .container {
       display: flex;
       align-items: center;
       justify-content: center;
     }
+    */
     .form-container {
       width: 400px;
       height: 400px;
     }
     .footer {
-      background-color: #00cbac;
+      margin-top: 15px;
+      background-color: white;
       padding: 20px 0;
-      position: absolute;
+      position: relative;
       height: 60px;
       width: 100%;
       bottom: 0;
@@ -60,50 +62,37 @@
       color: black;
     }
     .outer {
-      margin-top: 50px;
+      margin-top: 3%;
     }
   </style>
 </head>
 <body>
   <div id="colorstrip"><img id="logo" src="../img/mixing_bowl-512.png" alt="logo"></div>
   <div class="outer">
-  <header>
-    <h1>Welcome to Foodex</h1>
-  </header>
-  <div class="outer">
-  <div class="container">
-    <form method="post">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="form-group">
-            <label class="sr-only">Username:</label>
-            <input class="form-control" type="text" name="userName" placeholder="Username">
-          </div>
-          <div class="form-group">
-            <label class="sr-only">Password:</label>
-            <input class="form-control" type="password" name="password" placeholder="Password">
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <div class="form-group">
-            <label class="checkbox-inline"><input type="checkbox">Remember me?</label><br>
-          </div>
-        </div>
-      </div>
-    </form>
-  </div>
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-6">
-        <button class="btn btn-default" onclick="location.href='signUp.html'">Sign Up</button>
-      </div>
-      <div class="col-xs-6">
-        <button class="btn btn-primary" type="submit">Login</button>
+    <div class="container">
+      <h2>Login to Foodex</h2>
+      <div class="container">
+        <form method="post" id="login">
+          <fieldset>
+            <div class="form-group">
+              <label for="userName">Username:</label>
+              <input class="form-control" type="text" id="userName" placeholder="Username">
+            </div>
+            <div class="form-group">
+              <label for="password">Password:</label>
+              <input class="form-control" type="password" id="password" placeholder="Password">
+            </div>
+            <div class="form-group">
+              <label class="checkbox-inline"><input type="checkbox">Remember me?</label><br>
+            </div>
+            <div style="margin-top: 40px;">
+              <button class="btn btn-primary btn-block" type="submit" form="login">Login</button>
+              <button class="btn btn-default btn-block"><a href="signUp.html" style="color: black">Sign Up</a></button>
+            </div>
+          </fieldset>
+        </form>
       </div>
     </div>
-  </div>
   </div>
   <footer class="footer"><p>&copy; 2017 Foodex</p></footer>
 </body>
