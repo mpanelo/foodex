@@ -1,36 +1,85 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <title>Foodex Recipes</title>
-</head>
+  <head>
+    <title>Foodex Recipes</title>
+    <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap-theme.css">
+    <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.css">
+  </head>
+  <body>
 
-<body>
-  <h1>Foodex Catalog</h1>
-  <nav>
-    <a href="personal.html">Personal Catalog</a>
-    <br>
-    <a href="login.html">Login</a>
-  </nav>
+    <div class="col-sm-3 col-md-2 sidebar">
+      <ul class="nav nav-sidebar">
+	<li><a href="main.html">Foodex Catalog</a></li>
+	<li><a href="personal.html">Personal Catalog</a></li>
+	<li><a href="addEditRecipe.html">Add Recipe</a></li>
+	<li><a href="login.html">Logout</a></li>
+      </ul>
+    </div>
+    
+    <main>
+      <div class="container container-fluid">
+	<h1>Foodex Catalog</h1>
+	<div class="row">
+	  <div class="col-sm-4 col-md-3">
+	    <h3>Kalbi</h3>
+	    <img class="img img-responsive"
+		 src="../img/kalbi.jpg"
+		 onclick="location.href='recipe.html'"
+		 alt="Image of the recipe">
+	    <p>Check out this awesome Korean steak recipe by ChangHatesKimbap</p>
+	  </div>
+	  <div class="col-sm-4 col-md-3">
+	    <h3>Burger</h3>
+	    <img class="img img-responsive"
+		 src="../img/burger.jpg"
+		 onclick="location.href='recipe.html'"
+		 alt="Image of the recipe">
+	    <p>
+	      Check out this burger by bigBoi420
+	    </p>
+	  </div>	    
+	  <div class="col-sm-4 col-md-3">
+	    <h3>Tacos</h3>
+	    <img class="img img-responsive"
+		 src="../img/alpastor.jpg"
+		 onclick="location.href='recipe.html'"
+		 alt="Image of the recipe">
+	    <p>Check out this awesome taco recipe made by jalapeno_man35</p>
+	  </div>
+	</div>
 
-  <h3>Korean Steak</h3>
-  <img src="mjones.jpg" onclick="location.href='recipe.html'" alt="Image of the recipe">
-  <p>
-    Check out this awesome korean steak recipe made by aznculture221
-  </p>
-	
-  <h3>Sushi Roll</h3>
-  <img src="mjones.jpg" onclick="location.href='recipe.html'" alt="Image of the recipe">
-  <p>
-    Check out this awesome sushi roll recipe made by ShadowCloneJitsu8
-  </p>
-  
-  <h3>Tacos</h3>
-  <img src="mjones.jpg" onclick="location.href='recipe.html'" alt="Image of the recipe">
-  <p>
-    Check out this awesome taco recipe made by jalapeno_man35
-  </p>
+	<div class="row">
+	  <div class="col-sm-4 col-md-3">
+	    <h3>Kalbi</h3>
+	    <img class="img img-responsive"
+		 src="../img/kalbi.jpg"
+		 onclick="location.href='recipe.html'"
+		 alt="Image of the recipe">
+	    <p>Check out this awesome Korean steak recipe by ChangHatesKimbap</p>
+	  </div>
+	  <div class="col-sm-4 col-md-3">
+	    <h3>Burger</h3>
+	    <img class="img img-responsive"
+		 src="../img/burger.jpg"
+		 onclick="location.href='recipe.html'"
+		 alt="Image of the recipe">
+	    <p>
+	      Check out this burger by bigBoi420
+	    </p>
+	  </div>	    
+	  <div class="col-sm-4 col-md-3">
+	    <h3>Tacos</h3>
+	    <img class="img img-responsive"
+		 src="../img/alpastor.jpg"
+		 onclick="location.href='recipe.html'"
+		 alt="Image of the recipe">
+	    <p>Check out this awesome taco recipe made by jalapeno_man35</p>
+	  </div>
+	</div>
+      </div>
 
-  <footer><p>&copy; 2017 Foodex</p></footer>
-</body>
+      
+    </main>
+    <footer><p>&copy; 2017 Foodex</p></footer>
+  </body>
 </html>

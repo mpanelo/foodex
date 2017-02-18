@@ -1093,6 +1093,7 @@ body {
   line-height: 1.42857143;
   color: #333333;
   background-color: #ffffff;
+  padding-left: 201px;
 }
 input,
 button,
@@ -3797,10 +3798,32 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   z-index: 2;
   margin-left: -1px;
 }
+.sidebar {
+    display: none;
+}
+@media (min-width: 768px) {
+    .sidebar {
+	width: 200px;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1000;
+	display: block;
+	padding: 10px;
+	overflow-x: hidden;
+	overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+	background-color: #f5f5f5;
+	border-right: 1px solid #eee;
+    }
+}
+
 .nav {
   margin-bottom: 0;
   padding-left: 0;
+  margin-left: 0;
   list-style: none;
+  background-color: #f5f5f5;
 }
 .nav > li {
   position: relative;
@@ -3814,7 +3837,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav > li > a:hover,
 .nav > li > a:focus {
   text-decoration: none;
-  background-color: #eeeeee;
+  background-color: #8ffcac;
 }
 .nav > li.disabled > a {
   color: #777777;
@@ -3823,14 +3846,14 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav > li.disabled > a:focus {
   color: #777777;
   text-decoration: none;
-  background-color: transparent;
+  background-color: #6f9de8;
   cursor: not-allowed;
 }
 .nav .open > a,
 .nav .open > a:hover,
 .nav .open > a:focus {
-  background-color: #eeeeee;
-  border-color: #337ab7;
+    background-color: #8ffcac;
+    border-color: #337ab7;
 }
 .nav .nav-divider {
   height: 1px;

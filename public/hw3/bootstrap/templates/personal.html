@@ -1,37 +1,54 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Personal Recipes</title>
-</head>
-<body>
-  <button type="button" onclick="location.href='addEditRecipe.html'">Add Recipe</button>
-  
-  <h1>Personal Catalog</h1>
-  
-  <nav>
-    <a href="main.html">Foodex Catalog</a>
-    <br>
-    <a onclick="alert('Log out successful')" href="login.html">Logout</a>
-  </nav>
-  
-  <h3>Spaghetti</h3>
-  <img src="mjones.jpg" alt="Image of the recipe">
-  <p>
-    Check out this awesome spaghetti recipe
-  </p>
+  <head>
+    <title>Personal Recipes</title>
+    <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap-theme.css">
+    <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.css">
+  </head>
+  <body>
 
-  <h3>Burger</h3>
-  <img src="mjones.jpg" alt="Image of the recipe">
-  <p>
-    Check out this awesome burger recipe
-  </p>
-
-  <h3>Quesadilla</h3>
-  <img src="mjones.jpg" alt="Image of the recipe">
-  <p>
-    Check out this awesome taco recipe
-  </p>
-
-  <footer><p>&copy; 2017 Foodex</p></footer>
-</body>
+    <div class="col-sm-3 col-md-2 sidebar">
+      <ul class="nav nav-sidebar">
+	<li><a href="main.html">Foodex Catalog</a></li>
+	<li><a href="personal.html">Personal Catalog</a></li>
+	<li><a href="addEditRecipe.html">Add Recipe</a></li>
+	<li><a href="login.html">Logout</a></li>
+      </ul>
+    </div>
+    
+    <main>
+      <div class="container container-fluid">
+	<h1>Personal Catalog</h1>
+	<div class="row">
+	  <div class="col-sm-4 col-md-3">
+	    <h3>Spaghetti</h3>
+	    <img class="img img-responsive"
+		 src="../img/spaghetti.jpg"
+		 onclick="location.href='recipe.html'"
+		 alt="Image of the recipe">
+	    <p>Check out this awesome spaghetti seriouslyItalian</p>
+	  </div>
+	  <div class="col-sm-4 col-md-3">
+	    <h3>Burger</h3>
+	    <img class="img img-responsive"
+		 src="../img/burger.jpg"
+		 onclick="location.href='recipe.html'"
+		 alt="Image of the recipe">
+	    <p>
+	      Check out this burger by bigBoi420
+	    </p>
+	  </div>	    
+	  <div class="col-sm-4 col-md-3">
+	    <h3>Tacos</h3>
+	    <img class="img img-responsive"
+		 src="../img/alpastor.jpg"
+		 onclick="location.href='recipe.html'"
+		 alt="Image of the recipe">
+	    <p>Check out this awesome taco recipe made by jalapeno_man35</p>
+	  </div>
+	</div>
+      </div>
+    </main>
+    <footer><p>&copy; 2017 Foodex</p></footer>
+  </body>
 </html>
