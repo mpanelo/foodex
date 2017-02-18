@@ -49,6 +49,11 @@ h4 {
   display: block;
 }
 
+#save {
+  background-color: #00cbac;
+  border-color: white;
+}
+
 @media (max-width: 700px) {
   body {
     margin-bottom: 70px;
