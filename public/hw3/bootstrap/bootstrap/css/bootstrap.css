@@ -1599,11 +1599,15 @@ pre code {
 @media (min-width: 992px) {
   .container {
     width: 970px;
+    /* Added code :/ */
+    style="margin-left: 200px; position: relative;"
   }
 }
 @media (min-width: 1200px) {
   .container {
     width: 1170px;
+    /* Added code :/ */
+    style="margin-left: 200px; position: relative;"
   }
 }
 .container-fluid {
