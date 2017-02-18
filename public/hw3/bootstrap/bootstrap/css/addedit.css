@@ -1,0 +1,47 @@
+html, body {
+  height: 100vh;
+}
+body {
+  color: #3f998b;
+}
+
+label {
+  display: block;
+}
+
+input[type="radio"] {
+  margin-right: 10px;
+}
+
+h4 {
+  font-weight: 900;
+}
+
+footer {
+  width: 100%;
+  background: #005B4C;
+  position: fixed;
+  bottom: 0;
+  padding: 20px 0;
+}
+
+footer p {
+  text-align: center;
+  color: white;
+}
+
+.container {
+  padding-top: 25px;
+}
+
+.btn-group {
+  padding-top: 20px;
+}
+
+.btn-group button {
+  margin-right: 10px;
+}
+
+.btn-sm {
+  display: block;
+}

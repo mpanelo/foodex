@@ -3,41 +3,77 @@
 <head>
 	<meta charset="utf-8">
 	<title>Add/Edit Recipe</title>
+	<link rel="stylesheet" href="../bootstrap/css/bootstrap.css" type="text/css">
+	<link rel="stylesheet" href="../bootstrap/css/addedit.css" type="text/css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
+	<div class="container fill">
+	  <form action="none" method="post" id="recipeForm">
+			<h4>Recipe Title</h4>
+			<div class="form-group">
+		    <input class="form-control" type="text" name="recipe" placeholder="Recipe Title">
+			</div>
 
-  <form action="none" method="post" id="recipeForm">
-		<h5>Recipe Title</h5>
-    <input type="text" name="recipe">
+			<h4>Time Estimation</h4>
+			<div class="form-group">
+				<div class="row">
+					<div class="col-sm-4">
+			    	<input class="form-control" type="text" name="days" placeholder="days">
+					</div>
+					<div class="col-sm-4">
+			    	<input class="form-control" type="text" name="hours" placeholder="hours">
+					</div>
+					<div class="col-sm-4">
+			    	<input class="form-control" type="text" name="minutes" placeholder="minutes">
+					</div>
+				</div>
+			</div>
 
-    <h5>Time Estimation</h5>
-    <label><input type="text" name="days">Days</label>
-    <label><input type="text" name="hours">Hours</label>
-    <label><input type="text" name="minutes">Minutes</label>
+			<h4>Difficulty</h4>
+			<div class="form-group">
+				<div class="radio">
+		  	  <label class="control-label"><input type="radio" name="difficulty" value="hard">hard</label>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="radio">
+		    	<label class="control-label"><input type="radio" name="difficulty" value="medium">medium</label>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="radio">
+		    	<label><input type="radio" name="difficulty" value="easy">easy</label>
+				</div>
+			</div>
 
-    <h5>Difficulty</h5>
-    <label><input type="radio" name="difficulty" value="hard">hard</label>
-    <label><input type="radio" name="difficulty" value="medium">medium</label>
-    <label><input type="radio" name="difficulty" value="easy">easy</label>
-    
-    <h5>Brief Description</h5>
-    <textarea name="description"></textarea>
-    <h5>Ingredients</h5>
-    <textarea name="ingredients"></textarea>
-    
-    <h5>Instructions</h5>
-    <textarea name="instructions"></textarea>
-    
-    <h5>Visibiility</h5>
-    <label><input type="radio" name="visible" value="public">Public</label>
-    <label><input type="radio" name="visible" value="private">Private</label>
+	    <h4>Brief Description</h4>
+	    <textarea class="form-control" name="description"></textarea>
+	    <h4>Ingredients</h4>
+	    <textarea class="form-control" name="ingredients"></textarea>
 
-    <img src="#" alt="preview image of final product">
-    <button type="submit">Upload Image</button>
-  </form>
+	    <h4>Instructions</h4>
+	    <textarea class="form-control" name="instructions"></textarea>
 
-  <button type="submit" form="recipeForm" value="recipeSubmit">Save</button>
-  <button type="submit" form="recipeForm" value="recipeCancel">Cancel</button>
-
+	    <h4>Visibiility</h4>
+			<div class="form-group">
+				<div class="radio">
+			    <label><input type="radio" name="visible" value="public">Public</label>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="radio">
+			    <label><input type="radio" name="visible" value="private">Private</label>
+				</div>
+			</div>
+	  </form>
+	  <img alt="Preview of the uploaded image">
+	  <button class="btn btn-default btn-sm">Upload Image</button>
+		<div class="btn-group">
+	  		<button class="btn btn-primary" type="submit" form="recipeForm" value="recipeSubmit">Save</button>
+	  		<button class="btn btn-default" type="submit" form="recipeForm" value="recipeCancel">Cancel</button>
+		</div>
+	</div>
+  <footer><p>&copy; 2017 Foodex</p></footer>
 </body>
 </html>
