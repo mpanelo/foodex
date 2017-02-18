@@ -4,6 +4,7 @@ html {
 }
 body {
   color: #3f998b;
+  margin-bottom: 70px;
 }
 
 label {
@@ -22,6 +23,7 @@ h4 {
   background-color: #005B4C;
   padding-top: 30px 0;
   position: absolute;
+  height: 60px;
   width: 100%;
   bottom: 0;
 }
