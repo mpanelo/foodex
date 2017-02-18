@@ -2,6 +2,7 @@ html, body {
   margin: 0;
   height: 100%;
   width: 100%;
+  background-color: #f6f6f6;
 }
 
 h1 {
@@ -13,21 +14,29 @@ h1 {
 }
 
 footer {
-  background-color: #005B4C;
-  position: fixed;
+  position: absolute;
   bottom: 0;
   width: 100%;
-  padding: 5px 0;
+  height: 60px;
 }
 
 .container {
-  box-shadow: 1px 1px 8px 1px rgba(115,115,115,1);
-  height: 250px;
-  background-color: white;
-  width: 200px;
-  padding: 70px 0 20px 80px;
-  padding-right: 130px;
-  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 label {
@@ -45,16 +54,17 @@ a {
 
 footer p {
   text-align: center;
-  color: white;
-  font-size: 0.8rem;
 }
 
+input {
+  background-color: #f6f6f6;
+}
 input[type="checkbox"] {
   margin: 0;
   margin-right: 10px;
 }
 
-input[type="text"], input[type="email"] {
+input[type="text"] {
   margin-bottom: 20px;
   border: none;
   border-bottom: 2px solid #00cbac;
@@ -87,37 +97,14 @@ button {
   background-color: white;
   color: #00cbac;
 }
-
 main {
+  height: 50%;
   display: flex;
-  align-items: center;
   justify-content: center;
-  height: 80vh;
+  align-items: center;
 }
-
-.hide {
-  display: none;
-}
-
 @media (max-width: 700px) {
-  .container {
-    width: 200px;
-    padding: 30px 0 30px 35px;
-    padding-right: 90px;
-  }
   h1 {
     font-size: 3em;
-  }
-
-  html, body {
-    background-image: url("..");
-    background-color: #f6f6f6;
-  }
-}
-
-@media (min-width: 701px) {
-  html, body {
-    background-image: url("../img/foodex.jpeg");
-    background-size: cover;
   }
 }

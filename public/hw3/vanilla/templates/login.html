@@ -4,23 +4,25 @@
   <meta charset="utf-8"/>
   <title>Login</title>
   <link href="../css/login.css" type="text/css" rel="stylesheet">
+  <link href="../css/common.css" type="text/css" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
   <header>
+    <div id="colorstrip"><img id="logo" src="../img/mixing_bowl-512.png" alt="logo"></div>
     <h1>Welcome to Foodex</h1>
   </header>
   <main>
     <div class="container">
       <form id="loginForm" method="post">
-        <input type="text" name="userName" placeholder="Username">
-        <input type="password" name="password" placeholder="Password">
-        <input id="retype" class="hide" type="password" name="retype" placeholder="Re-type Password">
-        <input id="email" class="hide" type="email" name="email" placeholder="Email">
+        <input type="text" name="userName" placeholder="Username" size="25">
+        <input type="password" name="password" placeholder="Password" size="25">
         <label><input type="checkbox">Remember me?</label>
       </form>
-      <button id="signUp" onclick="location.href='signUp.html'">Sign Up</button>
-      <button type="submit" form="loginForm" value="submitted">Log In</button>
+      <div class="btn-group">
+        <button id="signUp" onclick="location.href='signUp.html'">Sign Up</button>
+        <button type="submit" onclick="location.href='main.html'" value="submitted">Log In</button>
+      </div>
     </div>
   </main>
   <footer><p>&copy; 2017 Foodex</p></footer>
