@@ -3,16 +3,66 @@
 <head>
   <meta charset="utf-8"/>
   <title>Login</title>
+	<link rel="stylesheet" href="../bootstrap/css/bootstrap.css" type="text/css">
+	<link rel="stylesheet" href="../bootstrap/css/login.css" type="text/css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    html, body {
+      height: 100%;
+    }
+    .vertical-center {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+    }
+    input[type="text"],input[type="password"] {
+      display: block;
+    }
+    button {
+      margin-right: 10px;
+    }
+    h1 {
+      margin-top: 0;
+      padding-top: 30px;
+      text-align: center;
+      color: #005B4C;
+      font-size: 6rem;
+    }
+    form {
+      width: 400px;
+    }
+    .footer {
+      background-color: #005B4C;
+      padding: 20px 0;
+      position: absolute;
+      height: 60px;
+      width: 100%;
+      bottom: 0;
+    }
+    .footer p {
+      text-align: center;
+      color: white;
+    }
+  </style>
 </head>
 <body>
-  <form>
-    User Name:<br>
-    <input type="text" name="userName"><br>
-    Password:<br>
-    <input type="text" name="password"><br>
-    <label><input type="checkbox">Remember me?</label><br>
-    <input type="submit" name="Submit">
-  </form>
-  <footer><p>&copy; 2017 Foodex</p></footer>
+  <h1>Welcome to Foodex</h1>
+  <div class="vertical-center">
+
+  <div class="container">
+    <form>
+      <label class="sr-only">Username:</label>
+      <input type="text" name="userName" placeholder="Username">
+      <label class="sr-only">Password:</label>
+      <input type="password" name="password" placeholder="Password">
+      <div class="form-group">
+        <label class="checkbox-inline"><input type="checkbox">Remember me?</label><br>
+      </div>
+    </form>
+    <button class="btn btn-default">Sign Up</button>
+    <button class="btn btn-primary" type="submit">Login</button>
+  </div>
+  </div>
+  <footer class="footer"><p>&copy; 2017 Foodex</p></footer>
 </body>
 </html>
