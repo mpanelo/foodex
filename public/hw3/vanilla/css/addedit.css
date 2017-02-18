@@ -4,20 +4,21 @@ html,body {
 }
 
 main {
+  padding-top: 30px;
   padding-left: 20px;
   margin-bottom: 35px;
 }
 
+h3 {
+  margin-bottom: 20px;
+}
 footer {
   width: 100%;
-  background: #005B4C;
   padding: 20px 0;
 }
 
 footer p {
   margin: 0;
-  color: white;
-  text-align: center;
 }
 
 input[type="text"] {
@@ -57,10 +58,12 @@ input[type="radio"] {
 
 textarea {
   margin-bottom: 10px;
+  max-width: 100%;
 }
 
 .radio-container {
   font-size: 1em;
+  margin-bottom: 20px;
 }
 
 .time-container {
@@ -68,4 +71,11 @@ textarea {
   justify-content: space-between;
   align-items: center;
   max-width: 220px;
+}
+
+@media (max-width: 700px) {
+  main {
+    padding: 0 5px;
+    padding-top: 20px;
+  }
 }
