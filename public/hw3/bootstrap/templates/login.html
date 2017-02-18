@@ -10,13 +10,17 @@
     html, body {
       height: 100%;
     }
-    .vertical-center {
+    main {
       min-height: 80vh;
       display: flex;
       align-items: center;
+      justify-content: center;
     }
     input[type="text"],input[type="password"] {
       display: block;
+    }
+    .btn-primary {
+      background-color: #3f998b;
     }
     button {
       margin-right: 10px;
@@ -28,7 +32,12 @@
       color: #005B4C;
       font-size: 6rem;
     }
-    form {
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .form-group {
       width: 400px;
     }
     .footer {
@@ -46,15 +55,21 @@
   </style>
 </head>
 <body>
-  <h1>Welcome to Foodex</h1>
-  <div class="vertical-center">
-
+  <header>
+    <h1>Welcome to Foodex</h1>
+  </header>
+  <main>
   <div class="container">
-    <form>
-      <label class="sr-only">Username:</label>
-      <input type="text" name="userName" placeholder="Username">
-      <label class="sr-only">Password:</label>
-      <input type="password" name="password" placeholder="Password">
+    <div class="form-group">
+    <form method="post">
+      <div class="form-group">
+        <label class="sr-only">Username:</label>
+        <input type="text" name="userName" placeholder="Username">
+      </div>
+      <div class="form-group">
+        <label class="sr-only">Password:</label>
+        <input type="password" name="password" placeholder="Password">
+      </div>
       <div class="form-group">
         <label class="checkbox-inline"><input type="checkbox">Remember me?</label><br>
       </div>
@@ -63,6 +78,7 @@
     <button class="btn btn-primary" type="submit">Login</button>
   </div>
   </div>
+  </main>
   <footer class="footer"><p>&copy; 2017 Foodex</p></footer>
 </body>
 </html>
