@@ -13,9 +13,17 @@
 	text-align: center;
 }
 
+hr {
+	border: 1px solid white;
+}
+
 #cancel {
-	color:blue;
+	color: #00cbac;
 	margin-top: 5px;
+}
+
+.btn {
+	background: #00cbac;
 }
 
 #logo {
@@ -27,6 +35,7 @@
 
 #contain {
 	background: #f4f4f4;
+	width: 100%;
 }
 
 #header {
