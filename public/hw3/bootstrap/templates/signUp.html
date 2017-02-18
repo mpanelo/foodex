@@ -4,15 +4,19 @@
   <meta charset="utf-8"/>
   <title>Sign Up</title>
   <link href="../bootstrap/css/bootstrap.css" type="text/css" rel="stylesheet">
+  <link href="../bootstrap/css/signup.css" type="text/css" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-
+    <div id="colorstrip"><img id="logo" src="../img/mixing_bowl-512.png" alt="logo"></div>
     <div class="container">
-      <h2>Welcome to Foodex</h2>
+      <div class="center">
+        <h2>Sign Up For Foodex</h2>
+      </div>
+      <hr>
       <main>
         <div class="container">
-          <form method="post">
+          <form method="post" id="signup">
             <fieldset>
               <div class="form-group">
                 <label for="userName">Username:</label>
@@ -30,17 +34,13 @@
                 <label for="email">Email:</label>
                 <input type="email" class="form-control" id="email" placeholder="Enter Email">
               </div>
-
-               <div class="form-check">
-                <label class="form-check-label">
-                  <input type="checkbox" class="form-check-input">
-                  Remember me?
-                </label>
+              <div class="center" style="margin-top: 20px;">
+                <button type="submit" class="btn btn-lrg btn-primary btn-block" form="signup">Sign Up</button>
               </div>
-
-              <button type="submit" class="btn btn-primary">Submit</button>
-              <button type="button" class="btn btn-primary"><a href="login.html" style="color:white;">Cancel</a></button>
-
+              <br>
+              <div class="center">
+                <a href="login.html" id="cancel">Already have an account?</a>
+              </div>
             </fieldset>
           </form>
 
