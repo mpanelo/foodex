@@ -69,3 +69,49 @@
 [info] Public Directory: public
 [info] 
 [info] Server listening at: http://localhost:5000
+[debug] ----------------------------------------------------------------------
+[debug] Command:      /usr/bin/nodejs /usr/bin/firebase serve
+[debug] CLI Version:  3.3.0
+[debug] Platform:     linux
+[debug] Node Version: v7.6.0
+[debug] Time:         Sat Mar 04 2017 14:08:16 GMT-0800 (PST)
+[debug] ----------------------------------------------------------------------
+[debug] 
+[info] Starting Firebase development server...
+[info] 
+[info] Project Directory: /home/cgwoun/Github/foodex
+[warn] ⚠  Port 5000 is not available. Trying another port...
+[info] Public Directory: public
+[info] 
+[info] Server listening at: http://localhost:5001
+[debug] ----------------------------------------------------------------------
+[debug] Command:      /usr/bin/nodejs /usr/bin/firebase serve
+[debug] CLI Version:  3.4.0
+[debug] Platform:     linux
+[debug] Node Version: v7.6.0
+[debug] Time:         Sat Mar 04 2017 14:09:08 GMT-0800 (PST)
+[debug] ----------------------------------------------------------------------
+[debug] 
+[info] Starting Firebase development server...
+[info] 
+[info] Project Directory: /home/cgwoun/Github/foodex
+[warn] ⚠  Port 5000 is not available. Trying another port...
+[warn] ⚠  Port 5001 is not available. Trying another port...
+[info] Public Directory: public
+[info] 
+[info] Server listening at: http://localhost:5002
+[debug] ----------------------------------------------------------------------
+[debug] Command:      /usr/bin/nodejs /usr/bin/firebase serve
+[debug] CLI Version:  3.4.0
+[debug] Platform:     linux
+[debug] Node Version: v7.6.0
+[debug] Time:         Sat Mar 04 2017 14:09:36 GMT-0800 (PST)
+[debug] ----------------------------------------------------------------------
+[debug] 
+[info] Starting Firebase development server...
+[info] 
+[info] Project Directory: /home/cgwoun/Github/foodex
+[warn] ⚠  Port 5000 is not available. Trying another port...
+[info] Public Directory: public
+[info] 
+[info] Server listening at: http://localhost:5001
