@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>Login</title>
+	<link rel="stylesheet" href="../bootstrap/css/bootstrap.css" type="text/css">
+	<link rel="stylesheet" href="../bootstrap/css/login.css" type="text/css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    html, body, {
+      height: 100%;
+    }
+    #colorstrip{
+      width: 100%;
+      height: 60px;
+      background-color: #00cbac;
+      position: relative;
+    }
+    #logo {
+    	margin-top: 8px;
+    	margin-left: 8px;
+    	width: 35px;
+    	height: 35px;
+    }
+    input[type="text"],input[type="password"] {
+      display: block;
+    }
+    button {
+      width: 80px;
+    }
+    .btn-primary {
+      background-color: #00cbac;
+    }
+    h2 {
+      margin-top: 0;
+      padding-top: 30px;
+      text-align: center;
+      color: #005B4C;
+    }
+    .form-container {
+      width: 400px;
+      height: 400px;
+    }
+    .footer {
+      margin-top: 15px;
+      background-color: white;
+      padding: 20px 0;
+      position: absolute;
+      height: 60px;
+      width: 100%;
+      bottom: 0;
+    }
+    .footer p {
+      padding-left: 30px;
+      text-align: center;
+      color: black;
+    }
+    .outer {
+      margin-top: 3%;
+    }
+  </style>
+</head>
+<body>
+  <div id="colorstrip"><img id="logo" src="../img/mixing_bowl-512.png" alt="logo"></div>
+  <div class="outer">
+    <div class="container">
+      <h2>Login to Foodex</h2>
+      <div class="container">
+        <form method="post" id="login">
+          <fieldset>
+            <div class="form-group">
+              <label for="userName">Username:</label>
+              <input class="form-control" type="text" id="userName" placeholder="Username">
+            </div>
+            <div class="form-group">
+              <label for="password">Password:</label>
+              <input class="form-control" type="password" id="password" placeholder="Password">
+            </div>
+            <div class="form-group">
+              <label class="checkbox-inline"><input type="checkbox">Remember me?</label><br>
+            </div>
+          </fieldset>
+        </form>
+        <div style="margin-top: 40px;">
+          <button class="btn btn-primary btn-block" onclick="location.href='main.html'">Login</button>
+          <button class="btn btn-default btn-block" onclick="location.href='signUp.html'">Sign Up</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer"><p>&copy; 2017 Foodex</p></footer>
+</body>
+</html>
