@@ -6,7 +6,6 @@ html {
 
 body {
   color: #3f998b;
-  margin-bottom: 60px;
 }
 
 label {
@@ -24,7 +23,7 @@ h4 {
 .footer {
   background-color: #00cbac;
   padding: 20px 0;
-  position: relative;
+  position: absolute;
   height: 60px;
   width: 100%;
   bottom: 0;
@@ -47,12 +46,6 @@ h4 {
   display: block;
 }
 
-#save {
+#submitBtn {
   background-color: #00cbac;
-}
-
-@media (max-width: 700px) {
-  body {
-    margin-bottom: 70px;
-  }
 }
