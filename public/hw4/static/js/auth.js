@@ -110,6 +110,7 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
 	    console.log("logging in as", firebaseUser.email);
 	    window.location = 'main.html';
 	}
+
     } else {
 	if (window.location.pathname != '/hw4/templates/login.html' &&
 	    window.location.pathname != '/hw4/templates/signUp.html') {
