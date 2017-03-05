@@ -1,7 +1,9 @@
+
 html {
   position: relative;
   min-height: 100%;
 }
+
 body {
   color: #3f998b;
   margin-bottom: 60px;
@@ -22,7 +24,7 @@ h4 {
 .footer {
   background-color: #00cbac;
   padding: 20px 0;
-  position: absolute;
+  position: relative;
   height: 60px;
   width: 100%;
   bottom: 0;
@@ -32,9 +34,6 @@ h4 {
   text-align: center;
   color: white;
 }
-.container {
-  padding-top: 25px;
-}
 
 .btn-group {
   padding: 20px 0;
@@ -43,7 +42,6 @@ h4 {
 .btn-group button {
   margin-right: 10px;
 }
-
 
 .btn-sm {
   display: block;
