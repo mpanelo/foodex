@@ -31,8 +31,15 @@ btnSignup.addEventListener('click', e => {
     const pass = loginPass.value;
 
     // log in an existing user
-    auth.createUserWithEmailAndPassword(email, pass);
+    const promise = auth.createUserWithEmailAndPassword(email, pass);
+    promise.catch(e => console.log(e.message));
 });
 
 // fires when user logs in or out
-//auth.onAuthStateChanged(firebaseUser => { });
+auth.onAuthStateChanged(firebaseUser => {
+    if (firebaseUser)
+	console.log(firebaseUser);
+    else
+	console.log("not logged in");
+
+});
