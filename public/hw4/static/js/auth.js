@@ -39,7 +39,10 @@ window.onload = function() {
 	    // log in an existing user
 	    const auth = firebase.auth();
 	    const promise = auth.signInWithEmailAndPassword(email, pass);
-	    promise.catch(e => console.log(e.message));
+	    promise.catch(error => {
+		console.log(error.message);
+		alert(error.message);
+	    });
 	});
     }
 
