@@ -3,11 +3,8 @@
 <head>
   <meta charset="utf-8"/>
   <title>Sign Up</title>
-  <script src="https://www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
   <link href="../static/css/bootstrap.css" type="text/css" rel="stylesheet">
   <link href="../static/css/signup.css" type="text/css" rel="stylesheet">
-  <script src="../static/js/app.js"></script>
-  <script src="../static/js/auth.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
@@ -19,40 +16,42 @@
       <hr>
       <main>
         <div id="body" class="container">
-          <form method="post" id="signup">
-            <fieldset>
-              <div class="form-group">
-                <label for="signupUserName">Username:</label>
-                <input type="text" class="form-control" id="signupUsername" placeholder="Enter Username">
-              </div>
-	      <div class="form-group">
-                <label for="signupEmail">Email:</label>
-                <input type="email" class="form-control" id="signupEmail" placeholder="Enter Email">
-              </div>
-
-              <div class="form-group">
-                <label for="signupPassword">Password:</label>
-                <input type="password" class="form-control" id="signupPassword" placeholder="Enter Password">
-              </div>
-              <div class="form-group">
-                <label for="signupPasswordRetype">Confirm Password:</label>
-                <input type="password" class="form-control" id="signupPasswordRetype" placeholder="Re-type Password">
-              </div>
-              <div class="center" style="margin-top: 20px;">
-                <button id="btnSignup" type="submit" class="btn btn-lrg btn-block" form="signup">Sign Up</button>
-              </div>
-              <br>
-              <div class="center">
-                <a href="login.html" id="cancel">Already have an account?</a>
-              </div>
-            </fieldset>
-          </form>
+          <fieldset>
+            <div class="form-group">
+              <label for="signupUserName">Username:</label>
+              <input type="text" class="form-control" id="signupUsername" placeholder="Enter Username">
+            </div>
+	    <div class="form-group">
+              <label for="signupEmail">Email:</label>
+              <input type="email" class="form-control" id="signupEmail" placeholder="Enter Email">
+            </div>
+	    
+            <div class="form-group">
+              <label for="signupPassword">Password:</label>
+              <input type="password" class="form-control" id="signupPassword" placeholder="Enter Password">
+            </div>
+            <div class="form-group">
+              <label for="signupPasswordRetype">Confirm Password:</label>
+              <input type="password" class="form-control" id="signupPasswordRetype" placeholder="Re-type Password">
+            </div>
+            <div class="center" style="margin-top: 20px;">
+              <button id="btnSignup" class="btn btn-lrg btn-block" form="signup">Sign Up</button>
+            </div>
+            <br>
+            <div class="center">
+              <a href="login.html" id="cancel">Already have an account?</a>
+            </div>
+          </fieldset>
 
         </div>
       </main>
     </div>
     <div id="foot">
-      <footer class="footer"><p>&copy; 2017 Foodex</p></footer>
+      <footer class="footer"><p>&copy; 2017 Foodex</p>
+	<script src="https://www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
+	<script src="../static/js/app.js"></script>
+	<script src="../static/js/auth.js"></script>
+      </footer>
     </div>
 </body>
 </html>
