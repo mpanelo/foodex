@@ -1,7 +1,21 @@
-var database = firebase.database().ref();
+Vue.use(VueFire);
+var recipeRef = db.ref("recipes");
+
+var mainVm = new Vue({
+	el: "homeApp",
+	firebase: {
+		recipes: recipeRef
+	},
+	methods: {
+		printKey: function(key) {
+			console.log(key);
+			var recipe = recipeRef.child(key);
+		}
+	}
+});
 
 function loadPage(){
-	database.on('value', function(snapshot){
+	recipeRef.on('value', function(snapshot){
 		console.log(snapshot.val());
 
 		var recipe = snapshot.val()['recipes'];
