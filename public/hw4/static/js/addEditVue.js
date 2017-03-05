@@ -21,9 +21,9 @@ function init() {
         data: {
             title: "",
             description: "",
-            days: 0,
-            hours: 0,
-            minutes: 0,
+            days: "",
+            hours: "",
+            minutes: "",
             ingredients: "",
             instructions: "",
             difficulty: "",

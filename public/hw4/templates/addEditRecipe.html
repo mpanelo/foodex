@@ -73,10 +73,10 @@
 	    <h4>Brief Description</h4>
 	    <textarea class="form-control" id="description" name="description" v-model.trim="description" placeholder="Enter a brief description of the recipe"required></textarea>
 	    <h4>Ingredients</h4>
-	    <textarea class="form-control" name="ingredients" placeholder="Enter each ingredient on a new line" required></textarea>
+	    <textarea class="form-control" name="ingredients" v-model="ingredients" placeholder="Enter each ingredient on a new line" required></textarea>
 
 	    <h4>Instructions</h4>
-	    <textarea class="form-control" name="instructions" required></textarea>
+	    <textarea class="form-control" name="instructions" v-model="instructions" placeholder="Enter each instruction on a new line"required></textarea>
 
 	    <h4>Visibiility</h4>
 			<div class="radio">
