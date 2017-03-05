@@ -6,13 +6,18 @@
     <link rel="stylesheet" type="text/css" href="../static/css/bootstrap-theme.css">
     <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../static/css/style.css">
-
+    
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
+    <script src="../static/js/app.js" ></script>
+    <script src="../static/js/auth.js" ></script>
+
+    
   </head>
   <body>
 
@@ -28,10 +33,10 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavBar">
            <ul class="nav navbar-nav">
-           		<li><a href="main.html">Foodex Catalog</a></li>
-                <li class="active"><a href="personal.html">Personal Catalog</a></li>
-                <li><a href="addEditRecipe.html">Add Recipe</a></li>
-                <li><a href="login.html">Log Out</a></li>
+             <li><a href="main.html">Foodex Catalog</a></li>
+             <li class="active"><a href="personal.html">Personal Catalog</a></li>
+             <li><a href="addEditRecipe.html">Add Recipe</a></li>
+             <li><a id="btnLogout">Log Out</a></li>
            </ul>
         </div>
     </div>
@@ -48,7 +53,7 @@
     </div>
 -->
 
-    <main>
+    <div id="main">
       <div class="container container-fluid">
 	<h1>Personal Catalog</h1>
 	<div class="row">
@@ -81,6 +86,9 @@
 	</div>
       </div>
     </main>
-    <footer><p>&copy; 2017 Foodex</p></footer>
+    <hr>
+    <div style="text-align: center;">
+      <footer><p>&copy; 2017 Foodex</p></footer>
+    </div>
   </body>
 </html>
