@@ -20,13 +20,13 @@ h4 {
 }
 
 input[type="radio"] {
-  
+
 }
 
 .footer {
   background-color: #00cbac;
   padding: 20px 0;
-  position: absolute;
+  position: relative;
   height: 60px;
   width: 100%;
   bottom: 0;
@@ -51,4 +51,8 @@ input[type="radio"] {
 
 #submitBtn {
   background-color: #00cbac;
+}
+
+#submitBtn:hover {
+  background-color: #009982;
 }
