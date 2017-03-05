@@ -7,36 +7,32 @@ function validateData(data) {
   return true;
 }
 
-function resetData(data) {
-  for (var prop in data) {
-    if (data.hasOwnProperty(prop)) {
-      data[prop] = "";
-    }
-  }
+function getDefaultData() {
+  return {
+    title: "",
+    description: "",
+    days: "",
+    hours: "",
+    minutes: "",
+    ingredients: "",
+    instructions: "",
+    difficulty: "",
+    visibility: ""
+  };
 }
 
 function init() {
     var vm = new Vue({
         el: "#addEditApp",
-        data: {
-            title: "",
-            description: "",
-            days: "",
-            hours: "",
-            minutes: "",
-            ingredients: "",
-            instructions: "",
-            difficulty: "",
-            visibility: ""
-        },
+        data: getDefaultData(),
         firebase: {
             recipes: ref
         },
         methods: {
             submitRecipeForm: function() {
                 if (validateData(this.data)) {
-                    var listOfIng = ingredients.split("\n");
-                    var listOfInstr = instructions.split("\n");
+                    var listOfIng = this.ingredients.split("\n");
+                    var listOfInstr = this.instructions.split("\n");
                     ref.push({
                         "title": this.title,
                         "description": this.description,
@@ -47,7 +43,7 @@ function init() {
                         "timeEstimate": {"days": this.days, "hours": this.hours, "minutes": this.minutes}
                     });
                 }
-                resetData(data);
+                Object.assign(this.$data, getDefaultData());
             }
         }
     });
