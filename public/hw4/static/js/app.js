@@ -8,4 +8,5 @@ var config = {
 };
 
 var app = firebase.initializeApp(config);
-var db = app.database();
+var storage = firebase.storage();
+var db = firebase.database();
