@@ -1,10 +1,11 @@
+
 html {
   position: relative;
   min-height: 100%;
 }
+
 body {
   color: #3f998b;
-  margin-bottom: 60px;
 }
 
 label {
@@ -23,7 +24,7 @@ h4 {
   background-color: #00cbac;
   padding: 20px 0;
   position: absolute;
-  height: 50px;
+  height: 60px;
   width: 100%;
   bottom: 0;
 }
@@ -31,9 +32,6 @@ h4 {
 .footer p {
   text-align: center;
   color: white;
-}
-.container {
-  padding-top: 25px;
 }
 
 .btn-group {
@@ -44,17 +42,10 @@ h4 {
   margin-right: 10px;
 }
 
-
 .btn-sm {
   display: block;
 }
 
 #submitBtn {
   background-color: #00cbac;
-}
-
-@media (max-width: 700px) {
-  body {
-    margin-bottom: 70px;
-  }
 }

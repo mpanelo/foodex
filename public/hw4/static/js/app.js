@@ -8,4 +8,4 @@ var config = {
 };
 
 var app = firebase.initializeApp(config);
-var db = app.database()
+var db = app.database();

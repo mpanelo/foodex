@@ -4,15 +4,39 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Add/Edit Recipe</title>
-	<link rel="stylesheet" href="../static/css/bootstrap.css" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="../static/css/addedit.css" type="text/css">
   <script src="https://www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
   <script src="https://unpkg.com/vue"></script>
   <script src="https://unpkg.com/vuefire/dist/vuefire.js"></script>
   <script src="../static/js/app.js"></script>
 	<script src="../static/js/addEditVue.js"></script>
+
 </head>
 <body>
+	<div class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavBar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavBar">
+           <ul class="nav navbar-nav">
+           		<li><a href="main.html">Foodex Catalog</a></li>
+                <li><a href="personal.html">Personal Catalog</a></li>
+                <li class="active"><a href="addEditRecipe.html">Add Recipe</a></li>
+                <li><a href="login.html">Log Out</a></li>
+           </ul>
+        </div>
+    </div>
+  </div>
+
 	<div id="addEditApp" class="container fill">
     <form id="recipeForm" @submit.prevent="submitRecipeForm">
 			<h4>Recipe Title</h4>
@@ -23,33 +47,27 @@
 			<h4>Time Estimation</h4>
 			<div class="form-group">
 				<div class="row">
-					<div class="col-sm-4">
-			    	<input class="form-control" type="text" name="days" placeholder="days">
+					<div class="col-sm-2">
+			    	<input class="form-control" type="text" name="days" placeholder="Days">
 					</div>
-					<div class="col-sm-4">
-			    	<input class="form-control" type="text" name="hours" placeholder="hours">
+					<div class="col-sm-2">
+			    	<input class="form-control" type="text" name="hours" placeholder="Hours">
 					</div>
-					<div class="col-sm-4">
-			    	<input class="form-control" type="text" name="minutes" placeholder="minutes">
+					<div class="col-sm-2">
+			    	<input class="form-control" type="text" name="minutes" placeholder="Minutes">
 					</div>
 				</div>
 			</div>
 
 			<h4>Difficulty</h4>
-			<div class="form-group">
-				<div class="radio">
-		  	  <label class="control-label"><input type="radio" name="difficulty" v-model="difficulty" value="hard" required>hard</label>
-				</div>
+			<div class="radio">
+	  	  <label><input type="radio" name="difficulty" v-model="difficulty" value="hard" required>hard</label>
 			</div>
-			<div class="form-group">
-				<div class="radio">
-		    	<label class="control-label"><input type="radio" name="difficulty" v-model="difficulty" value="medium">medium</label>
-				</div>
+			<div class="radio">
+		    <label class="control-label"><input type="radio" name="difficulty" v-model="difficulty" value="medium">medium</label>
 			</div>
-			<div class="form-group">
-				<div class="radio">
-		    	<label><input type="radio" name="difficulty" v-model="difficulty" value="easy">easy</label>
-				</div>
+			<div class="radio">
+		    <label><input type="radio" name="difficulty" v-model="difficulty" value="easy">easy</label>
 			</div>
 
 	    <h4>Brief Description</h4>
@@ -61,15 +79,11 @@
 	    <textarea class="form-control" name="instructions"></textarea>
 
 	    <h4>Visibiility</h4>
-			<div class="form-group">
-				<div class="radio">
-			    <label><input type="radio" name="visible" v-model="visibility" value="public" required>Public</label>
-				</div>
+			<div class="radio">
+		    <label><input type="radio" name="visible" v-model="visibility" value="public" required>Public</label>
 			</div>
-			<div class="form-group">
-				<div class="radio">
-			    <label><input type="radio" name="visible" v-model="visibility" value="private">Private</label>
-				</div>
+			<div class="radio">
+		    <label><input type="radio" name="visible" v-model="visibility" value="private">Private</label>
 			</div>
 	  </form>
 	</div>
