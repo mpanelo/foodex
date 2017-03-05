@@ -1,10 +1,18 @@
 function validateData(data) {
   for (var prop in data) {
     if (data.hasOwnProperty(prop)) {
-      if (data[prop] === "") return false;
+      if (!data[prop]) return false;
     }
   }
   return true;
+}
+
+function resetData(data) {
+  for (var prop in data) {
+    if (data.hasOwnProperty(prop)) {
+      data[prop] = "";
+    }
+  }
 }
 
 function init() {
@@ -13,8 +21,13 @@ function init() {
         data: {
             title: "",
             description: "",
+            days: 0,
+            hours: 0,
+            minutes: 0,
+            ingredients: "",
+            instructions: "",
             difficulty: "",
-            visibility: "",
+            visibility: ""
         },
         firebase: {
             recipes: ref
@@ -22,15 +35,19 @@ function init() {
         methods: {
             submitRecipeForm: function() {
                 if (validateData(this.data)) {
+                    var listOfIng = ingredients.split("\n");
+                    var listOfInstr = instructions.split("\n");
                     ref.push({
                         "title": this.title,
                         "description": this.description,
+                        "ingredients": listOfIng,
+                        "instructions": listOfInstr,
                         "difficulty": this.difficulty,
-                        "visibility": this.visibility
+                        "visibility": this.visibility,
+                        "timeEstimate": {"days": this.days, "hours": this.hours, "minutes": this.minutes}
                     });
-                    this.title = "";
-                    this.description = "";
                 }
+                resetData(data);
             }
         }
     });

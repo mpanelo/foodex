@@ -48,13 +48,13 @@
 			<div class="form-group">
 				<div class="row">
 					<div class="col-sm-2">
-			    	<input class="form-control" type="text" name="days" placeholder="Days">
+			    	<input class="form-control" type="text" name="days" v-model.number="days" placeholder="Days">
 					</div>
 					<div class="col-sm-2">
-			    	<input class="form-control" type="text" name="hours" placeholder="Hours">
+			    	<input class="form-control" type="text" name="hours" v-model.number="hours" placeholder="Hours" required>
 					</div>
 					<div class="col-sm-2">
-			    	<input class="form-control" type="text" name="minutes" placeholder="Minutes">
+			    	<input class="form-control" type="text" name="minutes" v-model.number="minutes" placeholder="Minutes" required>
 					</div>
 				</div>
 			</div>
@@ -64,19 +64,19 @@
 	  	  <label><input type="radio" name="difficulty" v-model="difficulty" value="hard" required>hard</label>
 			</div>
 			<div class="radio">
-		    <label class="control-label"><input type="radio" name="difficulty" v-model="difficulty" value="medium">medium</label>
+		    <label class="control-label"><input type="radio" name="difficulty" v-model="difficulty" value="medium" required>medium</label>
 			</div>
 			<div class="radio">
 		    <label><input type="radio" name="difficulty" v-model="difficulty" value="easy">easy</label>
 			</div>
 
 	    <h4>Brief Description</h4>
-	    <textarea class="form-control" id="description" name="description" v-model.trim="description" required></textarea>
+	    <textarea class="form-control" id="description" name="description" v-model.trim="description" placeholder="Enter a brief description of the recipe"required></textarea>
 	    <h4>Ingredients</h4>
-	    <textarea class="form-control" name="ingredients"></textarea>
+	    <textarea class="form-control" name="ingredients" placeholder="Enter each ingredient on a new line" required></textarea>
 
 	    <h4>Instructions</h4>
-	    <textarea class="form-control" name="instructions"></textarea>
+	    <textarea class="form-control" name="instructions" required></textarea>
 
 	    <h4>Visibiility</h4>
 			<div class="radio">
