@@ -3,8 +3,6 @@
 <head>
   <meta charset="utf-8"/>
   <title>Login</title>
-
-
   <link rel="stylesheet" href="../static/css/bootstrap.css" type="text/css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
@@ -69,8 +67,8 @@
       <div class="container">
         <fieldset>
           <div class="form-group">
-            <label for="userName">Username:</label>
-            <input class="form-control" type="text" id="loginUsername" placeholder="Username">
+            <label for="loginEmail">Email:</label>
+            <input class="form-control" type="text" id="loginEmail" placeholder="Email">
           </div>
           <div class="form-group">
             <label for="password">Password:</label>
@@ -79,34 +77,24 @@
           <div class="form-group">
             <label class="checkbox-inline"><input type="checkbox">Remember me?</label><br>
           </div>
+	  	
+	  <div style="margin-top: 40px;">
+            <button id="btnLogin" class="btn btn-primary btn-block"
+		    onclick="location.href='main.html'">Login</button>
+
+            <button id="btnGoToSignup" class="btn btn-default btn-block"
+		    onclick="location.href='signUp.html'">Sign Up</button>
+          </div>
+	  
         </fieldset>
-	
-	<div style="margin-top: 40px;">
-          <button id="btnLogin" class="btn btn-primary btn-block"
-		  onclick="location.href='main.html'">Login</button>
-          <button id="btnGoToSignup" class="btn btn-default btn-block"
-		  onclick="location.href='signUp.html'">Sign Up</button>
-        </div>
       </div>
     </div>
   </div>
-  <footer class="footer"><p>&copy; 2017 Foodex</p></footer>
-
-  <script src="https://www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
-
-  <!--
-  <script>
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyAPnQcQGlvVwpBLkKk49gjnw6EPuur7Pls",
-      authDomain: "foodex-d5655.firebaseapp.com",
-      databaseURL: "https://foodex-d5655.firebaseio.com",
-      storageBucket: "foodex-d5655.appspot.com",
-      messagingSenderId: "774577145729"
-    };
-    firebase.initializeApp(config);
-  </script>
-  -->
+  <footer class="footer"><p>&copy; 2017 Foodex</p>
+    <script src="https://www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
+    <script src="../static/js/app.js"></script>
+    <script src="../static/js/auth.js"></script>
+  </footer>
 
 </body>
 </html>

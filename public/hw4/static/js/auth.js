@@ -24,17 +24,16 @@ if (btnSignup != null) {
 const btnLogin = document.getElementById('btnLogin');
 
 if (btnLogin != null) {
-    const loginUsername = document.getElementById('loginUsername');
     const loginEmail = document.getElementById('loginEmail');
     const loginPass = document.getElementById('loginPassword');
 
-    btnSignup.addEventListener('click', e => {
+    btnLogin.addEventListener('click', e => {
 	const email = loginEmail.value;
 	const pass = loginPass.value;
 	
 	// log in an existing user
 	const auth = firebase.auth();
-	const promise = auth.createUserWithEmailAndPassword(email, pass);
+	const promise = auth.signInWithEmailAndPassword(email, pass);
 	promise.catch(e => console.log(e.message));
     });
 }
