@@ -39,13 +39,14 @@
 
 	<div id="addEditApp" class="container fill">
     <form id="recipeForm" @submit.prevent="submitRecipeForm">
+
 			<h4>Recipe Title</h4>
 			<div class="form-group">
 		    <input class="form-control" type="text" id="title" name="title" placeholder="Recipe Title" v-model.trim="title" required>
 			</div>
 
 			<h4>Time Estimation</h4>
-			<div class="form-group">
+			<div id="diffChoice">
 				<div class="row">
 					<div class="col-sm-2">
 			    	<input class="form-control" type="text" name="days" v-model.number="days" placeholder="Days">
@@ -70,13 +71,14 @@
 		    <label><input type="radio" name="difficulty" v-model="difficulty" value="easy">easy</label>
 			</div>
 
-	    <h4>Brief Description</h4>
-	    <textarea class="form-control" id="description" name="description" v-model.trim="description" rows="3" placeholder="Enter a brief description of the recipe"required></textarea>
-	    <h4>Ingredients</h4>
-	    <textarea class="form-control" name="ingredients" v-model="ingredients" rows="4" placeholder="Enter each ingredient on a new line" required></textarea>
-
-	    <h4>Instructions</h4>
-	    <textarea class="form-control" name="instructions" v-model="instructions" rows="4" placeholder="Enter each instruction on a new line"required></textarea>
+			<div id="textarea-group">
+		    <h4>Brief Description</h4>
+		    <textarea class="form-control" id="description" name="description" v-model.trim="description" rows="3" placeholder="Enter a brief description of the recipe"required></textarea>
+		    <h4>Ingredients</h4>
+		    <textarea class="form-control" name="ingredients" v-model="ingredients" rows="4" placeholder="Enter each ingredient on a new line" required></textarea>
+		    <h4>Instructions</h4>
+		    <textarea class="form-control" name="instructions" v-model="instructions" rows="4" placeholder="Enter each instruction on a new line"required></textarea>
+			</div>
 
 	    <h4>Visibiility</h4>
 			<div class="radio">
@@ -85,11 +87,15 @@
 			<div class="radio">
 		    <label><input type="radio" name="visible" v-model="visibility" value="private">Private</label>
 			</div>
+			<br>
+			<div class="form-group">
+		  	<label class="btn btn-default btn-file"><input type="file" accept="image/*" @change="uploadFile($event)" hidden>Upload Image</label>
+				<span style="margin-left: 5px;">{{ fileName }}</span>
+			</div>
+
 	  </form>
 	</div>
 	<div class="container">
-	  <img src="#" alt="Preview of the uploaded image">
-	  <button class="btn btn-default btn-sm">Upload Image</button>
 		<div class="btn-group">
 	  		<button id="submitBtn" class="btn btn-primary" type="submit" form="recipeForm" value="Submit">Submit</button>
 	  		<button class="btn btn-default" onclick="location.href='main.html'" value="recipeCancel">Cancel</button>

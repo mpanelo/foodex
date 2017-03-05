@@ -17,7 +17,11 @@
     <script src="https://www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
     <script src="../static/js/app.js" async></script>
     <script src="../static/js/auth.js" async></script>
-    
+    <script src="../static/js/main.js" async></script>
+    <!--
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/vuefire/dist/vuefire.js"></script>
+    -->
   </head>
   <body>
     <!--
@@ -101,27 +105,12 @@
 -->
 
     <div class="container">
-		<h1>Foodex Catalog</h1>
-		<div class="row">
-		  <div class="col-sm-4 col-md-3">
-		    <h3>Kalbi</h3>
-		    <img class="img img-responsive" src="../static/img/kalbi.jpg" onclick="location.href='recipe.html'" alt="Image of the recipe">
-		    <p>Check out this awesome Korean steak recipe by ChangHatesKimbap</p>
-		  </div>
-		  <div class="col-sm-4 col-md-3">
-		    <h3>Burger</h3>
-		    <img class="img img-responsive" src="../static/img/burger.jpg" onclick="location.href='recipe.html'" alt="Image of the recipe">
-		    <p>
-		      Check out this burger by bigBoi420
-		    </p>
-		  </div>
-		  <div class="col-sm-4 col-md-3">
-		    <h3>Tacos</h3>
-		    <img class="img img-responsive" src="../static/img/alpastor.jpg" onclick="location.href='recipe.html'" alt="Image of the recipe">
-		    <p>Check out this awesome taco recipe made by jalapeno_man35</p>
-		  </div>
-		</div>
 
+		<h1>Foodex Catalog</h1>
+
+		<div id="main"></div>
+
+	<!--
 		<div class="row">
 		  <div class="col-sm-4 col-md-3">
 		    <h3>Kalbi</h3>
@@ -141,9 +130,35 @@
 		    <p>Check out this awesome taco recipe made by jalapeno_man35</p>
 		  </div>
 		</div>
+	-->
+
+		<!-- **********************************template************************************* -->
+
+	<!--
+		<div class="row">
+		  <div class="col-sm-4 col-md-3">
+		    <h3>Kalbi</h3>
+		    <img class="img img-responsive" src="../static/img/kalbi.jpg" onclick="location.href='recipe.html'" alt="Image of the recipe">
+		    <p>Check out this awesome Korean steak recipe by ChangHatesKimbap</p>
+		  </div>
+		  <div class="col-sm-4 col-md-3">
+		    <h3>Burger</h3>
+		    <img class="img img-responsive" src="../static/img/burger.jpg" onclick="location.href='recipe.html'" alt="Image of the recipe">
+		    <p>
+		      Check out this burger by bigBoi420
+		    </p>
+		  </div>
+		  <div class="col-sm-4 col-md-3">
+		    <h3>Tacos</h3>
+		    <img class="img img-responsive" src="../static/img/alpastor.jpg" onclick="location.href='recipe.html'" alt="Image of the recipe">
+		    <p>Check out this awesome taco recipe made by jalapeno_man35</p>
+		  </div>
+		</div>
+	-->
+
     </div>
 
     <footer><p>&copy; 2017 Foodex</p></footer>
-    
+
   </body>
 </html>
