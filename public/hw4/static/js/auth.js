@@ -1,5 +1,4 @@
 const btnSignup = document.getElementById('btnSignup');
-
 if (btnSignup != null) {
     const signupUsername = document.getElementById('signupUsername');
     const signupEmail = document.getElementById('signupEmail');
@@ -22,7 +21,6 @@ if (btnSignup != null) {
 }
 
 const btnLogin = document.getElementById('btnLogin');
-
 if (btnLogin != null) {
     const loginEmail = document.getElementById('loginEmail');
     const loginPass = document.getElementById('loginPassword');
@@ -38,11 +36,21 @@ if (btnLogin != null) {
     });
 }
 
+
+const btnLogout = document.getElementById('btnLogout');
+if (btnLogout) {
+    firebase.auth().signOut();
+    window.location('../../templates/login.html');
+}
+
+
 // fires when user logs in or out
 firebase.auth().onAuthStateChanged(firebaseUser => {
-    if (firebaseUser)
+    if (firebaseUser) {
 	console.log(firebaseUser);
-    else
+	window.location('../../templates/main.html');
+    } else {
 	console.log("not logged in");
+    }
 
 });

@@ -5,6 +5,10 @@
   <title>Login</title>
   <link rel="stylesheet" href="../static/css/bootstrap.css" type="text/css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
+  <script src="../static/js/app.js" async></script>
+  <script src="../static/js/auth.js" async></script>
+
   <style>
     html, body, {
       height: 100%;
@@ -71,7 +75,7 @@
             <input class="form-control" type="text" id="loginEmail" placeholder="Email">
           </div>
           <div class="form-group">
-            <label for="password">Password:</label>
+            <label for="loginPassword">Password:</label>
             <input class="form-control" type="password" id="loginPassword" placeholder="Password">
           </div>
           <div class="form-group">
@@ -79,8 +83,7 @@
           </div>
 	  	
 	  <div style="margin-top: 40px;">
-            <button id="btnLogin" class="btn btn-primary btn-block"
-		    onclick="location.href='main.html'">Login</button>
+            <button id="btnLogin" class="btn btn-primary btn-block">Login</button>
 
             <button id="btnGoToSignup" class="btn btn-default btn-block"
 		    onclick="location.href='signUp.html'">Sign Up</button>
@@ -90,11 +93,6 @@
       </div>
     </div>
   </div>
-  <footer class="footer"><p>&copy; 2017 Foodex</p>
-    <script src="https://www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
-    <script src="../static/js/app.js"></script>
-    <script src="../static/js/auth.js"></script>
-  </footer>
-
+  <footer class="footer"><p>&copy; 2017 Foodex</p></footer>
 </body>
 </html>
