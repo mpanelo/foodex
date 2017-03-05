@@ -40,7 +40,7 @@ if (btnLogin != null) {
 const btnLogout = document.getElementById('btnLogout');
 if (btnLogout) {
     firebase.auth().signOut();
-    window.location('../../templates/login.html');
+    //window.location('../../templates/login.html');
 }
 
 
@@ -48,7 +48,7 @@ if (btnLogout) {
 firebase.auth().onAuthStateChanged(firebaseUser => {
     if (firebaseUser) {
 	console.log(firebaseUser);
-	window.location('../../templates/main.html');
+	window.location = '../../templates/main.html';
     } else {
 	console.log("not logged in");
     }
