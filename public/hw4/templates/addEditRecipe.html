@@ -13,7 +13,7 @@
 	<script src="../static/js/addEditVue.js"></script>
 </head>
 <body>
-	<div class="container fill">
+	<div id="addEditApp" class="container fill">
     <form id="recipeForm" @submit.prevent="submitRecipeForm">
 			<h4>Recipe Title</h4>
 			<div class="form-group">
@@ -38,22 +38,22 @@
 			<h4>Difficulty</h4>
 			<div class="form-group">
 				<div class="radio">
-		  	  <label class="control-label"><input type="radio" name="difficulty" value="hard">hard</label>
+		  	  <label class="control-label"><input type="radio" name="difficulty" v-model="difficulty" value="hard" required>hard</label>
 				</div>
 			</div>
 			<div class="form-group">
 				<div class="radio">
-		    	<label class="control-label"><input type="radio" name="difficulty" value="medium">medium</label>
+		    	<label class="control-label"><input type="radio" name="difficulty" v-model="difficulty" value="medium">medium</label>
 				</div>
 			</div>
 			<div class="form-group">
 				<div class="radio">
-		    	<label><input type="radio" name="difficulty" value="easy">easy</label>
+		    	<label><input type="radio" name="difficulty" v-model="difficulty" value="easy">easy</label>
 				</div>
 			</div>
 
 	    <h4>Brief Description</h4>
-	    <textarea class="form-control" name="description"></textarea>
+	    <textarea class="form-control" id="description" name="description" v-model.trim="description" required></textarea>
 	    <h4>Ingredients</h4>
 	    <textarea class="form-control" name="ingredients"></textarea>
 
@@ -63,12 +63,12 @@
 	    <h4>Visibiility</h4>
 			<div class="form-group">
 				<div class="radio">
-			    <label><input type="radio" name="visible" value="public">Public</label>
+			    <label><input type="radio" name="visible" v-model="visibility" value="public" required>Public</label>
 				</div>
 			</div>
 			<div class="form-group">
 				<div class="radio">
-			    <label><input type="radio" name="visible" value="private">Private</label>
+			    <label><input type="radio" name="visible" v-model="visibility" value="private">Private</label>
 				</div>
 			</div>
 	  </form>
@@ -77,7 +77,7 @@
 	  <img src="#" alt="Preview of the uploaded image">
 	  <button class="btn btn-default btn-sm">Upload Image</button>
 		<div class="btn-group">
-	  		<button id="save" class="btn btn-primary" type="submit" form="recipeForm" value="recipeSubmit">Save</button>
+	  		<button id="submitBtn" class="btn btn-primary" type="submit" form="recipeForm" value="Submit">Submit</button>
 	  		<button class="btn btn-default" onclick="location.href='main.html'" value="recipeCancel">Cancel</button>
 		</div>
 	</div>
