@@ -90,7 +90,8 @@ window.onload = function() {
 firebase.auth().onAuthStateChanged(firebaseUser => {
     console.log('auth state changed');
     if (firebaseUser) {
-	if (window.location.pathname != '/hw4/templates/main.html') {
+	if (window.location.pathname == '/hw4/templates/login.html' ||
+	   window.location.pathname == '/hw4/templates/signUp.html') {
 	    console.log("logging in as", firebaseUser.email);
 	    window.location = 'main.html';
 	}
