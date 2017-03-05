@@ -50,43 +50,24 @@ window.onload = function() {
 	var provider = new firebase.auth.GoogleAuthProvider();
 	btnGoogleAuth.addEventListener('click', e => {
 	    console.log('google login clicked');
-	    firebase.auth().signInWithRedirect(provider);
+	    firebase.auth().signInWithRedirect(provider)
+		.then(function() {
+		    firebase.auth().getRedirectResult().then(function (result) {
+			if (!user) {
+			    // User not logged in, start login.
+			    //firebase.auth().signInWithRedirect(provider);
+			    console.log('google: not logged in');
+			} else {
+			    console.log('google:', user);
+			}
+		    }).catch(function (error) {
+			console.log('google error caught:', error.code, error.message);
+			alert(error.message);
+		    });
+		    
+		});
 	});
     }
-
-
-    if (window.location.pathname == 'login.html') {
-	firebase.auth().getRedirectResult().then(function (result) {
-	    if (!user) {
-		// User not logged in, start login.
-		//firebase.auth().signInWithRedirect(provider);
-		console.log('google: not logged in');
-	    } else {
-		console.log('google:', user);
-	    }
-	}).catch(function (error) {
-	    console.log('google error caught:', error.code, error.message);
-	    alert(error.message);
-	});
-    }
-
-    /*
-      var provider = new firebase.auth.GoogleAuthProvider();
-      firebase.auth().signInRedirect(provider).then(function(result) {
-      var token = result.credential.accessToken;
-      // The signed-in user info.
-      var user = result.user;
-      console.log('google login successful', user);
-      
-      }).catch(function(error) {
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      var email = error.email;
-      var credential = error.credential;
-      console.log(errorCode, errorMessage);
-      console.log(email, credential);
-      });
-    */
 
 
     // Logout
