@@ -13,10 +13,10 @@
 </head>
 <body>
 	<div class="container fill">
-	  <form action="none" method="post" id="recipeForm">
+    <form id="recipeForm" @submit.prevent="submitRecipeForm">
 			<h4>Recipe Title</h4>
 			<div class="form-group">
-		    <input class="form-control" type="text" name="recipe" placeholder="Recipe Title">
+		    <input class="form-control" type="text" id="title" name="title" placeholder="Recipe Title" v-model.trim="title" required>
 			</div>
 
 			<h4>Time Estimation</h4>
