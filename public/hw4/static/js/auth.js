@@ -1,3 +1,4 @@
+// Signup with email
 const btnSignup = document.getElementById('btnSignup');
 if (btnSignup != null) {
     const signupUsername = document.getElementById('signupUsername');
@@ -20,6 +21,7 @@ if (btnSignup != null) {
     });
 }
 
+// Login with email
 const btnLogin = document.getElementById('btnLogin');
 if (btnLogin != null) {
     const loginEmail = document.getElementById('loginEmail');
@@ -36,7 +38,31 @@ if (btnLogin != null) {
     });
 }
 
+// Login with Google credentials
+const btnGoogleAuth = document.getElementById('btnGoogleAuth');
+if (btnGoogleAuth) {
+    btnGoogleAuth.addEventListener('click', e=> {
+	var provider = new firebase.auth.GoogleAuthProvider();
+	firebase.auth().signInWithPopup(provider).then(function(result) {
+	    var token = result.credential.accessToken;
+	    // The signed-in user info.
+	    var user = result.user;
+	    console.log(user);
 
+	}).catch(function(error) {
+	    var errorCode = error.code;
+	    var errorMessage = error.message;
+	    var email = error.email;
+	    var credential = error.credential;
+	    console.log(errorCode, errorMessage);
+	    console.log(email, credential);
+	});
+
+    });
+}
+
+
+// Logout
 const btnLogout = document.getElementById('btnLogout');
 if (btnLogout) {
     btnLogout.addEventListener('click', e => {
@@ -46,9 +72,9 @@ if (btnLogout) {
     });
 }
 
-
 // fires when user logs in or out
 firebase.auth().onAuthStateChanged(firebaseUser => {
+    console.log('auth state changed');
     if (firebaseUser) {
 		if (window.location.pathname != '/hw4/templates/main.html') {
 	    	console.log("logging in");
