@@ -39,16 +39,22 @@ if (btnLogin != null) {
 
 const btnLogout = document.getElementById('btnLogout');
 if (btnLogout) {
-    firebase.auth().signOut();
-    window.location('../../templates/login.html');
+    btnLogout.addEventListener('click', e => {
+	console.log("logging out");
+	firebase.auth().signOut();
+	window.location = 'login.html';
+    });
 }
 
 
 // fires when user logs in or out
 firebase.auth().onAuthStateChanged(firebaseUser => {
     if (firebaseUser) {
-	console.log(firebaseUser);
-	window.location('../../templates/main.html');
+	if (window.location.pathname != '/hw4/templates/main.html') {
+	    console.log("logging in");
+	    console.log(firebaseUser);
+	    window.location = 'main.html';
+	}
     } else {
 	console.log("not logged in");
     }
