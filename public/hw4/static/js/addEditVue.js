@@ -27,7 +27,7 @@ function init() {
         el: "#addEditApp",
         data: getDefaultData(),
         firebase: {
-            db: ref
+            recipes: ref
         },
         methods: {
             submitRecipeForm: function () {
@@ -46,6 +46,7 @@ function init() {
                     });
                 }
                 Object.assign(this.$data, getDefaultData());
+                window.location.href = "main.html";
             },
             uploadFile: function (event) {
               selectedFile = event.target.files[0];
