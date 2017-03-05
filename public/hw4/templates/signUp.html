@@ -3,9 +3,11 @@
 <head>
   <meta charset="utf-8"/>
   <title>Sign Up</title>
+  <script src="https://www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
   <link href="../static/css/bootstrap.css" type="text/css" rel="stylesheet">
   <link href="../static/css/signup.css" type="text/css" rel="stylesheet">
-  <script src="../static/js/auth.js">
+  <script src="../static/js/app.js"></script>
+  <script src="../static/js/auth.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
@@ -20,20 +22,20 @@
           <form method="post" id="signup">
             <fieldset>
               <div class="form-group">
-                <label for="userName">Username:</label>
+                <label for="signupUserName">Username:</label>
                 <input type="text" class="form-control" id="signupUsername" placeholder="Enter Username">
               </div>
 	      <div class="form-group">
-                <label for="email">Email:</label>
+                <label for="signupEmail">Email:</label>
                 <input type="email" class="form-control" id="signupEmail" placeholder="Enter Email">
               </div>
 
               <div class="form-group">
-                <label for="password">Password:</label>
+                <label for="signupPassword">Password:</label>
                 <input type="password" class="form-control" id="signupPassword" placeholder="Enter Password">
               </div>
               <div class="form-group">
-                <label for="retype">Confirm Password:</label>
+                <label for="signupPasswordRetype">Confirm Password:</label>
                 <input type="password" class="form-control" id="signupPasswordRetype" placeholder="Re-type Password">
               </div>
               <div class="center" style="margin-top: 20px;">
