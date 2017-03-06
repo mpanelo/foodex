@@ -42,7 +42,7 @@ function init() {
                         "instructions": listOfInstr,
                         "difficulty": this.difficulty,
                         "visibility": this.visibility,
-                        "timeEstimate": this.days + "days, " + this.hours + "hrs, " + this.minutes + "mins",
+                        "timeEstimate": this.days + " days, " + this.hours + " hrs, " + this.minutes + " mins",
                         "imageName": this.fileName,
                         "imageUrl": url
                     });
