@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Foodex Recipes</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/flexbox.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
     <script src="https://unpkg.com/vue"></script>
     <script src="https://unpkg.com/vuefire/dist/vuefire.js"></script>
     <script src="../static/js/app.js"></script>
-    <script src="../static/js/auth.js" async></script>
     <script src="../static/js/main.js"></script>
   </head>
   <body>
@@ -39,17 +39,14 @@
 
     <div class="container">
 	  <h1>Foodex Catalog</h1>
-	  <div id="homeApp">
-      <div class="row">
-        <div v-for="recipe in recipes">
-          <template v-if="recipe.visibility === 'public'">
-          <div class="col-sm-4 col-md-3">
+	  <div id="homeApp" class="flex-container">
+        <template v-for="recipe in recipes" v-if="isPublic(recipe.visibility)">
+          <div>
             <h3>{{recipe.title}}</h3>
-            <a href="#" v-on:click="storeKey(recipe['.key'])"><img class="img img-responsive" :src="recipe.imageUrl" alt="Image of the recipe"></a>
+            <a href="#" v-on:click="storeKey(recipe['.key'])"><img :src="recipe.imageUrl" alt="Image of the recipe"></a>
             <p>{{recipe.description}}</p>
           </div>
-          </template>
-        </div>
+        </template>
       </div>
     </div>
     <hr>

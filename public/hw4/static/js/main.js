@@ -11,6 +11,9 @@ window.addEventListener("load", function () {
 			storeKey: function(key) {
 				createCookie("recipeToView", key, 1);
 				window.location.href="recipe.html";
+			},
+			isPublic: function(vis) {
+				return vis == "public";
 			}
 		}
 	});
