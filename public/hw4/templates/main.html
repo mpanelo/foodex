@@ -11,7 +11,7 @@
     <script src="https://unpkg.com/vue"></script>
     <script src="https://unpkg.com/vuefire/dist/vuefire.js"></script>
     <script src="../static/js/app.js"></script>
-    <!--<script src="../static/js/auth.js" async></script>-->
+    <script src="../static/js/auth.js" async></script>
     <script src="../static/js/main.js"></script>
   </head>
   <body>
@@ -44,7 +44,7 @@
         <div v-for="recipe in recipes">
           <div class="col-sm-4 col-md-3">
             <h3>{{recipe.title}}</h3>
-            <a href="#" v-on:click="printKey(recipe['.key'])"><img class="img img-responsive" :src="recipe.imageUrl" alt="Image of the recipe"></a>
+            <a href="#" v-on:click="storeKey(recipe['.key'])"><img class="img img-responsive" :src="recipe.imageUrl" alt="Image of the recipe"></a>
             <p>{{recipe.description}}</p>
           </div>
         </div>

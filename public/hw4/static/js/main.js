@@ -9,6 +9,8 @@ window.addEventListener("load", function () {
 		},
 		methods: {
 			storeKey: function(key) {
+				createCookie("recipeToView", key, 1);
+				window.location.href="recipe.html";
 			}
 		}
 	});
