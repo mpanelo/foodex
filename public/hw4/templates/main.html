@@ -10,9 +10,9 @@
     <script src="https://www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
     <script src="https://unpkg.com/vue"></script>
     <script src="https://unpkg.com/vuefire/dist/vuefire.js"></script>
-    <script src="../static/js/app.js" async></script>
+    <script src="../static/js/app.js"></script>
     <script src="../static/js/auth.js" async></script>
-    <script src="../static/js/main.js" async></script>
+    <script src="../static/js/main.js"></script>
   </head>
   <body>
 
@@ -40,17 +40,18 @@
     <div class="container">
 	  <h1>Foodex Catalog</h1>
 	  <div id="homeApp">
-       <div v-for="recipe in recipes">
-        <div class="row">
-          <div class="col-sm-4 col-md-3">
-            <h3>{{recipe.title}}</h3>
-            <img :src="../static/img/burger.jpg" alt="Image of the recipe" @click="printKey(recipe[.key])">
-            <p>{{recipe.description}}</p>
+        <div v-for="recipe in recipes">
+          <div class="row">
+            <div class="col-sm-4 col-md-3">
+              <h3>{{recipe.title}}</h3>
+              <p>{{recipe.description}}</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
+    <div style="text-align: center;">
+    	<footer><p>&copy; 2017 Foodex</p></footer>
     </div>
-    <footer><p>&copy; 2017 Foodex</p></footer>
   </body>
 </html>

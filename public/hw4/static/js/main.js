@@ -18,6 +18,7 @@ window.addEventListener("load", function () {
 /*
 var recipeDb = firebase.database().ref();
 
+/*
 function loadPage(){
 	recipeDb.on('value', function(snapshot){
 		console.log(snapshot.val());
@@ -54,8 +55,12 @@ function loadPage(){
 	});
 }
 loadPage();
+<<<<<<< HEAD
 */
 /*
+=======
+
+>>>>>>> fe021d68888fe52f21842f9e034c82aa5576a195
 function httpGetAsync(theUrl, callback)
 {
     var xmlHttp = new XMLHttpRequest();
