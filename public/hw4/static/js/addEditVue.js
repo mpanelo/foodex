@@ -22,7 +22,7 @@ function getDefaultData() {
 }
 
 function init() {
-    var url;
+    var selectedFile = "";
     var vm = new Vue({
         el: "#addEditApp",
         data: getDefaultData(),
@@ -30,55 +30,55 @@ function init() {
             recipes: ref
         },
         methods: {
-            submitRecipeForm: function () {
-                if (validateData(this.data)) {
-                    var listOfIng = this.ingredients.split("\n");
-                    var listOfInstr = this.instructions.split("\n");
-                    ref.push({
-                        "title": this.title,
-                        "description": this.description,
-                        "ingredients": listOfIng,
-                        "instructions": listOfInstr,
-                        "difficulty": this.difficulty,
-                        "visibility": this.visibility,
-                        "timeEstimate": this.hours + " hrs, " + this.minutes + " mins",
-                        "imageName": this.fileName,
-                        "imageUrl": url
-                    });
-                  Object.assign(this.$data, getDefaultData());
-                  window.location.href = "main.html";
-                }
-            },
-            uploadFile: function (event) {
+            setImageFile: function (event) {
               selectedFile = event.target.files[0];
               this.fileName = selectedFile.name;
-              var currImageRef = imageRef.child(this.fileName);
-              var uploadTask = currImageRef.put(selectedFile);
-              // Register three observers:
-              // 1. 'state_changed' observer, called any time the state changes
-              // 2. Error observer, called on failure
-              // 3. Completion observer, called on successful completion
-              uploadTask.on('state_changed', function(snapshot){
-                // Observe state change events such as progress, pause, and resume
-                // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
-                var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-                console.log('Upload is ' + progress + '% done');
-                switch (snapshot.state) {
-                  case firebase.storage.TaskState.PAUSED: // or 'paused'
-                    console.log('Upload is paused');
-                    break;
-                  case firebase.storage.TaskState.RUNNING: // or 'running'
-                    console.log('Upload is running');
-                    break;
-                }
-              }, function(error) {
-                // Handle unsuccessful uploads
-              }, function() {
-                // Handle successful uploads on complete
-                // For instance, get the download URL: https://firebasestorage.googleapis.com/...
-
-                url = uploadTask.snapshot.downloadURL;
-              });
+            },
+            submitRecipeForm: function () {
+              if (this.fileName && selectedFile && validateData(this.data)) {
+                var currImageRef = imageRef.child(this.fileName);
+                var uploadTask = currImageRef.put(selectedFile);
+                // Register three observers:
+                // 1. 'state_changed' observer, called any time the state changes
+                // 2. Error observer, called on failure
+                // 3. Completion observer, called on successful completion
+                var that = this;
+                uploadTask.on('state_changed', function(snapshot) {
+                  // Observe state change events such as progress, pause, and resume
+                  // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+                  var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                  console.log('Upload is ' + progress + '% done');
+                  switch (snapshot.state) {
+                    case firebase.storage.TaskState.PAUSED: // or 'paused'
+                      console.log('Upload is paused');
+                      break;
+                    case firebase.storage.TaskState.RUNNING: // or 'running'
+                      console.log('Upload is running');
+                      break;
+                  }
+                }, function(error) {
+                  // Handle unsuccessful uploads
+                }, function() {
+                  // Handle successful uploads on complete
+                  // For instance, get the download URL: https://firebasestorage.googleapis.com/...
+                   var downloadURL = uploadTask.snapshot.downloadURL;
+                   var listOfIng = that.ingredients.split("\n");
+                   var listOfInstr = that.instructions.split("\n");
+                   ref.push({
+                     "title": that.title,
+                     "description": that.description,
+                     "ingredients": listOfIng,
+                     "instructions": listOfInstr,
+                     "difficulty": that.difficulty,
+                     "visibility": that.visibility,
+                     "timeEstimate": that.hours + " hrs, " + that.minutes + " mins",
+                     "imageName": that.fileName,
+                     "imageUrl": downloadURL
+                  });
+                  Object.assign(that.$data, getDefaultData());
+                  window.location.href = "main.html";
+                });
+              }
             }
         }
     });
@@ -87,5 +87,6 @@ function init() {
 Vue.use(VueFire);
 
 var ref = db.ref("recipes");
+var userRef = db.ref("users");
 var imageRef = storage.ref("images");
 window.addEventListener("load", init);

@@ -1,5 +1,5 @@
 window.onload = function() {
-    
+
     // Signup with email
     const btnSignup = document.getElementById('btnSignup');
     if (btnSignup != null) {
@@ -7,14 +7,14 @@ window.onload = function() {
 	const signupEmail = document.getElementById('signupEmail');
 	const signupPass = document.getElementById('signupPassword');
 	const signupPass2 = document.getElementById('signupPasswordRetype');
-	
+
 	btnSignup.addEventListener('click', e => {
 	    console.log('signUp clicked');
 	    const email = signupEmail.value;
 	    const username = signupUsername.value;
 	    const pass = signupPass.value;
 	    const pass2 = signupPass2.value;
-	    
+
 	    // create user and log them in
 	    if (pass == pass2) {
 		const auth = firebase.auth();
@@ -30,12 +30,12 @@ window.onload = function() {
     if (btnLogin != null) {
 	const loginEmail = document.getElementById('loginEmail');
 	const loginPass = document.getElementById('loginPassword');
-	
+
 	btnLogin.addEventListener('click', e => {
 	    console.log('login clicked');
 	    const email = loginEmail.value;
 	    const pass = loginPass.value;
-	    
+
 	    // log in an existing user
 	    const auth = firebase.auth();
 	    const promise = auth.signInWithEmailAndPassword(email, pass);
@@ -46,7 +46,7 @@ window.onload = function() {
 	});
     }
 
-    
+
     // Login with Google credentials
     const btnGoogleAuth = document.getElementById('btnGoogleAuth');
     if (btnGoogleAuth) {
@@ -67,7 +67,7 @@ window.onload = function() {
 			console.log('google error caught:', error.code, error.message);
 			alert(error.message);
 		    });
-		    
+
 		});
 	});
     }
@@ -82,7 +82,7 @@ window.onload = function() {
 	    window.location = 'login.html';
 	});
     }
-    
+
 
 };
 
@@ -92,7 +92,7 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
     if (firebaseUser) {
 	if (window.location.pathname == '/hw4/templates/login.html' ||
 	   window.location.pathname == '/hw4/templates/signUp.html') {
-	    console.log("logging in as", firebaseUser.email);
+	    console.log("logging in as", firebaseUser.uid);
 	    window.location = 'main.html';
 	}
 
