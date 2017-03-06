@@ -19,7 +19,6 @@ function getDefaultData() {
     difficulty: "",
     visibility: "",
     fileName: "",
-    imageUrl: "",
   };
 }
 
@@ -43,16 +42,15 @@ function init() {
                         "instructions": listOfInstr,
                         "difficulty": this.difficulty,
                         "visibility": this.visibility,
-                        "timeEstimate": {"days": this.days, "hours": this.hours, "minutes": this.minutes},
+                        "timeEstimate": this.days + "days, " + this.hours + "hrs, " + this.minutes + "mins",
                         "imageName": this.fileName,
                         "imageUrl": url
                     });
+                  Object.assign(this.$data, getDefaultData());
+                  window.location.href = "main.html";
                 }
-                Object.assign(this.$data, getDefaultData());
-                window.location.href = "main.html";
             },
             uploadFile: function (event) {
-                console.log("hello!");
               selectedFile = event.target.files[0];
               this.fileName = selectedFile.name;
               var currImageRef = imageRef.child(this.fileName);
@@ -79,7 +77,7 @@ function init() {
               }, function() {
                 // Handle successful uploads on complete
                 // For instance, get the download URL: https://firebasestorage.googleapis.com/...
-                
+
                 url = uploadTask.snapshot.downloadURL;
               });
             }

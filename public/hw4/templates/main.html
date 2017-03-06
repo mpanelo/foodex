@@ -42,11 +42,13 @@
 	  <div id="homeApp">
       <div class="row">
         <div v-for="recipe in recipes">
+          <template v-if="recipe.visibility === 'public'">
           <div class="col-sm-4 col-md-3">
             <h3>{{recipe.title}}</h3>
             <a href="#" v-on:click="storeKey(recipe['.key'])"><img class="img img-responsive" :src="recipe.imageUrl" alt="Image of the recipe"></a>
             <p>{{recipe.description}}</p>
           </div>
+          </template>
         </div>
       </div>
     </div>
