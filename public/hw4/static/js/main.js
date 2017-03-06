@@ -8,9 +8,8 @@ window.addEventListener("load", function () {
 			recipes: recipeRef
 		},
 		methods: {
-			printKey: function(key) {
-				console.log(key);
-				var recipe = recipeRef.child(key);
+			storeKey: function(key) {
+				document.cookie = 
 			}
 		}
 	});
