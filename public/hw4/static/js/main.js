@@ -15,7 +15,7 @@ window.addEventListener("load", function () {
 		}
 	});
 });
-
+/*
 var recipeDb = firebase.database().ref();
 
 function loadPage(){
@@ -54,7 +54,7 @@ function loadPage(){
 	});
 }
 loadPage();
-
+*/
 /*
 function httpGetAsync(theUrl, callback)
 {

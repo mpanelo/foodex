@@ -38,10 +38,10 @@
   </div>
 
     <div class="container">
-		  <h1>Foodex Catalog</h1>
-	    <div id="homeApp"></div>
-      <div class="row">
-        <div v-for="recipe in recipes">
+	  <h1>Foodex Catalog</h1>
+	  <div id="homeApp"></div>
+       <div v-for="recipe in recipes">
+        <div class="row">
           <div class="col-sm-4 col-md-3">
             <h3>{{recipe.title}}</h3>
             <img :src="../static/img/burger.jpg" alt="Image of the recipe" @click="printKey(recipe[.key])">
