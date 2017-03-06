@@ -9,23 +9,27 @@ window.addEventListener("load", function () {
 		},
 		methods: {
 			storeKey: function(key) {
-				document.cookie = 
 			}
 		}
 	});
 });
+/*
+var recipeDb = firebase.database().ref();
 
 /*
 function loadPage(){
-	recipeRef.on('value', function(snapshot){
+	recipeDb.on('value', function(snapshot){
 		console.log(snapshot.val());
 
 		var recipe = snapshot.val()['recipes'];
+
+		console.log(recipe);
 
 		var main = document.getElementById('main');
 
 		var count = 0;
 		for(var item in recipe){
+			//console.log(recipe[item]['visibility']);
 			if(recipe[item]['visibility']==='public'){
 				if(count==0){
 					main.innerHTML += '<div class="row">';
@@ -49,7 +53,12 @@ function loadPage(){
 	});
 }
 loadPage();
+<<<<<<< HEAD
+*/
+/*
+=======
 
+>>>>>>> fe021d68888fe52f21842f9e034c82aa5576a195
 function httpGetAsync(theUrl, callback)
 {
     var xmlHttp = new XMLHttpRequest();

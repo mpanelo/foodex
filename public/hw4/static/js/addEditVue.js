@@ -19,10 +19,12 @@ function getDefaultData() {
     difficulty: "",
     visibility: "",
     fileName: "",
+    imageUrl: "",
   };
 }
 
 function init() {
+    var url;
     var vm = new Vue({
         el: "#addEditApp",
         data: getDefaultData(),
@@ -42,13 +44,15 @@ function init() {
                         "difficulty": this.difficulty,
                         "visibility": this.visibility,
                         "timeEstimate": {"days": this.days, "hours": this.hours, "minutes": this.minutes},
-                        "imageName": this.fileName
+                        "imageName": this.fileName,
+                        "imageUrl": url
                     });
                 }
                 Object.assign(this.$data, getDefaultData());
                 window.location.href = "main.html";
             },
             uploadFile: function (event) {
+                console.log("hello!");
               selectedFile = event.target.files[0];
               this.fileName = selectedFile.name;
               var currImageRef = imageRef.child(this.fileName);
@@ -75,7 +79,8 @@ function init() {
               }, function() {
                 // Handle successful uploads on complete
                 // For instance, get the download URL: https://firebasestorage.googleapis.com/...
-                var url = uploadTask.snapshot.downloadURL;
+                
+                url = uploadTask.snapshot.downloadURL;
               });
             }
         }
