@@ -16,6 +16,7 @@ window.addEventListener("load", function () {
 	});
 });
 
+/*
 function loadPage(){
 	recipeRef.on('value', function(snapshot){
 		console.log(snapshot.val());
@@ -50,7 +51,6 @@ function loadPage(){
 }
 loadPage();
 
-/*
 function httpGetAsync(theUrl, callback)
 {
     var xmlHttp = new XMLHttpRequest();
