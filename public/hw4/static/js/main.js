@@ -14,16 +14,21 @@ var mainVm = new Vue({
 	}
 });
 
+var recipeDb = firebase.database().ref();
+
 function loadPage(){
-	recipeRef.on('value', function(snapshot){
+	recipeDb.on('value', function(snapshot){
 		console.log(snapshot.val());
 
 		var recipe = snapshot.val()['recipes'];
+
+		console.log(recipe);
 
 		var main = document.getElementById('main');
 
 		var count = 0;
 		for(var item in recipe){
+			//console.log(recipe[item]['visibility']);
 			if(recipe[item]['visibility']==='public'){
 				if(count==0){
 					main.innerHTML += '<div class="row">';
