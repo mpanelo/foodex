@@ -1,3 +1,17 @@
+.flex-container {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.flex-container div {
+  width: 300px;
+  margin: .5vw;
+}
+.flex-container div a img {
+  width: 100%;
+  height: auto;
+}
+
 @media (min-width: 768px) {
   main { position:relative;
   padding-left: 200px;
