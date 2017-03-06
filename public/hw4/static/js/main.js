@@ -1,17 +1,19 @@
 Vue.use(VueFire);
 var recipeRef = db.ref("recipes");
 
-var mainVm = new Vue({
-	el: "homeApp",
-	firebase: {
-		recipes: recipeRef
-	},
-	methods: {
-		printKey: function(key) {
-			console.log(key);
-			var recipe = recipeRef.child(key);
+window.addEventListener("load", function () {
+	var mainVm = new Vue({
+		el: "#homeApp",
+		firebase: {
+			recipes: recipeRef
+		},
+		methods: {
+			printKey: function(key) {
+				console.log(key);
+				var recipe = recipeRef.child(key);
+			}
 		}
-	}
+	});
 });
 
 var recipeDb = firebase.database().ref();
