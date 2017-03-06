@@ -11,7 +11,6 @@ function getDefaultData() {
   return {
     title: "",
     description: "",
-    days: "",
     hours: "",
     minutes: "",
     ingredients: "",
@@ -42,7 +41,7 @@ function init() {
                         "instructions": listOfInstr,
                         "difficulty": this.difficulty,
                         "visibility": this.visibility,
-                        "timeEstimate": this.days + " days, " + this.hours + " hrs, " + this.minutes + " mins",
+                        "timeEstimate": this.hours + " hrs, " + this.minutes + " mins",
                         "imageName": this.fileName,
                         "imageUrl": url
                     });
