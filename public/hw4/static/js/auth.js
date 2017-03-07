@@ -1,14 +1,42 @@
+function saveUser(){
+	var userRef = firebase.database().ref("users");
+	console.log('checkpoint 1');
+	firebase.auth().onAuthStateChanged(function(user) {
+	  console.log('checkpoint 2');	
+	  var email, uid;
+	  if (user) {
+	    // User is signed in.
+	    console.log('checkpoint 3');
+		email = user.email;
+		uid = user.uid;
+	  } else {
+	    // No user is signed in.
+	    console.log('FML');
+	  }
+	  var recipes = {};
+	  console.log('checkpoint 4');
+	  console.log(uid);
+	  console.log(email);
+	  userRef.push({
+          "uid": uid,
+          "email" : email,
+          "recipes": recipes
+      });
+	  console.log('checkpoint 5');
+	});
+}
+
 window.onload = function() {
 
     // Signup with email
     const btnSignup = document.getElementById('btnSignup');
     if (btnSignup != null) {
-	const signupUsername = document.getElementById('signupUsername');
-	const signupEmail = document.getElementById('signupEmail');
-	const signupPass = document.getElementById('signupPassword');
-	const signupPass2 = document.getElementById('signupPasswordRetype');
+	  const signupUsername = document.getElementById('signupUsername');
+	  const signupEmail = document.getElementById('signupEmail');
+	  const signupPass = document.getElementById('signupPassword');
+	  const signupPass2 = document.getElementById('signupPasswordRetype');
 
-	btnSignup.addEventListener('click', e => {
+	  btnSignup.addEventListener('click', e => {
 	    console.log('signUp clicked');
 	    const email = signupEmail.value;
 	    const username = signupUsername.value;
@@ -16,12 +44,13 @@ window.onload = function() {
 	    const pass2 = signupPass2.value;
 
 	    // create user and log them in
-	    if (pass == pass2) {
-		const auth = firebase.auth();
-		const promise = auth.createUserWithEmailAndPassword(email, pass);
-		promise.catch(e => console.log(e.code, e.message));
+	    var made = false;
+	    if (pass === pass2 && email !== "" && username !== "") {
+			const auth = firebase.auth();
+			const promise = auth.createUserWithEmailAndPassword(email, pass);
+			promise.catch(e => console.log(e.code, e.message));
 	    }
-	});
+	  });
     }
 
 
@@ -90,8 +119,12 @@ window.onload = function() {
 firebase.auth().onAuthStateChanged(firebaseUser => {
     console.log('auth state changed');
     if (firebaseUser) {
-	if (window.location.pathname == '/hw4/templates/login.html' ||
-	   window.location.pathname == '/hw4/templates/signUp.html') {
+	if (window.location.pathname == '/hw4/templates/login.html'){
+		console.log("logging in as", firebaseUser.uid);
+	    window.location = 'main.html';
+	}
+	else if (window.location.pathname == '/hw4/templates/signUp.html'){
+		saveUser();
 	    console.log("logging in as", firebaseUser.uid);
 	    window.location = 'main.html';
 	}
@@ -106,3 +139,4 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
     }
 
 });
+
