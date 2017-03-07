@@ -24,7 +24,7 @@ function getDefaultData() {
 function init() {
     var selectedFile = "";
     var vm = new Vue({
-        el: "#addEditApp",
+        el: "#addApp",
 
         beforeCreate: function () {
           firebase.auth().onAuthStateChanged(function(user) {
