@@ -38,7 +38,7 @@ function init() {
 
         data: getDefaultData(),
         firebase: {
-            recipes: ref
+            recipes: recipesRef
         },
 
         methods: {
@@ -78,7 +78,7 @@ function init() {
                   var listOfInstr = that.instructions.split("\n");
                 	console.log('checkpoint 2');
                 	console.log(that.user.uid);
-                  var recipeKey = ref.push({
+                  var recipeKey = recipesRef.push({
                    "title": that.title,
                    "description": that.description,
                    "ingredients": listOfIng,
@@ -101,7 +101,6 @@ function init() {
 
 Vue.use(VueFire);
 
-var ref = db.ref("recipes");
-var userRef = db.ref("users");
+var recipesRef = db.ref("recipes");
 var imageRef = storage.ref("images");
 window.addEventListener("load", init);

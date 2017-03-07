@@ -33,5 +33,5 @@ var config = {
 };
 
 var app = firebase.initializeApp(config);
-var storage = firebase.storage();
+var storage = app.storage();
 var db = app.database();
