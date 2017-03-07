@@ -17,7 +17,8 @@ function saveUser(){
 	  console.log('checkpoint 4');
 	  console.log(uid);
 	  console.log(email);
-	  userRef.push({
+	  var child = userRef.child(uid);
+	  child.set({
           "uid": uid,
           "email" : email,
           "recipes": recipes
