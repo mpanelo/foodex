@@ -26,7 +26,7 @@ function saveUser(){
 	  console.log('checkpoint 5');
 	});
 }
-
+/*
 var userRef = firebase.database().ref();
 function check(){
 	userRef.on('value', function(snapshot){
@@ -55,7 +55,7 @@ function check(){
 		console.log('Error: ' + error.code);
 	});
 }
-
+*/
 window.onload = function() {
 
     // Signup with email
@@ -150,11 +150,13 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
     if (firebaseUser) {
 	if (window.location.pathname == '/hw4/templates/login.html'){
 		console.log("logging in as", firebaseUser.uid);
+		/*
 		console.log("omg");
 		if(check()){
 			console.log('GOOOOOOOOOOOOGGGGGGLLLLLLLEEEEEEEEEE')
 			saveUser();
 		}
+		*/
 	    window.location = 'main.html';
 	}
 	else if (window.location.pathname == '/hw4/templates/signUp.html'){
