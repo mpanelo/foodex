@@ -34,7 +34,8 @@ window.addEventListener("load", function () {
           });
         },
         editRecipe: function(key) {
-          console.log(key);
+          createCookie("recipeToEdit", key, 1);
+          window.location.href="edit.html";
         }
       }
   });
