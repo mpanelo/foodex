@@ -64,7 +64,26 @@ function init() {
                    var downloadURL = uploadTask.snapshot.downloadURL;
                    var listOfIng = that.ingredients.split("\n");
                    var listOfInstr = that.instructions.split("\n");
-                   ref.push({
+
+
+
+                	firebase.auth().onAuthStateChanged(function(user) {
+                	  console.log('checkpoint 2');
+                	  var email, uid;
+                	  if (user) {
+                	    // User is signed in.
+                	  console.log('checkpoint 3');
+                		email = user.email;
+                		uid = user.uid;
+                	  } else {
+                	    // No user is signed in.
+                	    console.log('FML');
+                	  }
+                	  console.log('checkpoint 4');
+                	  console.log(uid);
+                	  console.log(email);
+
+                    var recipeKey = ref.push({
                      "title": that.title,
                      "description": that.description,
                      "ingredients": listOfIng,
@@ -73,10 +92,22 @@ function init() {
                      "visibility": that.visibility,
                      "timeEstimate": that.hours + " hrs, " + that.minutes + " mins",
                      "imageName": that.fileName,
-                     "imageUrl": downloadURL
-                  });
-                  Object.assign(that.$data, getDefaultData());
-                  window.location.href = "main.html";
+                     "imageUrl": downloadURL,
+                     "uid": uid
+                   }).key;
+
+                   var updates = {};
+                   updates["users/" + uid + "/recipes"] = recipeKey;
+                   firebase.database().ref().update(updates);
+                	  console.log('checkpoint 5');
+                    window.location.href = "main.html";
+                	});
+
+
+
+
+
+
                 });
               }
             }
