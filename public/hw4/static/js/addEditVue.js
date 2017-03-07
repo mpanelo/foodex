@@ -91,12 +91,6 @@ function init() {
                    "uid": that.user.uid
                  });
 
-                 /*
-                 var updates = {};
-                 updates["users/" + uid + "/recipes"] = recipeKey;
-                 firebase.database().ref().update(updates);
-              	  console.log('checkpoint 5');
-                  */
                   window.location.href = "main.html";
                 });
               }

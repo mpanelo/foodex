@@ -1,8 +1,9 @@
 Vue.use(VueFire);
-
+var ref = db.ref("recipes");
 window.addEventListener("load", function () {
   var vm = new Vue({
       el: "#personalApp",
+
       data: {
         recipes: []
       },
@@ -19,8 +20,15 @@ window.addEventListener("load", function () {
       },
 
       methods: {
-        printUserID: function () {
-          console.log(this.user.uid);
+      	storeKey: function(key) {
+          createCookie("recipeToView", key, 1);
+          window.location.href="recipe.html";
+        },
+        removeRecipe: function(key) {
+          ref.child(key).remove();
+        },
+        editRecipe: function(key) {
+          console.log(key);
         }
       }
   });
