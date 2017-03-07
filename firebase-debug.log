@@ -16,14 +16,14 @@
 [debug] Command:      /usr/bin/nodejs /usr/bin/firebase serve
 [debug] CLI Version:  3.4.0
 [debug] Platform:     linux
-[debug] Node Version: v7.6.0
-[debug] Time:         Mon Mar 06 2017 15:59:08 GMT-0800 (PST)
+[debug] Node Version: v6.10.0
+[debug] Time:         Mon Mar 06 2017 15:21:17 GMT-0800 (PST)
 [debug] ----------------------------------------------------------------------
 [debug] 
 [info] Starting Firebase development server...
 [info] 
-[info] Project Directory: /home/cgwoun/Github/foodex
-[warn] ⚠  Port 5000 is not available. Trying another port...
+[info] Project Directory: /home/mpanelojr/CSE134B/foodex
 [info] Public Directory: public
 [info] 
-[info] Server listening at: http://localhost:5001
+[info] Server listening at: http://localhost:5000
+
