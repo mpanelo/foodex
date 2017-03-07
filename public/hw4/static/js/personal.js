@@ -1,5 +1,6 @@
 Vue.use(VueFire);
 var ref = db.ref("recipes");
+var imageRef = storage.ref("images");
 window.addEventListener("load", function () {
   var vm = new Vue({
       el: "#personalApp",
@@ -24,8 +25,13 @@ window.addEventListener("load", function () {
           createCookie("recipeToView", key, 1);
           window.location.href="recipe.html";
         },
-        removeRecipe: function(key) {
+        removeRecipe: function(key, imageName) {
           ref.child(key).remove();
+          imageRef.child(imageName).delete().then(function() {
+            console.log("Image deleted!");
+          }).catch(function(error) {
+            console.log(error);
+          });
         },
         editRecipe: function(key) {
           console.log(key);
