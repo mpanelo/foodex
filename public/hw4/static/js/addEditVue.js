@@ -25,10 +25,22 @@ function init() {
     var selectedFile = "";
     var vm = new Vue({
         el: "#addEditApp",
+
+        beforeCreate: function () {
+          firebase.auth().onAuthStateChanged(function(user) {
+            if (user) {
+              this.user = user;
+            } else {
+              window.location.href = "login.html";
+            }
+          }.bind(this));
+        },
+
         data: getDefaultData(),
         firebase: {
             recipes: ref
         },
+
         methods: {
             setImageFile: function (event) {
               selectedFile = event.target.files[0];
@@ -61,53 +73,31 @@ function init() {
                 }, function() {
                   // Handle successful uploads on complete
                   // For instance, get the download URL: https://firebasestorage.googleapis.com/...
-                   var downloadURL = uploadTask.snapshot.downloadURL;
-                   var listOfIng = that.ingredients.split("\n");
-                   var listOfInstr = that.instructions.split("\n");
+                  var downloadURL = uploadTask.snapshot.downloadURL;
+                  var listOfIng = that.ingredients.split("\n");
+                  var listOfInstr = that.instructions.split("\n");
+                	console.log('checkpoint 2');
+                	console.log(that.user.uid);
+                  var recipeKey = ref.push({
+                   "title": that.title,
+                   "description": that.description,
+                   "ingredients": listOfIng,
+                   "instructions": listOfInstr,
+                   "difficulty": that.difficulty,
+                   "visibility": that.visibility,
+                   "timeEstimate": that.hours + " hrs, " + that.minutes + " mins",
+                   "imageName": that.fileName,
+                   "imageUrl": downloadURL,
+                   "uid": that.user.uid
+                 });
 
-
-
-                	firebase.auth().onAuthStateChanged(function(user) {
-                	  console.log('checkpoint 2');
-                	  var email, uid;
-                	  if (user) {
-                	    // User is signed in.
-                	  console.log('checkpoint 3');
-                		email = user.email;
-                		uid = user.uid;
-                	  } else {
-                	    // No user is signed in.
-                	    console.log('FML');
-                	  }
-                	  console.log('checkpoint 4');
-                	  console.log(uid);
-                	  console.log(email);
-
-                    var recipeKey = ref.push({
-                     "title": that.title,
-                     "description": that.description,
-                     "ingredients": listOfIng,
-                     "instructions": listOfInstr,
-                     "difficulty": that.difficulty,
-                     "visibility": that.visibility,
-                     "timeEstimate": that.hours + " hrs, " + that.minutes + " mins",
-                     "imageName": that.fileName,
-                     "imageUrl": downloadURL,
-                     "uid": uid
-                   }).key;
-
-                   var updates = {};
-                   updates["users/" + uid + "/recipes"] = recipeKey;
-                   firebase.database().ref().update(updates);
-                	  console.log('checkpoint 5');
-                    window.location.href = "main.html";
-                	});
-
-
-
-
-
-
+                 /*
+                 var updates = {};
+                 updates["users/" + uid + "/recipes"] = recipeKey;
+                 firebase.database().ref().update(updates);
+              	  console.log('checkpoint 5');
+                  */
+                  window.location.href = "main.html";
                 });
               }
             }
