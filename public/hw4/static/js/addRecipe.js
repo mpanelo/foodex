@@ -76,6 +76,12 @@ function init() {
                   var downloadURL = uploadTask.snapshot.downloadURL;
                   var listOfIng = that.ingredients.split("\n");
                   var listOfInstr = that.instructions.split("\n");
+                  listOfIng = listOfIng.filter(function(n) {
+                    return n.length > 0;
+                  });
+                  listOfInstr = listOfInstr.filter(function(n) {
+                    return n.length > 0;
+                  });
                 	console.log('checkpoint 2');
                 	console.log(that.user.uid);
                   var recipeKey = recipesRef.push({
