@@ -1,3 +1,4 @@
+/*
 function saveUser(){
 	var userRef = firebase.database().ref("users");
 	console.log('checkpoint 1');
@@ -26,6 +27,7 @@ function saveUser(){
 	  console.log('checkpoint 5');
 	});
 }
+*/ 
 /*
 var userRef = firebase.database().ref();
 function check(){
@@ -160,7 +162,7 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
 	    window.location = 'main.html';
 	}
 	else if (window.location.pathname == '/hw4/templates/signUp.html'){
-		saveUser();
+		//saveUser();
 	    console.log("logging in as", firebaseUser.uid);
 	    window.location = 'main.html';
 	}
