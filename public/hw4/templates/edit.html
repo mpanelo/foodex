@@ -5,16 +5,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="../static/css/addedit.css" type="text/css">
-  
+
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  
+
 
   <script src="../static/js/firebase-3.7.0.js"></script>
   <script src="../static/js/vue-2.2.1.js"></script>
-  <script src="../static/js/vuefire-1.3.1.js"></script> 
+  <script src="../static/js/vuefire-1.3.1.js"></script>
   <script src="../static/js/app.js"></script>
   <script src="../static/js/auth.js"></script>
   <script src="../static/js/editRecipe.js"></script>
@@ -53,44 +53,44 @@
 			<div id="diffChoice">
 				<div class="row">
 					<div class="col-sm-2">
-			    	<input class="form-control" type="text" name="hours" :value="recipe.hours" @input="updateRecipe(recipe['.key'])" placeholder="Hours" required>
+			    	<input class="form-control" type="text" name="hours" :value="recipe.hours" @input="updateRecipe($event)" placeholder="Hours" required>
 					</div>
 					<div class="col-sm-2">
-			    	<input class="form-control" type="text" name="minutes" :value="recipe.minutes" @input="updateRecipe(recipe['.key'])" placeholder="Minutes" required>
+			    	<input class="form-control" type="text" name="minutes" :value="recipe.minutes" @input="updateRecipe($event)" placeholder="Minutes" required>
 					</div>
 				</div>
 			</div>
 
 			<h4>Difficulty</h4>
 			<div class="radio">
-	  	  <label><input type="radio" name="difficulty" v-model="difficulty" value="hard" required>hard</label>
+	  	  <label><input type="radio" name="difficulty" value="hard" :checked="recipe.difficulty === 'hard'" @input="updateRadio($event)" required>hard</label>
 			</div>
 			<div class="radio">
-		    <label><input type="radio" name="difficulty" v-model="difficulty" value="medium" required>medium</label>
+		    <label><input type="radio" name="difficulty" value="medium" :checked="recipe.difficulty === 'medium'" @input="updateRadio($event)" required>medium</label>
 			</div>
 			<div class="radio">
-		    <label><input type="radio" name="difficulty" v-model="difficulty" value="easy">easy</label>
+		    <label><input type="radio" name="difficulty" value="easy" :checked="recipe.difficulty === 'easy'" @input="updateRadio($event)" required>easy</label>
 			</div>
 
 			<div id="textarea-group">
 		    <h4>Brief Description</h4>
-		    <textarea class="form-control" id="description" name="description" :value="recipe.description" rows="3" placeholder="Enter a brief description of the recipe"required></textarea>
+		    <textarea class="form-control" id="description" name="description" :value="recipe.description" @input="updateRecipe($event)" rows="3" placeholder="Enter a brief description of the recipe"required></textarea>
 		    <h4>Ingredients</h4>
-		    <textarea class="form-control" id="ingredients" name="ingredients" :value="recipe.rawIngredients" rows="4" placeholder="Enter each ingredient on a new line" required></textarea>
+		    <textarea class="form-control" id="ingredients" name="ingredients" :value="recipe.rawIngredients" @input="updateAsArray($event)" rows="4" placeholder="Enter each ingredient on a new line" required></textarea>
 		    <h4>Instructions</h4>
-		    <textarea class="form-control" id="instructions" name="instructions" :value="recipe.rawInstructions" rows="4" placeholder="Enter each instruction on a new line"required></textarea>
+		    <textarea class="form-control" id="instructions" name="instructions" :value="recipe.rawInstructions" @input="updateAsArray($event)" rows="4" placeholder="Enter each instruction on a new line"required></textarea>
 			</div>
 
 	    <h4>Visibiility</h4>
 			<div class="radio">
-		    <label><input type="radio" name="visible" v-model="visibility" value="public" required>Public</label>
+		    <label><input type="radio" name="visibility" :checked="recipe.visibility === 'public'" value="public" @input="updateRadio($event)" required>Public</label>
 			</div>
 			<div class="radio">
-		    <label><input type="radio" name="visible" v-model="visibility" value="private">Private</label>
+		    <label><input type="radio" name="visibility" :checked="recipe.visibility === 'private'" value="private" @input="updateRadio($event)" required>Private</label>
 			</div>
 			<br>
 			<div class="form-group">
-		  	<label class="btn btn-default btn-file"><input type="file" accept="image/*" @change="setImageFile($event)" hidden>Upload Image</label>
+		  	<label class="btn btn-default btn-file"><input type="file" accept="image/*" @change="updateImage($event)" hidden>Upload Image</label>
 				<span style="margin-left: 5px;">{{ fileName }}</span>
 			</div>
 
@@ -98,8 +98,8 @@
 	</div>
 	<div class="container">
 		<div class="btn-group">
-	  		<button class="btn btn-primary foodex-btn" type="submit" form="updateForm" value="Submit">Update</button>
-	  		<button class="btn btn-default" onclick="location.href='main.html'" value="recipeCancel">Cancel</button>
+	  		<button class="btn btn-primary foodex-btn" onclick="location.href='personal.html'" value="updated">Update</button>
+	  		<button class="btn btn-default" onclick="location.href='personal.html'" value="recipeCancel">Cancel</button>
 		</div>
 	</div>
   <footer class="footer">
