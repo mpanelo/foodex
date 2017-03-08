@@ -395,11 +395,21 @@
     "input-groups.less",
     "navs.less",
     "navbar.less",
-    "jumbotron.less",
-    "thumbnails.less",
+    "labels.less",
     "alerts.less",
-    "list-group.less"
+    "list-group.less",
+    "responsive-embed.less",
+    "close.less",
+    "component-animations.less",
+    "dropdowns.less"
   ],
-  "js": [],
-  "customizerUrl": "http://getbootstrap.com/customize/?id=e06e3b249ea2e0d555dc27525ed2fd20"
+  "js": [
+    "alert.js",
+    "dropdown.js",
+    "affix.js",
+    "collapse.js",
+    "scrollspy.js",
+    "transition.js"
+  ],
+  "customizerUrl": "http://getbootstrap.com/customize/?id=850911c428bf988339d247ae55f8ab6c"
 }
