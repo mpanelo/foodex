@@ -36,7 +36,7 @@ window.addEventListener("load", function () {
       },
       updateAsArray: function (event) {
         var prop = event.target.name;
-        var rawProp = "raw" + event.target.name.charAt(0).toUpperCase();
+        var rawProp = "raw" + event.target.name.charAt(0).toUpperCase() + event.target.name.substring(1);
         var asArray = event.target.value.split('\n');
         editRef.child(rawProp).set(event.target.value);
         editRef.child(prop).set(asArray);
