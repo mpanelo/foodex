@@ -11,19 +11,3 @@
   width: 100%;
   height: auto;
 }
-
-@media (min-width: 768px) {
-  main { position:relative;
-  padding-left: 200px;
-  }
-}
-@media (min-width: 992px) {
-  main { position:relative;
-  padding-left: 200px;
-  }
-}
-@media (min-width: 1200px) {
-  main { position:relative;
-  padding-left: 200px;
-  }
-}
