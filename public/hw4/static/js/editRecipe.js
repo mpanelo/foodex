@@ -44,6 +44,8 @@ window.addEventListener("load", function () {
         editRef.child(prop).set(asArray);
       },
       updateImage: function (oldImage, event) {
+				if (!event) return;
+				console.log(oldImage);
         var selectedFile = event.target.files[0];
         var fileName = selectedFile.name;
         this.iName = fileName;
