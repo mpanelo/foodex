@@ -1,63 +1,4 @@
-/*
-function saveUser(){
-	var userRef = firebase.database().ref("users");
-	console.log('checkpoint 1');
-	firebase.auth().onAuthStateChanged(function(user) {
-	  console.log('checkpoint 2');	
-	  var email, uid;
-	  if (user) {
-	    // User is signed in.
-	    console.log('checkpoint 3');
-		email = user.email;
-		uid = user.uid;
-	  } else {
-	    // No user is signed in.
-	    console.log('FML');
-	  }
-	  var recipes = {};
-	  console.log('checkpoint 4');
-	  console.log(uid);
-	  console.log(email);
-	  var child = userRef.child(uid);
-	  child.set({
-          "uid": uid,
-          "email" : email,
-          "recipes": recipes
-      });
-	  console.log('checkpoint 5');
-	});
-}
-*/ 
-/*
-var userRef = firebase.database().ref();
-function check(){
-	userRef.on('value', function(snapshot){
-		console.log('wtf');
-		firebase.auth().onAuthStateChanged(function(user){
-			console.log('im broken');
-			var person = snapshot.val()['users'];
-			var uid;
-			if(user){
-				// User is signed in.
-				uid = user.uid;
-				console.log(person);
-				console.log(person[uid]);
-				if(person[uid] == null){
-					console.log('--inside check--');
-					return true;
 
-				}
-			} else {
-				// No user is signed in.
-				console.log('FML');
-			}
-			return false;
-		});
-	}, function(error){
-		console.log('Error: ' + error.code);
-	});
-}
-*/
 window.onload = function() {
 
     // Signup with email
@@ -152,13 +93,6 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
     if (firebaseUser) {
 	if (window.location.pathname == '/hw4/templates/login.html'){
 		console.log("logging in as", firebaseUser.uid);
-		/*
-		console.log("omg");
-		if(check()){
-			console.log('GOOOOOOOOOOOOGGGGGGLLLLLLLEEEEEEEEEE')
-			saveUser();
-		}
-		*/
 	    window.location = 'main.html';
 	}
 	else if (window.location.pathname == '/hw4/templates/signUp.html'){
