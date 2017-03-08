@@ -29,8 +29,8 @@ window.addEventListener("load", function () {
         editRef.child(prop).set(newText);
       },
       updateRadio: function (event) {
-        var prop = event.target.name;
-        var newValue = event.target.value;
+        var prop = event.target.name || event.srcElement.name;
+        var newValue = event.target.value || event.srcElement.name;
         editRef.child(prop).set(newValue);
       },
       updateAsArray: function (event) {
