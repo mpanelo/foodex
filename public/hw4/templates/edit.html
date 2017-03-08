@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Add/Edit Recipe</title>
+	<title>Edit Recipe</title>
 	<!-- We're going to actually download these files to speed up our app -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -31,7 +31,7 @@
            <ul class="nav navbar-nav">
            		<li><a href="main.html">Foodex Catalog</a></li>
                 <li><a href="personal.html">Personal Catalog</a></li>
-                <li class="active"><a href="add.html">Add Recipe</a></li>
+                <li><a href="add.html">Add Recipe</a></li>
                 <li><a id="btnLogout">Log Out</a></li>
            </ul>
         </div>
@@ -39,21 +39,21 @@
   </div>
 
 	<div id="editApp" class="container fill">
-    <form id="recipeForm" @submit.prevent="submitRecipeForm">
+    <form id="updateForm" @submit.prevent="">
 
 			<h4>Recipe Title</h4>
 			<div class="form-group">
-		    <input class="form-control" type="text" id="title" name="title" placeholder="Recipe Title" v-model.trim="title" required>
+		    <input class="form-control" type="text" name="title" placeholder="Recipe Title" :value="recipe.title" @input="updateRecipe($event)" required>
 			</div>
 
 			<h4>Time Estimation</h4>
 			<div id="diffChoice">
 				<div class="row">
 					<div class="col-sm-2">
-			    	<input class="form-control" type="text" name="hours" v-model.number="hours" placeholder="Hours" required>
+			    	<input class="form-control" type="text" name="hours" :value="recipe.hours" @input="updateRecipe(recipe['.key'])" placeholder="Hours" required>
 					</div>
 					<div class="col-sm-2">
-			    	<input class="form-control" type="text" name="minutes" v-model.number="minutes" placeholder="Minutes" required>
+			    	<input class="form-control" type="text" name="minutes" :value="recipe.minutes" @input="updateRecipe(recipe['.key'])" placeholder="Minutes" required>
 					</div>
 				</div>
 			</div>
@@ -63,7 +63,7 @@
 	  	  <label><input type="radio" name="difficulty" v-model="difficulty" value="hard" required>hard</label>
 			</div>
 			<div class="radio">
-		    <label class="control-label"><input type="radio" name="difficulty" v-model="difficulty" value="medium" required>medium</label>
+		    <label><input type="radio" name="difficulty" v-model="difficulty" value="medium" required>medium</label>
 			</div>
 			<div class="radio">
 		    <label><input type="radio" name="difficulty" v-model="difficulty" value="easy">easy</label>
@@ -71,11 +71,11 @@
 
 			<div id="textarea-group">
 		    <h4>Brief Description</h4>
-		    <textarea class="form-control" id="description" name="description" v-model.trim="description" rows="3" placeholder="Enter a brief description of the recipe"required></textarea>
+		    <textarea class="form-control" id="description" name="description" :value="recipe.description" rows="3" placeholder="Enter a brief description of the recipe"required></textarea>
 		    <h4>Ingredients</h4>
-		    <textarea class="form-control" name="ingredients" v-model="ingredients" rows="4" placeholder="Enter each ingredient on a new line" required></textarea>
+		    <textarea class="form-control" id="ingredients" name="ingredients" :value="recipe.rawIngredients" rows="4" placeholder="Enter each ingredient on a new line" required></textarea>
 		    <h4>Instructions</h4>
-		    <textarea class="form-control" name="instructions" v-model="instructions" rows="4" placeholder="Enter each instruction on a new line"required></textarea>
+		    <textarea class="form-control" id="instructions" name="instructions" :value="recipe.rawInstructions" rows="4" placeholder="Enter each instruction on a new line"required></textarea>
 			</div>
 
 	    <h4>Visibiility</h4>
@@ -95,7 +95,7 @@
 	</div>
 	<div class="container">
 		<div class="btn-group">
-	  		<button id="submitBtn" class="btn btn-primary" type="submit" form="recipeForm" value="Submit">Submit</button>
+	  		<button class="btn btn-primary foodex-btn" type="submit" form="updateForm" value="Submit">Update</button>
 	  		<button class="btn btn-default" onclick="location.href='main.html'" value="recipeCancel">Cancel</button>
 		</div>
 	</div>

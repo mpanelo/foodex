@@ -70,11 +70,11 @@ input[type="radio"] {
     display: block;
 }
 
-#submitBtn {
+.foodex-btn {
   background-color: #00cbac;
 }
 
-#submitBtn:hover {
+.foodex-btn:hover {
   background-color: #009982;
 }
 
