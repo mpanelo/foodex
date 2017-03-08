@@ -43,11 +43,11 @@ window.addEventListener("load", function () {
         editRef.child(rawProp).set(event.target.value);
         editRef.child(prop).set(asArray);
       },
-      updateImage: function (iName, event) {
+      updateImage: function (oldImage, event) {
         var selectedFile = event.target.files[0];
         var fileName = selectedFile.name;
         this.iName = fileName;
-        imageRef.child(iName).delete().then(function () {
+        imageRef.child(oldImage).delete().then(function () {
         }).catch(function(error) {
         });
 
