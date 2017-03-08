@@ -11,6 +11,7 @@
   <script src="../static/min.js/firebase-3.7.0.min.js"></script>
   <script src="../static/min.js/vue-and-vuefire.min.js"></script>
   <script src="../static/min.js/app-auth.min.js"></script>
+  <!--<script src="../static/js/editRecipe.js"></script>-->
   <script src="../static/min.js/editRecipe.min.js"></script>
 </head>
 <body>
@@ -55,13 +56,13 @@
 
 			<h4>Difficulty</h4>
 			<div class="radio">
-	  	  <label><input type="radio" name="difficulty" value="hard" :checked="recipe.difficulty === 'hard'" @input="updateRadio($event)" required>hard</label>
+	  	  <label><input type="radio" name="difficulty" value="hard" :checked="recipe.difficulty === 'hard'" @change="updateRadio($event)" required>hard</label>
 			</div>
 			<div class="radio">
-		    <label><input type="radio" name="difficulty" value="medium" :checked="recipe.difficulty === 'medium'" @input="updateRadio($event)" required>medium</label>
+		    <label><input type="radio" name="difficulty" value="medium" :checked="recipe.difficulty === 'medium'" @change="updateRadio($event)" required>medium</label>
 			</div>
 			<div class="radio">
-		    <label><input type="radio" name="difficulty" value="easy" :checked="recipe.difficulty === 'easy'" @input="updateRadio($event)" required>easy</label>
+		    <label><input type="radio" name="difficulty" value="easy" :checked="recipe.difficulty === 'easy'" @change="updateRadio($event)" required>easy</label>
 			</div>
 
 			<div id="textarea-group">
@@ -75,10 +76,10 @@
 
 	    <h4>Visibiility</h4>
 			<div class="radio">
-		    <label><input type="radio" name="visibility" :checked="recipe.visibility === 'public'" value="public" @input="updateRadio($event)" required>Public</label>
+		    <label><input type="radio" name="visibility" :checked="recipe.visibility === 'public'" value="public" @change="updateRadio($event)" required>Public</label>
 			</div>
 			<div class="radio">
-		    <label><input type="radio" name="visibility" :checked="recipe.visibility === 'private'" value="private" @input="updateRadio($event)" required>Private</label>
+		    <label><input type="radio" name="visibility" :checked="recipe.visibility === 'private'" value="private" @change="updateRadio($event)" required>Private</label>
 			</div>
 			<br>
 			<div class="form-group">
