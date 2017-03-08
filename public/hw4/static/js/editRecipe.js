@@ -1,13 +1,12 @@
 Vue.use(VueFire);
 var editRef = db.ref("recipes/" + readCookie("recipeToEdit"));
+var imageRef = storage.ref("images");
 
 window.addEventListener("load", function () {
 	var vm = new Vue({
 		el: "#editApp",
     data: {
-      difficulty: "",
-      visibility: "",
-      fileName: ""
+      iName: ""
     },
 		firebase: {
 			recipe: {
@@ -40,6 +39,43 @@ window.addEventListener("load", function () {
         var asArray = event.target.value.split('\n');
         editRef.child(rawProp).set(event.target.value);
         editRef.child(prop).set(asArray);
+      },
+      updateImage: function (iName, event) {
+        var selectedFile = event.target.files[0];
+        var fileName = selectedFile.name;
+        this.iName = fileName;
+        imageRef.child(iName).delete().then(function () {
+        }).catch(function(error) {
+        });
+
+        var newImageRef = imageRef.child(fileName);
+        var uploadTask = newImageRef.put(selectedFile);
+        // Register three observers:
+        // 1. 'state_changed' observer, called any time the state changes
+        // 2. Error observer, called on failure
+        // 3. Completion observer, called on successful completion
+        uploadTask.on('state_changed', function(snapshot) {
+          // Observe state change events such as progress, pause, and resume
+          // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+          var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          console.log('Upload is ' + progress + '% done');
+          switch (snapshot.state) {
+            case firebase.storage.TaskState.PAUSED: // or 'paused'
+              console.log('Upload is paused');
+              break;
+            case firebase.storage.TaskState.RUNNING: // or 'running'
+              console.log('Upload is running');
+              break;
+          }
+        }, function(error) {
+          // Handle unsuccessful uploads
+        }, function() {
+          // Handle successful uploads on complete
+          // For instance, get the download URL: https://firebasestorage.googleapis.com/...
+          var downloadURL = uploadTask.snapshot.downloadURL;
+          editRef.child("imageName").set(fileName);
+          editRef.child("imageUrl").set(downloadURL);
+        });
       }
     }
 	});
