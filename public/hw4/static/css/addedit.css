@@ -1,26 +1,6 @@
-
-html,body {
-  height: 100%;
-}
-
-body {
-  color: #3f998b;
-}
-
-label {
-  display: block;
-}
-
-input[type="radio"] {
-  margin-right: 10px;
-}
-
 h4 {
   font-weight: 900;
-}
-
-input[type="radio"] {
-
+  color: #3f998b;
 }
 
 .footer {
@@ -68,14 +48,6 @@ input[type="radio"] {
     background: white;
     cursor: inherit;
     display: block;
-}
-
-.foodex-btn {
-  background-color: #00cbac;
-}
-
-.foodex-btn:hover {
-  background-color: #009982;
 }
 
 #diffChoice input {

@@ -2,13 +2,18 @@
 [debug] Command:      /usr/bin/nodejs /usr/bin/firebase serve
 [debug] CLI Version:  3.4.0
 [debug] Platform:     linux
+<<<<<<< HEAD
+[debug] Node Version: v6.10.0
+[debug] Time:         Tue Mar 07 2017 20:16:40 GMT-0800 (PST)
+=======
 [debug] Node Version: v7.6.0
 [debug] Time:         Tue Mar 07 2017 18:44:53 GMT-0800 (PST)
+>>>>>>> 9e086c6ccc73ff16d036b510b31c5fe697336efc
 [debug] ----------------------------------------------------------------------
 [debug] 
 [info] Starting Firebase development server...
 [info] 
-[info] Project Directory: /home/cgwoun/Github/foodex
+[info] Project Directory: /home/mpanelojr/CSE134B/foodex
 [info] Public Directory: public
 [info] 
 [info] Server listening at: http://localhost:5000

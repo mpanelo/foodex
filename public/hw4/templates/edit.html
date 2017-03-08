@@ -4,18 +4,16 @@
   <title>Edit Recipe</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <link rel="stylesheet" href="../static/css/addedit.css" type="text/css">
   <link rel="stylesheet" href="../static/css/bootstrap.min.css" type="text/css">
+  <link rel="stylesheet" href="../static/css/addedit.css" type="text/css">
 
   <script src="../static/min.js/jquery.min.js"></script>
   <script src="../static/min.js/bootstrap.min.js"></script>
   <script src="../static/min.js/firebase-3.7.0.min.js"></script>
   <script src="../static/min.js/vue-and-vuefire.min.js"></script>
-  
+
   <script src="../static/min.js/app-auth.min.js"></script>
   <script src="../static/min.js/editRecipe.min.js"></script>
-
 </head>
 <body>
 	<div class="navbar navbar-default" role="navigation">
@@ -40,8 +38,6 @@
   </div>
 
 	<div id="editApp" class="container fill">
-    <form id="updateForm" @submit.prevent="">
-
 			<h4>Recipe Title</h4>
 			<div class="form-group">
 		    <input class="form-control" type="text" name="title" placeholder="Recipe Title" :value="recipe.title" @input="updateRecipe($event)" required>
@@ -91,17 +87,13 @@
 		  	<label class="btn btn-default btn-file"><input type="file" accept="image/*"  @change="updateImage(recipe.imageName, $event)" hidden>Upload Image</label>
 				<span style="margin-left: 5px;">{{ iName }}</span>
 			</div>
-
-	  </form>
 	</div>
 	<div class="container">
 		<div class="btn-group">
-	  		<button class="btn btn-primary foodex-btn" onclick="location.href='personal.html'" value="updated">Update</button>
+	  		<button class="btn btn-primary" onclick="location.href='personal.html'" value="updated">Update</button>
 	  		<button class="btn btn-default" onclick="location.href='personal.html'" value="recipeCancel">Cancel</button>
 		</div>
 	</div>
-  <footer class="footer">
-		<p>&copy; 2017 Foodex</p>
-	</footer>
+  <footer class="footer"><p>&copy; 2017 Foodex</p></footer>
 </body>
 </html>
