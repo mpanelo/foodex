@@ -91,19 +91,19 @@ window.onload = function() {
 firebase.auth().onAuthStateChanged(firebaseUser => {
     console.log('auth state changed');
     if (firebaseUser) {
-	if (window.location.pathname == '/hw4/templates/login.html'){
+	if (window.location.pathname == '/hw5/templates/login.html'){
 		console.log("logging in as", firebaseUser.uid);
 	    window.location = 'main.html';
 	}
-	else if (window.location.pathname == '/hw4/templates/signUp.html'){
+	else if (window.location.pathname == '/hw5/templates/signUp.html'){
 		//saveUser();
 	    console.log("logging in as", firebaseUser.uid);
 	    window.location = 'main.html';
 	}
 
     } else {
-	if (window.location.pathname != '/hw4/templates/login.html' &&
-	    window.location.pathname != '/hw4/templates/signUp.html') {
+	if (window.location.pathname != '/hw5/templates/login.html' &&
+	    window.location.pathname != '/hw5/templates/signUp.html') {
 	    console.log("not logged in");
 	    window.location = 'login.html';
 	}

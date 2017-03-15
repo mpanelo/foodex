@@ -5,6 +5,8 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <link rel="manifest" href="../static/manifest.json">
+  
   <link rel="stylesheet" href="../static/css/bootstrap.min.css" type="text/css">
   <link rel="stylesheet" href="../static/min.css/foodex.min.css" type="text/css">
 
@@ -56,6 +58,13 @@
           </div>
         </fieldset>
     </div>
-  <footer class="footer"><p>&copy; 2017 Foodex</p></footer>
+    <footer class="footer"><p>&copy; 2017 Foodex</p></footer>
+    <script>
+      if('serviceWorker' in navigator) {
+      navigator.serviceWorker
+      .register('../static/js/sw.js')
+      .then(function() { console.log("Service Worker Registered"); });
+      }
+    </script>
 </body>
 </html>
