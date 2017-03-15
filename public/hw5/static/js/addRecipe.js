@@ -48,7 +48,7 @@ function init() {
               selectedFile = event.target.files[0];
               this.fileName = selectedFile.name;
               var MAX_WIDTH = 400;
-              var MAX_HEIGHT = 1000;
+              var MAX_HEIGHT = 400;
               var reader = new FileReader();
               reader.readAsArrayBuffer(selectedFile);
 
@@ -108,7 +108,7 @@ function init() {
                       // For instance, get the download URL: https://firebasestorage.googleapis.com/...
                       smallUrl = upTask.snapshot.downloadURL;
                     });
-                  });
+                  }, 'image/jpeg', 0.8);
                 };
               };
             },
