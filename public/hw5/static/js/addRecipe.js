@@ -47,8 +47,8 @@ function init() {
             readFile: function (event) {
               selectedFile = event.target.files[0];
               this.fileName = selectedFile.name;
-              var MAX_WIDTH = 400;
-              var MAX_HEIGHT = 600;
+              var MAX_WIDTH = 600;
+              var MAX_HEIGHT = 900;
               var reader = new FileReader();
               reader.readAsArrayBuffer(selectedFile);
 
@@ -83,7 +83,12 @@ function init() {
                   ctx.drawImage(img,0,0,width,height);
 
                   canvas.toBlob(function(blob) {
-                    var upTask = imageRef.child("small_" + selectedFile.name).put(blob);
+                    var upTask;
+                    if (blob.size > selectedFile.size) {
+                      upTask = imageRef.child("small_" + selectedFile.name).put(selectedFile);
+                    } else {
+                      upTask = imageRef.child("small_" + selectedFile.name).put(blob);
+                    }
                     // Register three observers:
                     // 1. 'state_changed' observer, called any time the state changes
                     // 2. Error observer, called on failure
@@ -108,7 +113,7 @@ function init() {
                       // For instance, get the download URL: https://firebasestorage.googleapis.com/...
                       smallUrl = upTask.snapshot.downloadURL;
                     });
-                  });
+                  }, 'image/jpeg', 0.95);
                 };
               };
             },
@@ -140,6 +145,9 @@ function init() {
                   // Handle successful uploads on complete
                   // For instance, get the download URL: https://firebasestorage.googleapis.com/...
                   var downloadURL = uploadTask.snapshot.downloadURL;
+                  if (selectedFile.size > 100000) {
+                    downloadURL = smallUrl;
+                  }
                   var listOfIng = that.ingredients.split("\n");
                   var listOfInstr = that.instructions.split("\n");
                   listOfIng = listOfIng.filter(function(n) {
