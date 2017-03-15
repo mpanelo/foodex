@@ -59,12 +59,15 @@
         </fieldset>
     </div>
     <footer class="footer"><p>&copy; 2017 Foodex</p></footer>
+
     <script>
       if('serviceWorker' in navigator) {
       navigator.serviceWorker
-      .register('../static/js/sw.js')
-      .then(function() { console.log("Service Worker Registered"); });
+      .register('/hw5/static/js/sw.js')
+      .then(function() { console.log("Service Worker Registered"); })
+      .catch(function(error) { console.log(error) });
       }
     </script>
+
 </body>
 </html>
