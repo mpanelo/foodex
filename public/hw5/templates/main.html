@@ -45,7 +45,7 @@
         <template v-for="recipe in recipes" v-if="isPublic(recipe.visibility)">
           <div>
             <h3>{{recipe.title}}</h3>
-            <a href="#" v-on:click="storeKey(recipe['.key'])"><img :src="recipe.imageUrl" alt="Image of the recipe"></a>
+            <a href="#" v-on:click="storeKey(recipe['.key'])"><img :src="recipe.smallUrl" alt="Image of the recipe"></a>
             <p>{{recipe.description}}</p>
           </div>
         </template>
