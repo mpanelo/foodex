@@ -14,7 +14,7 @@
   <script src="../static/min.js/vue-and-vuefire.min.js"></script>
 
   <script src="../static/min.js/app-auth.min.js"></script>
-  <script src="../static/min.js/addRecipe.min.js"></script>
+  <script src="../static/js/addRecipe.js"></script>
 </head>
 <body>
 	<div class="navbar navbar-default" role="navigation">
@@ -87,7 +87,7 @@
 			</div>
 			<br>
 			<div class="form-group">
-		  	<label class="btn btn-default btn-file"><input type="file" accept="image/*" @change="setImageFile($event)" hidden>Upload Image</label>
+		  	<label class="btn btn-default btn-file"><input type="file" accept="image/*" @change="readFile($event)" hidden>Upload Image</label>
 				<span style="margin-left: 5px;">{{ fileName }}</span>
 			</div>
 

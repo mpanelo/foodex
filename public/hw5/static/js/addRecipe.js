@@ -23,6 +23,8 @@ function getDefaultData() {
 
 function init() {
     var selectedFile = "";
+    var resized = "";
+    var smallURL = "";
     var vm = new Vue({
         el: "#addApp",
 
@@ -42,9 +44,54 @@ function init() {
         },
 
         methods: {
-            setImageFile: function (event) {
+            readFile: function (event) {
               selectedFile = event.target.files[0];
               this.fileName = selectedFile.name;
+              var MAX_WIDTH = 400;
+              var MAX_HEIGHT = 1000;
+              var reader = new FileReader();
+              reader.readAsArrayBuffer(selectedFile);
+
+              reader.onload = function (event) {
+                var blob = new Blob([event.target.result]);
+                window.URL = window.URL || window.webskitURL;
+                var blobURL = window.URL.createObjectURL(blob);
+
+                var img = new Image();
+                img.src = blobURL;
+
+                img.onload = function () {
+                  var canvas = document.createElement('canvas');
+                  var width = img.width;
+                  var height = img.height;
+
+                  if (width > height) {
+                    if (width > MAX_WIDTH) {
+                      height = Math.round(height *= MAX_WIDTH / width);
+                      width = MAX_WIDTH;
+                    }
+                  } else {
+                    if (height > MAX_HEIGHT) {
+                      width = Math.round(width *= MAX_HEIGHT / height);
+                      height = MAX_HEIGHT;
+                    }
+                  }
+
+                  canvas.width = width;
+                  canvas.height = height;
+                  var ctx = canvas.getContext('2d');
+                  ctx.drawImage(img,0,0,width,height);
+
+                  canvas.toBlob(function(blob) {
+                    imageRef.child("small_" + selectedFile.name).put(blob);
+                  });
+                  imageRef.child("small_" + selectedFile.name).getDownloadURL().then(function(url) {
+                    console.log("url = " + url);
+
+                  }).catch(function(error) {
+                  });
+                };
+              };
             },
             submitRecipeForm: function () {
               if (this.fileName && selectedFile && validateData(this.data)) {
