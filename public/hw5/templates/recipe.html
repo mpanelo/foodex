@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Recipe</title>
+  <link rel="stylesheet" href="../static/css/bootstrap.min.css" type="text/css">
+
+  <script src="../static/min.js/jquery.min.js"></script>
+  <script src="../static/min.js/bootstrap.min.js"></script>
+  <script src="../static/min.js/firebase-3.7.0.min.js"></script>
+  <script src="../static/min.js/vue-and-vuefire.min.js"></script>
+
+  <script src="../static/min.js/app-auth.min.js"></script>
+  <script src="../static/min.js/recipe.min.js"></script>
+</head>
+<body>
+
+  <div class="navbar navbar-default" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavBar">
+	  <span class="sr-only">Toggle navigation</span>
+	  <span class="icon-bar"></span>
+	  <span class="icon-bar"></span>
+	  <span class="icon-bar"></span>
+	</button>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavBar">
+	<ul class="nav navbar-nav">
+	  <li><a href="main.html">Foodex Catalog</a></li>
+	  <li><a href="personal.html">Personal Catalog</a></li>
+	  <li><a href="add.html">Add Recipe</a></li>
+	  <li><a id="btnLogout">Log Out</a></li>
+	</ul>
+      </div>
+    </div>
+  </div>
+
+  <main id="recipeViewApp">
+    <div class="container">
+    <h1>{{recipe.title}}</h1>
+      <div class="row">
+	      <div class="col-sm-8">
+  	      <h3>Description</h3>
+  	      <hr>
+  	      <p>{{recipe.description}}</p>
+  	      <img class="flex-img img-responsive" :src="recipe.imageUrl" alt="Image of recipe">
+	      </div>
+      </div>
+      <div class="row">
+	      <div class="col-xs-4">
+	        <h4>Duration</h4>
+	        <p>{{recipe.timeEstimate}}</p>
+	      </div>
+  	    <div class="col-xs-4">
+    	    <h4>Difficulty</h4>
+    	    <p>{{recipe.difficulty}}</p>
+  	    </div>
+      </div>
+      <div class="row">
+  	    <div class="col-sm-8">
+  	      <h3>Ingredients</h3>
+  	      <hr>
+  	      <ul>
+            <li v-for="ing in recipe.ingredients">
+              {{ing}}
+            </li>
+  	      <br>
+  	    </div>
+      </div>
+      <div class="row">
+	      <div class="col-sm-8">
+	        <h3>Instructions</h3>
+	        <hr>
+	        <ol>
+            <li v-for="instr in recipe.instructions">
+              {{instr}}
+            </li>
+	        </ol>
+	      </div>
+      </div>
+    </div>
+  </main>
+  <hr>
+  <footer style="text-align:center;"><p>&copy; 2017 Foodex</p></footer>
+</body>
+</html>

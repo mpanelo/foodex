@@ -1,0 +1,59 @@
+h4 {
+  font-weight: 900;
+  color: #3f998b;
+}
+
+.footer {
+  background-color: #00cbac;
+  padding: 20px 0;
+  position: relative;
+  height: 60px;
+  width: 100%;
+  bottom: 0;
+}
+
+.footer p {
+  text-align: center;
+  color: white;
+}
+
+.btn-group {
+  padding: 10px 0 20px 0;
+}
+
+.btn-group button {
+  margin-right: 10px;
+}
+
+.btn-sm {
+  display: block;
+}
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+
+#diffChoice input {
+  margin: 5px 0;
+}
+
+#textarea-group {
+  margin: 25px 0;
+}

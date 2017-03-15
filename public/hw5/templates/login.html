@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Login</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="../static/css/bootstrap.min.css" type="text/css">
+  <link rel="stylesheet" href="../static/min.css/foodex.min.css" type="text/css">
+
+  <script src="../static/min.js/jquery.min.js"></script>
+  <script src="../static/min.js/bootstrap.min.js"></script>
+  <script src="../static/min.js/firebase-3.7.0.min.js"></script>
+
+  <script src="../static/min.js/app-auth.min.js"></script>
+
+  <style>
+
+    input[type="text"],input[type="password"] {
+      display: block;
+    }
+    .btn-primary {
+      background-color: #00cbac;
+    }
+    h2 {
+      margin-top: 0;
+      padding-top: 30px;
+      text-align: center;
+      color: #005B4C;
+    }
+  </style>
+</head>
+<body>
+  <div id="colorstrip"><img id="logo" src="../static/img/mixing_bowl-512.png" alt="logo"></div>
+    <div class="container">
+      <h2>Login to Foodex</h2>
+        <fieldset>
+          <div class="form-group">
+            <label for="loginEmail">Email:</label>
+            <input class="form-control" type="text" id="loginEmail" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <label for="loginPassword">Password:</label>
+            <input class="form-control" type="password" id="loginPassword" placeholder="Password">
+          </div>
+          <div class="form-group">
+            <label class="checkbox-inline"><input type="checkbox">Remember me?</label><br>
+          </div>
+
+	  <div style="margin-top: 40px;">
+            <button id="btnLogin" class="btn btn-primary btn-block">Login</button>
+	    <button id="btnGoogleAuth"
+		    class="btn btn-primary btn-block">Login With Google</button>
+            <button id="btnGoToSignup" class="btn btn-default btn-block"
+		    onclick="location.href='signUp.html'">Sign Up</button>
+          </div>
+        </fieldset>
+    </div>
+  <footer class="footer"><p>&copy; 2017 Foodex</p></footer>
+</body>
+</html>
