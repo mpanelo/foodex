@@ -1,13 +1,13 @@
 {
     "name": "Foodex",
     "short_name": "Foodex",
-    "start_url": ".",
+    "start_url": "/",
     "display": "standalone",
-    "background_color": "#fff",
+    "background_color": "#1dd3d0",
     "lang": "en-US",
     "description": "The best damn collection of recipes.",
     "icons": [{
-	"src": "img/mixing_bowl-512.jpeg",
+	"src": "img/mixing_bowl-512.jpg",
 	"type": "image/jpg"
     }]
     "related_applications": [{
