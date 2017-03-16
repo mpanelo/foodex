@@ -28,6 +28,8 @@ self.addEventListener('install', function(e) {
 		'/hw5/static/min.js/recipe.min.js',
 		
 	    ]);
+
 	})
     );
 });
+
