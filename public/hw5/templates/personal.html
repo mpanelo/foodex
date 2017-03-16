@@ -7,7 +7,6 @@
     <meta name="theme-color" content="#00cbac">
     <link rel="manifest" href="../static/manifest.json">
     <link rel="stylesheet" href="../static/css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="../static/css/foodex.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet">
   <!--
   <link rel="stylesheet" href="../static/css/bootstrap.min.css" type="text/css">
@@ -35,7 +34,7 @@
       */
     </style>
   </head>
-  <body>
+  <body style="background-color: #ffc0c0">
 
  <div class="navbar navbar-default" role="navigation">
     <div class="container">
@@ -59,10 +58,10 @@
   </div>
 
   <div class="container">
-    <h1 style="font-family: 'Bitter', serif;" class="text-center">Personal Catalog</h1>
+    <h1 style="color: white; font-family: 'Bitter', serif;" class="text-center">Personal Catalog</h1>
     <div id="personalApp" class="flex-container">
         <template v-for="recipe in recipes">
-          <div class="container borderStyle rounded">
+          <div style="background-color: #d7f4e8" class="container borderStyle rounded">
             <a href="#" v-on:click="storeKey(recipe['.key'])"><img style="margin-top: 5%;" class="borderStyle img-rounded" :src="recipe.smallUrl" alt="Image of the recipe"></a>
             <h3><strong>{{recipe.title}}</strong></h3>
             <p>{{recipe.description}}</p>
