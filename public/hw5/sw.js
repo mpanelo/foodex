@@ -24,23 +24,18 @@ self.addEventListener('install', function(e) {
 		'/hw5/static/min.js/main.min.js',
 		'/hw5/static/min.js/personal.min.js',
 		'/hw5/static/min.js/recipe.min.js',
+
+		'/hw5/static/img/foodex.jpeg'
 		
 	    ]);
 	})
     );
 });
 
-self.addEventListener('fetch', function(e) {
-    e.respondWith(
-	caches.match(e.request).then(function(resp) {
-	    return resp || fetch(e.request).then(function(response) {
-		caches.open('foodex').then(function(cache) {
-		    cache.put(e.request, response.clone());
-		});
-		return response;
-	    });
-	}).catch(function() {
-	    return caches.match('/hw5/static/img/foodex.jpeg');
+self.addEventListener('fetch', function(event) {
+    event.respondWith(
+	caches.match(event.request).then(function(response) {
+	    return response || fetch(event.request);
 	})
     );
 });
