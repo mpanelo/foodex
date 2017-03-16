@@ -39,6 +39,7 @@
   </div>
 
 	<div id="editApp" class="container fill">
+    <form id="updateForm" @submit.prevent="updateRecipeForm">
 			<h4>Recipe Title</h4>
 			<div class="form-group">
 		    <input class="form-control" type="text" name="title" placeholder="Recipe Title" :value="recipe.title" @input="updateRecipe($event)" required>
@@ -85,13 +86,14 @@
 			</div>
 			<br>
 			<div class="form-group">
-		  	<label class="btn btn-default btn-file"><input type="file" accept="image/*"  @change="updateImage(recipe.imageName,recipe.smallImageName, $event)" hidden>Upload Image</label>
+		  	<label class="btn btn-default btn-file"><input type="file" accept="image/*"  @change="readFile(recipe.smallImageName, $event)" hidden>Upload Image</label>
 				<span style="margin-left: 5px;">{{ iName }}</span>
 			</div>
+    </form>
 	</div>
 	<div class="container">
 		<div class="btn-group">
-	  		<button class="btn btn-primary foodex-btn" onclick="location.href='personal.html'" value="updated">Update</button>
+	  		<button class="btn btn-primary foodex-btn" type="submit" form="updateForm" value="updated">Update</button>
 	  		<button class="btn btn-default" onclick="location.href='personal.html'" value="recipeCancel">Cancel</button>
 		</div>
 	</div>

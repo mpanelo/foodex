@@ -1,12 +1,39 @@
+function getDefaultData() {
+  return {
+		title: "",
+    description: "",
+    hours: "",
+    minutes: "",
+    ingredients: "",
+    instructions: "",
+		rawIngredients: "",
+		rawInstructions: "",
+    difficulty: "",
+    visibility: "",
+		iName: ""
+  };
+}
+
 Vue.use(VueFire);
 var editRef = db.ref("recipes/" + readCookie("recipeToEdit"));
 var imageRef = storage.ref("images");
 
 window.addEventListener("load", function () {
+	var selectedFile = "";
 	var vm = new Vue({
 		el: "#editApp",
     data: {
-      iName: ""
+			recipe: {},
+			iName: ""
+		},
+		beforeCreate: function () {
+      firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+          this.$bindAsArray("recipe", editRef);
+        } else {
+          window.location.href = "login.html";
+        }
+      }.bind(this));
     },
 		firebase: {
 			recipe: {
@@ -15,23 +42,30 @@ window.addEventListener("load", function () {
 				cancelCallback: function () {}
 			}
 		},
-    computed: {
-        getIngredients: function () {
-          var ing = this.recipe.ingredients;
-          ing = ing.join('\n');
-          return ing;
-        }
-    },
     methods: {
+			validateData: function() {
+					for (var prop in this.$data["recipe"]) {
+    				if (this.$data["recipe"].hasOwnProperty(prop))  {
+      				if (!this.$data['recipe'][prop]) return false;
+    				}
+  				}
+  				return true;
+			},
       updateRecipe: function (event) {
+				this.$data.recipe[event.target.name] = event.target.value;
+				/*
         var prop = event.target.name;
         var newText = event.target.value;
         editRef.child(prop).set(newText);
+				*/
       },
       updateRadio: function (event) {
+				this.$data.recipe[event.target.name] = event.target.value;
+				/*
         var prop = event.target.name || event.srcElement.name;
         var newValue = event.target.value || event.srcElement.name;
         editRef.child(prop).set(newValue);
+				*/
       },
       updateAsArray: function (event) {
         var prop = event.target.name;
@@ -40,23 +74,71 @@ window.addEventListener("load", function () {
         asArray = asArray.filter(function(n) {
           return n.length > 0;
         });
+
+				this.$data.recipe[prop] = asArray;
+				this.$data.recipe[rawProp] = event.target.value;
+				/*
         editRef.child(rawProp).set(event.target.value);
         editRef.child(prop).set(asArray);
+				*/
       },
-      updateImage: function (oldImage,oldSmallImage, event) {
+			updateRecipeForm: function () {
+				if (this.validateData()) {
+					if (selectedFile) {
+						console.log("hello");
+	        	var currImageRef = imageRef.child(this.iName);
+		        var uploadTask = currImageRef.put(selectedFile);
+		        // Register three observers:
+		        // 1. 'state_changed' observer, called any time the state changes
+		        // 2. Error observer, called on failure
+		        // 3. Completion observer, called on successful completion
+						var that = this;
+		        uploadTask.on('state_changed', function(snapshot) {
+		          // Observe state change events such as progress, pause, and resume
+		          // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+		          var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+		          console.log('Upload is ' + progress + '% done');
+		          switch (snapshot.state) {
+		            case firebase.storage.TaskState.PAUSED: // or 'paused'
+		              console.log('Upload is paused');
+		              break;
+		            case firebase.storage.TaskState.RUNNING: // or 'running'
+		              console.log('Upload is running');
+		              break;
+		          }
+		        }, function(error) {
+		          // Handle unsuccessful uploads
+		        }, function() {
+		          // Handle successful uploads on complete
+		          // For instance, get the download URL: https://firebasestorage.googleapis.com/...
+							var fileName = that.iName;
+							imageRef.child(that.$data.recipe['imageName']).delete().then(function () {
+		          	var downloadURL = uploadTask.snapshot.downloadURL;
+		          	editRef.child("imageName").set(fileName);
+		          	editRef.child("imageUrl").set(downloadURL);
+			      	}).catch(function(error) {
+			      	});
+
+							var keys = Object.keys(that.$data.recipe);
+							var values = Object.values(that.$data.recipe);
+
+							for (var i = 0; i < keys.length; i++) {
+								if (keys[i] !== ".key") {
+									editRef.child(keys[i]).set(values[i]);
+								}
+							}
+							var hrs = that.$data.recipe.hours;
+							var mins = that.$data.recipe.minutes;
+							editRef.child("timeEstimate").set(hrs + " hrs, " + mins + " mins");
+		        });
+					}
+				}
+			},
+      readFile: function (oldSmallImage, event) {
 				if (!event) return;
-				console.log(oldImage);
-				console.log(oldSmallImage);
-        var selectedFile = event.target.files[0];
+        selectedFile = event.target.files[0];
         var fileName = selectedFile.name;
         this.iName = fileName;
-
-        imageRef.child(oldImage).delete().then(function () {
-        }).catch(function(error) {
-        });
-        imageRef.child(oldSmallImage).delete().then(function () {
-        }).catch(function(error) {
-        });
 
 				var MAX_WIDTH = 600;
 				var MAX_HEIGHT = 900;
@@ -122,41 +204,18 @@ window.addEventListener("load", function () {
 							}, function() {
 								// Handle successful uploads on complete
 								// For instance, get the download URL: https://firebasestorage.googleapis.com/...
-								var smallDownloadURL = upTask.snapshot.downloadURL;
-								editRef.child("smallImageName").set("small_" + selectedFile.name);
-								editRef.child("smallUrl").set(smallDownloadURL);
+
+		        		imageRef.child(oldSmallImage).delete().then(function () {
+									var smallDownloadURL = upTask.snapshot.downloadURL;
+									editRef.child("smallImageName").set("small_" + selectedFile.name);
+									editRef.child("smallUrl").set(smallDownloadURL);
+		        		}).catch(function(error) {
+		        		});
+
 							});
 						}, 'image/jpeg', 0.95);
 					};
 				};
-        var newImageRef = imageRef.child(fileName);
-        var uploadTask = newImageRef.put(selectedFile);
-        // Register three observers:
-        // 1. 'state_changed' observer, called any time the state changes
-        // 2. Error observer, called on failure
-        // 3. Completion observer, called on successful completion
-        uploadTask.on('state_changed', function(snapshot) {
-          // Observe state change events such as progress, pause, and resume
-          // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
-          var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-          console.log('Upload is ' + progress + '% done');
-          switch (snapshot.state) {
-            case firebase.storage.TaskState.PAUSED: // or 'paused'
-              console.log('Upload is paused');
-              break;
-            case firebase.storage.TaskState.RUNNING: // or 'running'
-              console.log('Upload is running');
-              break;
-          }
-        }, function(error) {
-          // Handle unsuccessful uploads
-        }, function() {
-          // Handle successful uploads on complete
-          // For instance, get the download URL: https://firebasestorage.googleapis.com/...
-          var downloadURL = uploadTask.snapshot.downloadURL;
-          editRef.child("imageName").set(fileName);
-          editRef.child("imageUrl").set(downloadURL);
-        });
       }
     }
 	});
