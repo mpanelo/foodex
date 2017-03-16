@@ -28,7 +28,7 @@
     <script src="../static/min.js/main.min.js"></script>
 
   </head>
-  <body style="background-color: #ffc0c0">
+  <body style="background-color: #ff4646;">
 
 	  <div class="navbar navbar-default" role="navigation">
 	    <div class="container">
@@ -55,10 +55,10 @@
       <h1 style="color: white; font-family: 'Bitter', serif;" class="text-center">Foodex Catalog</h1>
       <div id="homeApp" class="flex-container">
         <template v-for="recipe in recipes" v-if="isPublic(recipe.visibility)">
-          <div style="background-color: #ff9a80;" class="container borderStyle">
-            <a href="#" v-on:click="storeKey(recipe['.key'])"><img style="margin-top: 5%;" class="borderStyle img-rounded img-responsive" :src="recipe.smallUrl" alt="Image of the recipe"></a>
-            <h3>{{recipe.title}}</h3>
-            <p>{{recipe.description}}</p>
+          <div style="background-color: #f0f0f0;" class="container borderStyle">
+              <a href="#" v-on:click="storeKey(recipe['.key'])"><img style="margin-top: 5%;" class="borderStyle img-rounded img-responsive" :src="recipe.smallUrl" alt="Image of the recipe"></a>
+              <h3>{{recipe.title}}</h3>
+              <p>{{recipe.description}}</p>
           </div>
         </template>
       </div>
