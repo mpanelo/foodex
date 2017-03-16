@@ -5,11 +5,9 @@
   <title>Sign Up</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <link href="../static/css/bootstrap.min.css" type="text/css" rel="stylesheet">
   <meta name="theme-color" content="#00cbac"> 
   <link rel="manifest" href="../static/manifest.json">
-
-  <link href="../static/css/bootstrap.css" type="text/css" rel="stylesheet">
-  <link rel="stylesheet" href="../static/min.css/foodex.min.css" type="text/css">
 
   <script src="../static/min.js/firebase-3.7.0.min.js"></script>
   <script src="../static/min.js/app-auth.min.js"></script>
@@ -18,12 +16,12 @@
 <body>
     <div id="colorstrip"><img id="logo" src="../static/img/mixing_bowl-512.png" alt="logo"></div>
     <div id="contain" class="container">
-      <div class="center">
+      <div class="text-center">
         <h2>Sign Up</h2>
       </div>
       <hr>
       <main>
-        <div id="body" class="container">
+        <div id="signUpBody" class="container">
           <fieldset>
             <div class="form-group">
               <label for="signupUserName">Username:</label>
@@ -42,11 +40,11 @@
               <label for="signupPasswordRetype">Confirm Password:</label>
               <input type="password" class="form-control" id="signupPasswordRetype" placeholder="Re-type Password">
             </div>
-            <div class="center" style="margin-top: 20px;">
+            <div class="text-center" style="margin-top: 20px;">
               <button id="btnSignup" class="btn btn-lrg btn-block foodex-btn" form="signup">Sign Up</button>
             </div>
             <br>
-            <div class="center">
+            <div class="text-center">
               <a href="login.html" id="cancel">Already have an account?</a>
             </div>
           </fieldset>

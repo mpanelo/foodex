@@ -1,11 +1,9 @@
-importScripts('cache-polyfill.js');
+importScripts('./static/js/cache-polyfill.js');
 
 self.addEventListener('install', function(e) {
     e.waitUntil(
 	caches.open('foodex').then(function(cache) {
 	    return cache.addAll([
-		'/hw5/static/manifest.json',
-		
 		'/hw5/templates/login.html',
 		'/hw5/templates/signUp.html',
 		'/hw5/templates/main.html',
@@ -26,10 +24,18 @@ self.addEventListener('install', function(e) {
 		'/hw5/static/min.js/main.min.js',
 		'/hw5/static/min.js/personal.min.js',
 		'/hw5/static/min.js/recipe.min.js',
+
+		'/hw5/static/img/foodex.jpeg'
 		
 	    ]);
-
 	})
     );
 });
 
+self.addEventListener('fetch', function(event) {
+    event.respondWith(
+	caches.match(event.request).then(function(response) {
+	    return response || fetch(event.request);
+	})
+    );
+});

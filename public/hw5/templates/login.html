@@ -8,9 +8,11 @@
   <meta name="theme-color" content="#00cbac">
   <link rel="manifest" href="../static/manifest.json">
   
+  <link href="../static/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+  <!--
   <link rel="stylesheet" href="../static/css/bootstrap.min.css" type="text/css">
   <link rel="stylesheet" href="../static/min.css/foodex.min.css" type="text/css">
-
+  -->
   <script src="../static/min.js/jquery.min.js"></script>
   <script src="../static/min.js/bootstrap.min.js"></script>
   <script src="../static/min.js/firebase-3.7.0.min.js"></script>
@@ -18,7 +20,6 @@
   <script src="../static/min.js/app-auth.min.js"></script>
 
   <style>
-
     input[type="text"],input[type="password"] {
       display: block;
     }
@@ -28,15 +29,14 @@
     h2 {
       margin-top: 0;
       padding-top: 30px;
-      text-align: center;
       color: #005B4C;
     }
   </style>
 </head>
 <body>
-  <div id="colorstrip"><img id="logo" src="../static/img/mixing_bowl-512.png" alt="logo"></div>
+  <div id="colorstrip"><img class="logo" src="../static/img/mixing_bowl-512.png" alt="logo"></div>
     <div class="container">
-      <h2>Login to Foodex</h2>
+      <h2 class="text-center">Login to Foodex</h2>
         <fieldset>
           <div class="form-group">
             <label for="loginEmail">Email:</label>
@@ -60,15 +60,13 @@
         </fieldset>
     </div>
     <footer class="footer"><p>&copy; 2017 Foodex</p></footer>
-
     <script>
       if('serviceWorker' in navigator) {
       navigator.serviceWorker
-      .register('/hw5/static/js/sw.js')
+      .register('/hw5/sw.js', {scope: '/hw5/'})
       .then(function() { console.log("Service Worker Registered"); })
       .catch(function(error) { console.log(error) });
       }
     </script>
-
 </body>
 </html>
