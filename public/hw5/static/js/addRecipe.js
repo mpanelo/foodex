@@ -45,6 +45,7 @@ function init() {
 
         methods: {
             readFile: function (event) {
+              if (!event) return;
               selectedFile = event.target.files[0];
               this.fileName = selectedFile.name;
               var MAX_WIDTH = 600;
@@ -171,7 +172,7 @@ function init() {
                    "hours": that.hours,
                    "minutes": that.minutes,
                    "imageName": that.fileName,
-                   "smallImageName": "small" + that.fileName,
+                   "smallImageName": "small_" + that.fileName,
                    "imageUrl": downloadURL,
                    "smallUrl": smallUrl,
                    "uid": that.user.uid
