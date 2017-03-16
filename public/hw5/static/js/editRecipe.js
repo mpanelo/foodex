@@ -133,6 +133,7 @@ window.addEventListener("load", function () {
 					var hrs = this.$data.recipe.hours;
 					var mins = this.$data.recipe.minutes;
 					editRef.child("timeEstimate").set(hrs + " hrs, " + mins + " mins");
+          window.location.href="personal.html";
 				}
 			},
       readFile: function (oldSmallImage, event) {
