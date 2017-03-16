@@ -13,7 +13,6 @@
   <link rel="manifest" href="../static/manifest.json">
 
   <link rel="stylesheet" href="../static/css/bootstrap.min.css" type="text/css">
-  <link rel="stylesheet" href="../static/min.css/foodex.min.css" type="text/css">
   <script src="../static/min.js/jquery.min.js"></script>
   <script src="../static/min.js/bootstrap.min.js"></script>
   <script src="../static/min.js/firebase-3.7.0.min.js"></script>
@@ -22,7 +21,7 @@
   <!--<script src="../static/min.js/editRecipe.min.js"></script>-->
   <script src="../static/editRecipe.js"></script>
 </head>
-<body>
+<body style="background-color: #f0f0f0;">
 	<div class="navbar navbar-default" role="navigation">
     <div class="container">
         <div class="navbar-header">
@@ -99,10 +98,12 @@
 	</div>
 	<div class="container">
 		<div class="btn-group">
-	  		<button class="btn btn-primary foodex-btn" type="submit" form="updateForm" value="updated">Update</button>
-	  		<button class="btn btn-default" onclick="location.href='personal.html'" value="recipeCancel">Cancel</button>
+	  		<button class="btn btn-primary" type="submit" form="updateForm" value="updated">Update</button>
+	  		<button class="btn btn-danger" onclick="location.href='personal.html'" value="recipeCancel">Cancel</button>
 		</div>
 	</div>
-  <footer class="footer"><p>&copy; 2017 Foodex</p></footer>
+  	<footer style="background-color: #f0f0f0;" class="footer">
+		<p style="color: black;">&copy; 2017 Foodex</p>
+	</footer>
 </body>
 </html>

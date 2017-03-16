@@ -37,7 +37,7 @@
       */
     </style>
   </head>
-  <body style="background-color: #ffc0c0">
+  <body style="background-color: #ff4646;">
 
  <div class="navbar navbar-default" role="navigation">
     <div class="container">
@@ -61,10 +61,10 @@
   </div>
 
   <div class="container">
-    <h1 style="color: white; font-family: 'Bitter', serif;" class="text-center">Personal Catalog</h1>
+    <h1 style="color: white;" class="pageHeading text-center">Personal Catalog</h1>
     <div id="personalApp" class="flex-container">
         <template v-for="recipe in recipes">
-          <div style="background-color: #d7f4e8" class="container borderStyle rounded">
+          <div style="background-color: #f0f0f0;" class="container borderStyle rounded">
             <a href="#" v-on:click="storeKey(recipe['.key'])"><img style="margin-top: 5%;" class="borderStyle img-rounded" :src="recipe.smallUrl" alt="Image of the recipe"></a>
             <h3><strong>{{recipe.title}}</strong></h3>
             <p>{{recipe.description}}</p>
