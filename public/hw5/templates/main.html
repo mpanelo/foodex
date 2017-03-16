@@ -52,7 +52,7 @@
       <h1 style="color: white; font-family: 'Bitter', serif;" class="text-center">Foodex Catalog</h1>
       <div id="homeApp" class="flex-container">
         <template v-for="recipe in recipes" v-if="isPublic(recipe.visibility)">
-          <div style="background-color: #d7f4e8" class="container borderStyle">
+          <div style="background-color: #ff9a80;" class="container borderStyle">
             <a href="#" v-on:click="storeKey(recipe['.key'])"><img style="margin-top: 5%;" class="borderStyle img-rounded img-responsive" :src="recipe.smallUrl" alt="Image of the recipe"></a>
             <h3>{{recipe.title}}</h3>
             <p>{{recipe.description}}</p>
@@ -62,5 +62,6 @@
     </div>
     <hr>
     <footer class="footer"><p>&copy; 2017 Foodex</p></footer>
+
   </body>
 </html>
