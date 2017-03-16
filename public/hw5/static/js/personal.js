@@ -25,12 +25,16 @@ window.addEventListener("load", function () {
           createCookie("recipeToView", key, 1);
           window.location.href="recipe.html";
         },
-        removeRecipe: function(key, imageName) {
+        removeRecipe: function(key, imageName, smallImageName) {
           ref.child(key).remove();
           imageRef.child(imageName).delete().then(function() {
             console.log("Image deleted!");
           }).catch(function(error) {
             console.log(error);
+          });
+          imageRef.child(smallImageName).delete().then(function() {
+            console.log("smaller image deleted");
+          }).catch(function(error) {
           });
         },
         editRecipe: function(key) {
