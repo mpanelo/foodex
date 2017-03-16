@@ -16,6 +16,10 @@ html, body, {
   justify-content: center;
 }
 
+.pageHeading{
+  font-family: 'Bitter', serif;
+}
+
 .borderStyle{
   border: 1px solid #d3d3d3;
   border-radius: 5px;
@@ -33,8 +37,8 @@ html, body, {
     width: 100%;
     height: 60px;
     border-style: solid;
-    border-color: #00cbac;
-    background-color: #00cbac;
+    border-color: #ff4646;;
+    background-color: #ff4646;
     position: relative;
 }
 
