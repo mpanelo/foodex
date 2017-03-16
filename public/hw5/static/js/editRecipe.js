@@ -118,20 +118,21 @@ window.addEventListener("load", function () {
 		          	editRef.child("imageUrl").set(downloadURL);
 			      	}).catch(function(error) {
 			      	});
-
-							var keys = Object.keys(that.$data.recipe);
-							var values = Object.values(that.$data.recipe);
-
-							for (var i = 0; i < keys.length; i++) {
-								if (keys[i] !== ".key") {
-									editRef.child(keys[i]).set(values[i]);
-								}
-							}
-							var hrs = that.$data.recipe.hours;
-							var mins = that.$data.recipe.minutes;
-							editRef.child("timeEstimate").set(hrs + " hrs, " + mins + " mins");
 		        });
+
 					}
+
+					var keys = Object.keys(this.$data.recipe);
+					var values = Object.values(this.$data.recipe);
+
+					for (var i = 0; i < keys.length; i++) {
+						if (keys[i] !== ".key") {
+							editRef.child(keys[i]).set(values[i]);
+						}
+					}
+					var hrs = this.$data.recipe.hours;
+					var mins = this.$data.recipe.minutes;
+					editRef.child("timeEstimate").set(hrs + " hrs, " + mins + " mins");
 				}
 			},
       readFile: function (oldSmallImage, event) {
