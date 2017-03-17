@@ -64,7 +64,7 @@
     <script>
       if('serviceWorker' in navigator) {
       navigator.serviceWorker
-      .register('/hw5/sw.js', {scope: '/hw5/'})
+      .register('/hw5/sw.min.js', {scope: '/hw5/'})
       .then(function() { console.log("Service Worker Registered"); })
       .catch(function(error) { console.log(error) });
       }
