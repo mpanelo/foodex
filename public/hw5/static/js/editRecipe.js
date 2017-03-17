@@ -84,6 +84,12 @@ window.addEventListener("load", function () {
       },
 			updateRecipeForm: function () {
 				if (this.validateData()) {
+				  var keys = Object.keys(this.$data.recipe);
+					var values = Object.values(this.$data.recipe);
+
+					var hrs = this.$data.recipe.hours;
+					var mins = this.$data.recipe.minutes;
+
 					if (selectedFile) {
 						console.log("hello");
 		        var uploadTask = imageRef.child(this.$data.recipe.imageName).put(selectedFile);
@@ -112,7 +118,12 @@ window.addEventListener("load", function () {
 		          // Handle successful uploads on complete
 		          // For instance, get the download URL: https://firebasestorage.googleapis.com/...
 							var fileName = that.iName;
-              console.log(fileName);
+              editRef.child("timeEstimate").set(hrs + " hrs, " + mins + " mins");
+    					for (var i = 0; i < keys.length; i++) {
+    						if (keys[i] !== ".key") {
+    							editRef.child(keys[i]).set(values[i]);
+    						}
+    					}
 							imageRef.child(that.$data.recipe['imageName']).delete().then(function () {
 		          	var downloadURL = uploadTask.snapshot.downloadURL;
 		          	editRef.child("imageName").set(fileName);
@@ -122,19 +133,15 @@ window.addEventListener("load", function () {
 			      	});
 		        });
 
-					}
-
-					var keys = Object.keys(this.$data.recipe);
-					var values = Object.values(this.$data.recipe);
-
-					for (var i = 0; i < keys.length; i++) {
-						if (keys[i] !== ".key") {
-							editRef.child(keys[i]).set(values[i]);
-						}
-					}
-					var hrs = this.$data.recipe.hours;
-					var mins = this.$data.recipe.minutes;
-					editRef.child("timeEstimate").set(hrs + " hrs, " + mins + " mins");
+					} else {
+  					editRef.child("timeEstimate").set(hrs + " hrs, " + mins + " mins");
+  					for (var i = 0; i < keys.length; i++) {
+  						if (keys[i] !== ".key") {
+  							editRef.child(keys[i]).set(values[i]);
+  						}
+  					}
+            window.location.href="personal.html";
+          }
 				}
 			},
       readFile: function (oldSmallImage, event) {
