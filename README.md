@@ -54,6 +54,7 @@ The Foodex Team is aware of a number of issues, bugs, and limitations:
 ## Code Base Information
  * For the sanity of the grader, all of our homework assignments (code and hosted pages) are accessible from our index.html: https://foodex-d5655.firebaseapp.com/
  * For the final implementation of Foodex (HW5), our code is structured as follows:
+ 
  ![Alt text](./public/hw5/static/img/screenshots/tree.png "Tree")
  * sw.js (and the minified sw.min.js) contains our service worker code. It is placed in the root of hw5 to make it easier to define what scope the service worker controls.
  * templates contains all the html pages for our app, each of which corresponds to its own web page (this is not a SPA)
