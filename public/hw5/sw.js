@@ -25,7 +25,9 @@ self.addEventListener('install', function(e) {
 		'/hw5/static/min.js/personal.min.js',
 		'/hw5/static/min.js/recipe.min.js',
 
-		'/hw5/static/img/foodex.jpeg'
+		'/hw5/static/img/alpastor.jpg'
+		'/hw5/static/img/kalbi.jpg'
+		'/hw5/static/img/burger.jpg'
 		
 	    ]);
 	})

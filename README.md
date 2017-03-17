@@ -41,7 +41,12 @@ Foodex is a web application that simplifies the process of adding, editing, and 
 The Foodex Team is aware of a number of issues, bugs, and limitations:
  * The flow of page redirection when logging in with your Google account seems a bit janky, as you are redirect back from the Google account selection page to the Foodex login page before being taken to the home page. This is something that we are working on, but can't seem to figure out how to fix Firebase's Google authentication page flow.
  * In the future, we would like to add features that provide more feedback to our users when the perform CRUD actions on our site, such as success or failure notifications or warnings.
- 
+
+## Code Base Information
+ * For the sanity of the grader, all of our homework assignments (code and hosted pages) are accessible from our index.html: https://foodex-d5655.firebaseapp.com/
+ * For the final implementation of Foodex (HW5), our code is structured as follows:
+![Alt text](./public/hw5/static/img/screenshots/tree.png "Tree")  
+
  
 ## Foodex Developers
 For more information on the developers: https://foodex-d5655.firebaseapp.com/hw5/templates/team.html
