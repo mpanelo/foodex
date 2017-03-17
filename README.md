@@ -3,6 +3,7 @@
 ## Available Now!
 Sign Up Here
 https://foodex-d5655.firebaseapp.com/hw5/templates/signUp.html
+
 Already a Foodex Chef? Log In Here!
 https://foodex-d5655.firebaseapp.com/hw5/templates/login.html
 
@@ -38,7 +39,7 @@ Foodex is a web application that simplifies the process of adding, editing, and 
 ## Known Issues, Bugs, & Limitations
 The Foodex Team is aware of a number of issues, bugs, and limitations:
  * The flow of page redirection when logging in with your Google account seems a bit janky, as you are redirect back from the Google account selection page to the Foodex login page before being taken to the home page. This is something that we are working on, but can't seem to figure out how to fix Firebase's Google authentication page flow.
- *
+ * In the future, we would like to add features that provide more feedback to our users when the perform CRUD actions on our site, such as success or failure notifications or warnings.
  
  
 ## Foodex Developers
