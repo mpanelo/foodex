@@ -28,7 +28,7 @@ Foodex is a web application that simplifies the process of adding, editing, and 
  * Our Javascript and CSS files are bundled and minified to reduce byte count
  * Uploaded images are resized for consistency and to avoid huge files and longer load times
  * PWA/Offline Functionality: By leveraging technologies like Service Workers and the web app manifest, we have made our app more accessible to users with poor internet connectivity
- * Service workers allow us to cache the files necessary for a smoother offline experience. Note that caching must be enabled for this to work, and that the first site visit will cache the javascript, css and image files for our app.
+ * Service workers allow us to cache the files necessary for a smoother offline experience. Note that caching must be enabled for this to work, and that the first site visit will cache the javascript, css and image files for our app. Cache me outside.
  * Using a web app manifest allows us to define certain attributes and behaviors of our app that can be applied even when offline.
 
 
@@ -45,7 +45,11 @@ The Foodex Team is aware of a number of issues, bugs, and limitations:
 ## Code Base Information
  * For the sanity of the grader, all of our homework assignments (code and hosted pages) are accessible from our index.html: https://foodex-d5655.firebaseapp.com/
  * For the final implementation of Foodex (HW5), our code is structured as follows:
-![Alt text](./public/hw5/static/img/screenshots/tree.png "Tree")  
+ ![Alt text](./public/hw5/static/img/screenshots/tree.png "Tree")
+ * sw.js (and the minified sw.min.js) contains our service worker code. It is placed in the root of hw5 to make it easier to define what scope the service worker controls.
+ * templates contains all the html pages for our app, each of which correspond to its own web page (this is not a SPA)
+ * static contains our css (plain and minified), javascript (plain and minified) and images
+ * static also contains the web app manifest
 
  
 ## Foodex Developers
