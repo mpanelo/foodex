@@ -46,13 +46,17 @@ html, body, {
 	text-align: center;
 }
 
+.backColor{
+  background-color: #fe8181;
+}
+
 hr {
 	border: 1px solid white;
   width: 80%;
 }
 
 #cancel {
-	color: #00cbac;
+	color: #ff4646;
 	margin-top: 5px;
 }
 
