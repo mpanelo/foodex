@@ -43,9 +43,9 @@
 	      <div class="collapse navbar-collapse" id="myNavBar">
 	        <ul class="nav navbar-nav">
 	          <li class="active"><a href="main.html">Foodex Catalog</a></li>
-		      <li><a href="personal.html">Personal Catalog</a></li>
-		      <li><a href="add.html">Add Recipe</a></li>
-		      <li><a id="btnLogout">Log Out</a></li>
+  		      <li><a href="personal.html">Personal Catalog</a></li>
+  		      <li><a href="add.html">Add Recipe</a></li>
+  		      <li><a id="btnLogout">Log Out</a></li>
 	        </ul>
 	      </div>
 	    </div>
@@ -55,7 +55,7 @@
       <h1 style="color: white;" class="pageHeading text-center">Foodex Catalog</h1>
       <div id="homeApp" class="flex-container">
         <template v-for="recipe in recipes" v-if="isPublic(recipe.visibility)">
-          <div style="background-color: #f0f0f0;" class="container borderStyle">
+          <div class="container borderStyle2">
               <a href="#" v-on:click="storeKey(recipe['.key'])"><img style="margin-top: 5%;" class="borderStyle img-rounded img-responsive" :src="recipe.smallUrl" alt="Image of the recipe"></a>
               <h3>{{recipe.title}}</h3>
               <p>{{recipe.description}}</p>

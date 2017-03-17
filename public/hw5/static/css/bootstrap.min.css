@@ -31,9 +31,19 @@ html, body, {
   justify-content: center;
 }
 
+.top{
+	margin-top: 1%;
+}
+
 .borderStyle{
   border: 1px solid #d3d3d3;
   border-radius: 5px;
+}
+
+.borderStyle2{
+  border: 1px solid #d3d3d3;
+  border-radius: 5px;
+  background-color: #f0f0f0;
 }
 
 .pageHeading{
