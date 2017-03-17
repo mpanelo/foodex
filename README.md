@@ -12,11 +12,11 @@ Foodex is a web application that simplifies the process of adding, editing, and 
 
 
 ## Application Overview
-![Alt text](./public/hw5/static/img/screenshots/foodex-main.png "Main")
  * Frontend: HTML, Bootstrap, JavaScript (Vanilla, Vue)
  * Backend: Firebase
  * Accessibility: Chrome, Firefox, Mobile friendly!
 
+![Alt text](./public/hw5/static/img/screenshots/foodex-test.png "Main")
 ![Alt text](./public/hw5/static/img/screenshots/foodex-mobile.png "Mobile")
 
 
