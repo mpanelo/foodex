@@ -3,19 +3,24 @@
 ## Available Now!
 Sign Up Here
 https://foodex-d5655.firebaseapp.com/hw5/templates/signUp.html
+
 Already a Foodex Chef? Log In Here!
 https://foodex-d5655.firebaseapp.com/hw5/templates/login.html
 
 ## What is Foodex?
 Foodex is a web application that simplifies the process of adding, editing, and removing recipes from a personal cookbook, while also allowing registered users to view public recipes created by the Foodex community. The Foodex web application consolidates the actions of browsing, sharing, creating and editing recipes into one simple and friendly application.
 
-< insert image of someone editing a sample recipe >
-![Alt text](./public/hw5/static/img/screenshots/foodex-mobile.png "Mobile")
+![Alt text](./public/hw5/static/img/screenshots/foodex-demo.gif "Demo") 
+
 
 ## Application Overview
  * Frontend: HTML, Bootstrap, JavaScript (Vanilla, Vue)
  * Backend: Firebase
- * Accessibility: Chrome, Firefox, Mobile friendly
+ * Accessibility: Chrome, Firefox, Mobile friendly!
+
+![Alt text](./public/hw5/static/img/screenshots/foodex-main.png "Main") ![Alt text](./public/hw5/static/img/screenshots/foodex-mobile.png "Mobile")
+
+
 
 
 ## Performance and UX
@@ -35,7 +40,7 @@ Foodex is a web application that simplifies the process of adding, editing, and 
 ## Known Issues, Bugs, & Limitations
 The Foodex Team is aware of a number of issues, bugs, and limitations:
  * The flow of page redirection when logging in with your Google account seems a bit janky, as you are redirect back from the Google account selection page to the Foodex login page before being taken to the home page. This is something that we are working on, but can't seem to figure out how to fix Firebase's Google authentication page flow.
- *
+ * In the future, we would like to add features that provide more feedback to our users when the perform CRUD actions on our site, such as success or failure notifications or warnings.
  
  
 ## Foodex Developers
