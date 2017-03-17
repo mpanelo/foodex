@@ -10,6 +10,7 @@ https://foodex-d5655.firebaseapp.com/hw5/templates/login.html
 ## What is Foodex?
 Foodex is a web application that simplifies the process of adding, editing, and removing recipes from a personal cookbook, while also allowing registered users to view public recipes created by the Foodex community. The Foodex web application consolidates the actions of browsing, sharing, creating and editing recipes into one simple and friendly application.
 
+![Alt text](./public/hw5/static/img/screenshots/foodex-demo.gif "Demo") 
 
 
 ## Application Overview
