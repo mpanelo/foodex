@@ -1,66 +1,60 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Foodex Recipes</title>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+  <title>Foodex Recipes</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fe8181">
+  <link rel="icon" type="image/png" href="../static/img/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="../static/img/favicon-16x16.png" sizes="16x16">
+  <link rel="shortcut icon" href="../static/img/favicon.ico">
+  <link rel="manifest" href="../static/manifest.json">
+  <link rel="stylesheet" href="../static/css/bootstrap.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet">
+  <script src="../static/min.js/jquery.min.js"></script>
+  <script src="../static/min.js/bootstrap.min.js"></script>
+  <script src="../static/min.js/firebase-3.7.0.min.js"></script>
+  <script src="../static/min.js/vue-and-vuefire.min.js"></script>
+  <script src="../static/min.js/app-auth.min.js"></script>
+  <script src="../static/min.js/main.min.js"></script>
+</head>
+<body class="backColor">
 
-    <meta name="theme-color" content="#fe8181">
-    <link rel="icon" type="image/png" href="../static/img/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="../static/img/favicon-16x16.png" sizes="16x16">
-    <link rel="shortcut icon" href="../static/img/favicon.ico">
-    <link rel="manifest" href="../static/manifest.json">
+ <div class="navbar navbar-default" role="navigation">
+   <div class="container">
+     <div class="navbar-header">
+      <img class="logo" src="../static/img/mixing_bowl-515.png" alt="logo">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavBar">
+       <span class="sr-only">Toggle navigation</span>
+       <span class="icon-bar"></span>
+       <span class="icon-bar"></span>
+       <span class="icon-bar"></span>
+     </button>
+   </div>
+   <div class="collapse navbar-collapse" id="myNavBar">
+     <ul class="nav navbar-nav">
+       <li class="active"><a href="main.html">Foodex Catalog</a></li>
+       <li><a href="personal.html">Personal Catalog</a></li>
+       <li><a href="add.html">Add Recipe</a></li>
+       <li><a id="btnLogout">Log Out</a></li>
+     </ul>
+   </div>
+ </div>
+</div>
 
-    <link rel="stylesheet" href="../static/css/bootstrap.min.css" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet">
-
-    <script src="../static/min.js/jquery.min.js"></script>
-    <script src="../static/min.js/bootstrap.min.js"></script>
-    <script src="../static/min.js/firebase-3.7.0.min.js"></script>
-    <script src="../static/min.js/vue-and-vuefire.min.js"></script>
-
-    <script src="../static/min.js/app-auth.min.js"></script>
-    <script src="../static/min.js/main.min.js"></script>
-
-  </head>
-  <body class="backColor">
-
-	  <div class="navbar navbar-default" role="navigation">
-	    <div class="container">
-	      <div class="navbar-header">
-          <img class="logo" src="../static/img/mixing_bowl-515.png" alt="logo">
-	        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavBar">
-	          <span class="sr-only">Toggle navigation</span>
-	          <span class="icon-bar"></span>
-	          <span class="icon-bar"></span>
-	          <span class="icon-bar"></span>
-	        </button>
-	      </div>
-	      <div class="collapse navbar-collapse" id="myNavBar">
-	        <ul class="nav navbar-nav">
-	          <li class="active"><a href="main.html">Foodex Catalog</a></li>
-  		      <li><a href="personal.html">Personal Catalog</a></li>
-  		      <li><a href="add.html">Add Recipe</a></li>
-  		      <li><a id="btnLogout">Log Out</a></li>
-	        </ul>
-	      </div>
-	    </div>
-	  </div>
-
-    <div class="container">
-      <h1 style="color: white;" class="pageHeading text-center">Foodex Catalog</h1>
-      <div id="homeApp" class="flex-container">
-        <template v-for="recipe in recipes" v-if="isPublic(recipe.visibility)">
-          <div class="container borderStyle2">
-              <a href="#" v-on:click="storeKey(recipe['.key'])"><img style="margin-top: 5%;" class="borderStyle img-rounded img-responsive" :src="recipe.smallUrl" alt="Image of the recipe"></a>
-              <h3>{{recipe.title}}</h3>
-              <p>{{recipe.description}}</p>
-          </div>
-        </template>
+<div class="container">
+  <h1 style="color: white;" class="pageHeading text-center">Foodex Catalog</h1>
+  <div id="homeApp" class="flex-container">
+    <template v-for="recipe in recipes" v-if="isPublic(recipe.visibility)">
+      <div class="container borderStyle2">
+        <a href="#" v-on:click="storeKey(recipe['.key'])"><img style="margin-top: 5%;" class="borderStyle img-rounded img-responsive" :src="recipe.smallUrl" alt="Image of the recipe"></a>
+        <h3>{{recipe.title}}</h3>
+        <p>{{recipe.description}}</p>
       </div>
-    </div>
-    <hr>
-    <footer class="footer"><p>&copy; 2017 Foodex</p></footer>
-
-  </body>
+    </template>
+  </div>
+</div>
+<hr>
+<footer class="footer"><p>&copy; 2017 Foodex</p></footer>
+</body>
 </html>
