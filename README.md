@@ -26,8 +26,14 @@ Foodex is a web application that simplifies the process of adding, editing, and 
  * The Foodex Catalog page displays all public recipes that have been added by Foodex users
  * The Personal Catalog page shows all of your recipes, so it should be empty on your first visit.
  * The add recipe page allows you to add a title, time estimation, difficulty level, description, ingredients, instructions, a picture, and a visibility. If you set the visibility to public, your recipe will appear in the Foodex Catalog, viewable by all users. Setting it to private will ensure it only appears in your Personal Catalog. Don't worry about the image size, we resize it for you if it's too big :)
+
+![Alt text](./public/hw5/static/img/screenshots/create-gif.gif "Demo") 
+
  * In the Foodex Catalog, clicking on any recipe image will take you to the recipe page, where you can view all the relevant information and cook away!
  * In the Personal Catalog, you have the ability to edit and delete any recipes that you have personally added.
+
+
+
 
 
 
