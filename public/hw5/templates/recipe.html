@@ -23,74 +23,74 @@
   <div class="navbar navbar-default" role="navigation">
     <div class="container">
       <div class="navbar-header">
-      <img class="logo" src="../static/img/mixing_bowl-515.png" alt="logo">
-	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavBar">
-	  <span class="sr-only">Toggle navigation</span>
-	  <span class="icon-bar"></span>
-	  <span class="icon-bar"></span>
-	  <span class="icon-bar"></span>
-	</button>
-      </div>
-      <div class="collapse navbar-collapse" id="myNavBar">
-	<ul class="nav navbar-nav">
-	  <li><a href="main.html">Foodex Catalog</a></li>
-	  <li><a href="personal.html">Personal Catalog</a></li>
-	  <li><a href="add.html">Add Recipe</a></li>
-	  <li><a id="btnLogout">Log Out</a></li>
-	</ul>
+        <img class="logo" src="../static/img/mixing_bowl-515.png" alt="logo">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavBar">
+         <span class="sr-only">Toggle navigation</span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+     </div>
+     <div class="collapse navbar-collapse" id="myNavBar">
+       <ul class="nav navbar-nav">
+         <li><a href="main.html">Foodex Catalog</a></li>
+         <li><a href="personal.html">Personal Catalog</a></li>
+         <li><a href="add.html">Add Recipe</a></li>
+         <li><a id="btnLogout">Log Out</a></li>
+       </ul>
+     </div>
+   </div>
+ </div>
+
+
+ <div id="recipeViewApp" class="container">
+  <div class="container borderStyle2">
+    <div class="row">
+      <div class="container">
+        <h1 class="pageHeading">{{recipe.title}}</h1>
+        <img class="flex-img img-responsive borderStyle" :src="recipe.imageUrl" alt="Image of recipe">
+        <h3><u>Description</u></h3>
+        <p>{{recipe.description}}</p>
       </div>
     </div>
   </div>
+  <div class="container top borderStyle2">
+    <div class="row">
+      <div class="container">
+       <h3><u>Duration</u></h3>
+       <p>{{recipe.timeEstimate}}</p>
+       <h3><u>Difficulty</u></h3>
+       <p>{{recipe.difficulty}}</p>
+     </div>
+   </div>
+ </div>
+ <div class="container top borderStyle2">
+  <div class="row">
+    <div class="container">
+     <h3><u>Ingredients:</u></h3>
+     <ul>
+      <li v-for="ing in recipe.ingredients">
+        {{ing}}
+      </li>
+    </ul>
+  </div>
+</div>
+</div>
+<div class="container top borderStyle2">
+  <div class="row">
+    <div class="container">
+     <h3><u>Instructions:</u></h3>
+     <ol>
+      <li v-for="instr in recipe.instructions">
+        {{instr}}
+      </li>
+    </ol>
+  </div>
+</div>
+</div>
+</div>
 
-
-    <div id="recipeViewApp" class="container">
-        <div class="container borderStyle2">
-          <div class="row">
-            <div class="container">
-          <h1 class="pageHeading">{{recipe.title}}</h1>
-    	      <img class="flex-img img-responsive borderStyle" :src="recipe.imageUrl" alt="Image of recipe">
-            <h3><u>Description</u></h3>
-            <p>{{recipe.description}}</p>
-            </div>
-          </div>
-        </div>
-        <div class="container top borderStyle2">
-          <div class="row">
-            <div class="container">
-  	        <h3><u>Duration</u></h3>
-  	        <p>{{recipe.timeEstimate}}</p>
-      	    <h3><u>Difficulty</u></h3>
-      	    <p>{{recipe.difficulty}}</p>
-            </div>
-          </div>
-        </div>
-        <div class="container top borderStyle2">
-          <div class="row">
-            <div class="container">
-    	      <h3><u>Ingredients:</u></h3>
-    	      <ul>
-              <li v-for="ing in recipe.ingredients">
-                {{ing}}
-              </li>
-            </ul>
-            </div>
-          </div>
-        </div>
-        <div class="container top borderStyle2">
-          <div class="row">
-            <div class="container">
-    	        <h3><u>Instructions:</u></h3>
-    	        <ol>
-                <li v-for="instr in recipe.instructions">
-                  {{instr}}
-                </li>
-    	        </ol>
-            </div>
-          </div>
-        </div>
-    </div>
-
-  <hr>
-  <footer style="text-align:center;"><p>&copy; 2017 Foodex</p></footer>
+<hr>
+<footer style="text-align:center;"><p>&copy; 2017 Foodex</p></footer>
 </body>
 </html>
