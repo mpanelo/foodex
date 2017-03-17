@@ -2,14 +2,14 @@
     "name": "Foodex",
     "short_name": "Foodex",
     "display": "standalone",
-    "background_color": "#00cbac",
-    "theme_color": "#00cbac",
+    "background_color": "#fe8181",
+    "theme_color": "#fe8181",
     "lang": "en-US",
     "description": "The best damn collection of recipes.",
     "icons": [{
-	"src": "img/mixing_bowl-512.jpg",
+	"src": "img/android-chrome-192x192.png",
 	"sizes": "192x192",
-	"type": "image/jpg"
+	"type": "image/png"
     }],
     "related_applications": [{
 	"platform": "web"
