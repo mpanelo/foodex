@@ -14,10 +14,10 @@ Foodex is a web application that simplifies the process of adding, editing, and 
 ## Application Overview
  * Frontend: HTML, Bootstrap, JavaScript (Vanilla, Vue)
  * Backend: Firebase
- * Accessibility: Chrome, Firefox, Mobile friendly
+ * Accessibility: Chrome, Firefox, Mobile friendly ![Alt text](./public/hw5/static/img/screenshots/foodex-mobile.png "Mobile")
 
 ![Alt text](./public/hw5/static/img/screenshots/foodex-main.png "Main")
-![Alt text](./public/hw5/static/img/screenshots/foodex-mobile.png "Mobile")
+
 
 ## Performance and UX
  * We took measures to ensure the best possible user experience in terms of RAIL (Response, Animation, Idle, Load)
