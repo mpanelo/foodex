@@ -86,8 +86,7 @@ window.addEventListener("load", function () {
 				if (this.validateData()) {
 					if (selectedFile) {
 						console.log("hello");
-	        	var currImageRef = imageRef.child(this.iName);
-		        var uploadTask = currImageRef.put(selectedFile);
+		        var uploadTask = imageRef.child(this.$data.recipe.imageName).put(selectedFile);
 		        // Register three observers:
 		        // 1. 'state_changed' observer, called any time the state changes
 		        // 2. Error observer, called on failure
@@ -108,14 +107,17 @@ window.addEventListener("load", function () {
 		          }
 		        }, function(error) {
 		          // Handle unsuccessful uploads
+              console.log(error);
 		        }, function() {
 		          // Handle successful uploads on complete
 		          // For instance, get the download URL: https://firebasestorage.googleapis.com/...
 							var fileName = that.iName;
+              console.log(fileName);
 							imageRef.child(that.$data.recipe['imageName']).delete().then(function () {
 		          	var downloadURL = uploadTask.snapshot.downloadURL;
 		          	editRef.child("imageName").set(fileName);
 		          	editRef.child("imageUrl").set(downloadURL);
+                window.location.href="personal.html";
 			      	}).catch(function(error) {
 			      	});
 		        });
