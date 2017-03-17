@@ -117,6 +117,7 @@ window.addEventListener("load", function () {
 		          	var downloadURL = uploadTask.snapshot.downloadURL;
 		          	editRef.child("imageName").set(fileName);
 		          	editRef.child("imageUrl").set(downloadURL);
+                window.location.href="personal.html";
 			      	}).catch(function(error) {
 			      	});
 		        });
@@ -134,7 +135,6 @@ window.addEventListener("load", function () {
 					var hrs = this.$data.recipe.hours;
 					var mins = this.$data.recipe.minutes;
 					editRef.child("timeEstimate").set(hrs + " hrs, " + mins + " mins");
-          window.location.href="personal.html";
 				}
 			},
       readFile: function (oldSmallImage, event) {
